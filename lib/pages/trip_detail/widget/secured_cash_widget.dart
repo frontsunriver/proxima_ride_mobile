@@ -60,17 +60,17 @@ Widget securedCashWidget({context, bookingList, double screenWidth = 0.0, contro
                               txt16Size(context: context, title: "${booking['passenger']['first_name']} ${controller.labelTextDetail['driver_age_label'] ?? "Age"}: ${booking['passenger']['age']}  ${booking['passenger']['gender_label']} ${controller.labelTextDetail['review_label'] ?? "Review"}: ${booking['passenger']['average_rating'] != null ? booking['passenger']['average_rating'].toStringAsFixed(1) : ""} ")
                             ],
                           ),
-                          showBtn == true ? elevatedButtonWidget(
-                              textWidget: txt16Size(context: context, title: "${controller.labelTextDetail['enter_code_label'] ?? "Enter code"}", textColor: Colors.white),
-                              context: context,
-                              onPressed: booking['secured_cash_attempt_count'] == "10" ? null : () async{
-                                controller.securedCashTextEditingController.text = "";
-                                await securedCashBottomSheet(controller: controller, context: context, height: height, onSubmit: () async{
-                                  await controller.enterCode(booking['id']);
-                                },
-                                errors: errors
-                                );
-                              }
+                        showBtn == true ? elevatedButtonWidget(
+                            textWidget: secondaryButtonSize(context: context, title: "${controller.labelTextDetail['enter_code_label'] ?? "Enter code"}", textColor: Colors.white),
+                            context: context,
+                            onPressed: booking['secured_cash_attempt_count'] == "10" ? null : () async{
+                              controller.securedCashTextEditingController.text = "";
+                              await securedCashBottomSheet(controller: controller, context: context, height: height, onSubmit: () async{
+                                await controller.enterCode(booking['id']);
+                              },
+                              errors: errors
+                              );
+                            }
                           ) : SizedBox(),
                         ],
                       ),

@@ -220,7 +220,7 @@ class PasswordPage extends GetView<PasswordController> {
                       width: context.screenWidth,
                       height: 75,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
+                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
                           onPressed: () async{
                             await controller.updatePassword();
                           },

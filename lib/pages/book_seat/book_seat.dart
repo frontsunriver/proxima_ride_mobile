@@ -309,7 +309,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                           child: SizedBox(
                             width: context.screenWidth,
                             child: elevatedButtonWidget(
-                              textWidget: txt28Size(
+                              textWidget: primaryButtonSize(
                                   title: "${controller.labelTextDetail['book_seat_button_label'] ?? "Book seat(s)"}",
                                   fontFamily: regular,
                                   textColor: Colors.white,
@@ -328,7 +328,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                           child: SizedBox(
                             width: context.screenWidth,
                             child: elevatedButtonWidget(
-                              textWidget: txt28Size(
+                              textWidget: primaryButtonSize(
                                   title: "${controller.labelTextDetail['book_seat_button_label'] ?? "Book seat(s)"}",
                                   fontFamily: regular,
                                   textColor: Colors.white,

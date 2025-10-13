@@ -28,7 +28,7 @@ Widget userInfoWidget({context, String imagePath = "", String userName = "", Str
         ),
       ),
       elevatedButtonWidget(
-        textWidget: txt16Size(
+        textWidget: secondaryButtonSize(
             title: editProfileLabel,
             textColor: Colors.white,
             fontFamily: regular,

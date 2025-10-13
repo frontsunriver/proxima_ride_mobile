@@ -50,7 +50,7 @@ class StageFourVehicle extends GetView<StageThreeController> {
                           Align(
                             alignment: Alignment.topRight,
                             child: elevatedButtonWidget(
-                                textWidget: txt16Size(
+                                textWidget: secondaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                                     fontFamily: regular,
@@ -791,7 +791,7 @@ class StageFourVehicle extends GetView<StageThreeController> {
                             children: [
                               Expanded(
                                   child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['skip_vehicle_info'] ?? "Skip Vehicle"}",
                                     textColor: Colors.white,
@@ -807,7 +807,7 @@ class StageFourVehicle extends GetView<StageThreeController> {
                               2.widthBox,
                               Expanded(
                                   child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['skip_license'] ?? "license"}",
                                     textColor: Colors.white,
@@ -827,7 +827,7 @@ class StageFourVehicle extends GetView<StageThreeController> {
                             children: [
                               Expanded(
                                   child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
                                     textColor: Colors.white,
@@ -843,7 +843,7 @@ class StageFourVehicle extends GetView<StageThreeController> {
                               2.widthBox,
                               Expanded(
                                   child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['next_button_label'] ?? "Add vehicle"}",
                                     textColor: Colors.white,

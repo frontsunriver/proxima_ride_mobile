@@ -127,7 +127,7 @@ Widget tripCardFromToWidget({String from = "", String to = "", String pickup = "
             if(tripStatus == "completed")...[
               if(isRating || showReviewButton)...[
               elevatedButtonWidget(
-                textWidget: txt16Size(title: isRating ? reviewedLabel :  reviewDriverLabel, context: context, textColor: Colors.white),
+                textWidget: secondaryButtonSize(title: isRating ? reviewedLabel :  reviewDriverLabel, context: context, textColor: Colors.white),
                 onPressed: onTapReview,
                 context: context,
                btnColor: btnPrimaryColor

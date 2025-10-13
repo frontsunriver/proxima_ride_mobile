@@ -44,7 +44,7 @@ Widget phoneNumberCardWidget(
               if(def == "0" && verification == "1")...[
                 Expanded(
                   child: elevatedButtonWidget(
-                    textWidget: txt16Size(title: "${controller.labelTextDetail['set_as_default_label'] ?? "Set as default"}", context: context, textColor: Colors.white),
+                    textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['set_as_default_label'] ?? "Set as default"}", context: context, textColor: Colors.white),
                     onPressed: onSetDefault,
                   ),
                 ),
@@ -52,7 +52,7 @@ Widget phoneNumberCardWidget(
                 Expanded(
                   child: elevatedButtonWidget(
                     btnColor: Colors.red,
-                    textWidget: txt16Size(title: "${controller.labelTextDetail['delete_button_text'] ?? "Delete"}", context: context, textColor: Colors.white),
+                    textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['delete_button_text'] ?? "Delete"}", context: context, textColor: Colors.white),
                     onPressed: onDelete,
                   ),
                 ),
@@ -60,7 +60,7 @@ Widget phoneNumberCardWidget(
               if(def == "0" && verification == "0")...[
                 Expanded(
                   child: elevatedButtonWidget(
-                      textWidget: txt16Size(title: "${controller.labelTextDetail['mobile_verify_button_text'] ?? "Verify"}", context: context, textColor: Colors.white),
+                      textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['mobile_verify_button_text'] ?? "Verify"}", context: context, textColor: Colors.white),
                       onPressed: onVerify
                   ),
                 ),
@@ -68,7 +68,7 @@ Widget phoneNumberCardWidget(
                 Expanded(
                   child: elevatedButtonWidget(
                     btnColor: Colors.red,
-                      textWidget: txt16Size(title: "${controller.labelTextDetail['delete_button_text'] ?? "Delete"}", context: context, textColor: Colors.white),
+                      textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['delete_button_text'] ?? "Delete"}", context: context, textColor: Colors.white),
                       onPressed: onDelete
                   ),
                 ),

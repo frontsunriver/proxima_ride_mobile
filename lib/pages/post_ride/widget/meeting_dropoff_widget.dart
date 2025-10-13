@@ -38,7 +38,7 @@ Widget meetingDropOffWidget({
                       textController:
                           controller.dropOffDescriptionTextEditingController,
                       readonly: bookingCheck,
-                      fontSize: fontSizeMedium,
+                      fontSize: fontSizeRegular,
                       fontFamily: regular,
                       placeHolder:
                       "${controller.labelTextDetail['meeting_drop_off_description_placeholder'] ?? "Describe the place where you will meet your passengers, and the place where you will drop them of. Please elaborate, and be as accurate as possible"}",

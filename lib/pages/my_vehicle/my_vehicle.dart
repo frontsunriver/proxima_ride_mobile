@@ -87,30 +87,30 @@ class MyVehiclePage extends GetView<MyVehicleController> {
                                      Column(
                                        crossAxisAlignment: CrossAxisAlignment.center,
                                        children: [
-                                         SizedBox(
-                                           height: 30,
-                                           width: 132,
-                                           child: elevatedButtonWidget(
-                                             textWidget: txt16Size(title: "${controller.labelTextDetail['edit_vehicle_button_text'] ?? "Edit vehicle"}", context: context, fontFamily: regular, textColor: Colors.white),
-                                             onPressed: () async{
-                                               await controller.getVehicleDetail(controller.vehicleList[i]['id']);
-                                             },
-                                             context: context
-                                           ),
-                                         ),
-                                         5.heightBox,
-                                         SizedBox(
-                                           height: 30,
-                                           width: 132,
-                                           child: elevatedButtonWidget(
-                                               textWidget: txt16Size(title: "${controller.labelTextDetail['remove_vehicle_button_text'] ?? "Remove vehicle"}", context: context, fontFamily: regular, textColor: Colors.white),
-                                               btnColor: Colors.red,
-                                               onPressed: () async{
-                                                 await controller.removeVehicle(controller.vehicleList[i]['id']);
-                                               },
-                                               context: context
-                                           ),
-                                         )
+                                        SizedBox(
+                                          height: 30,
+                                          width: 132,
+                                          child: elevatedButtonWidget(
+                                            textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['edit_vehicle_button_text'] ?? "Edit vehicle"}", context: context, fontFamily: regular, textColor: Colors.white),
+                                            onPressed: () async{
+                                              await controller.getVehicleDetail(controller.vehicleList[i]['id']);
+                                            },
+                                            context: context
+                                          ),
+                                        ),
+                                        5.heightBox,
+                                        SizedBox(
+                                          height: 30,
+                                          width: 132,
+                                          child: elevatedButtonWidget(
+                                              textWidget: secondaryButtonSize(title: "${controller.labelTextDetail['remove_vehicle_button_text'] ?? "Remove vehicle"}", context: context, fontFamily: regular, textColor: Colors.white),
+                                              btnColor: Colors.red,
+                                              onPressed: () async{
+                                                await controller.removeVehicle(controller.vehicleList[i]['id']);
+                                              },
+                                              context: context
+                                          ),
+                                        )
                                        ],
                                      )
                
@@ -137,7 +137,7 @@ class MyVehiclePage extends GetView<MyVehicleController> {
                      width: context.screenWidth,
                      height: 50,
                      child: elevatedButtonWidget(
-                       textWidget: txt28Size(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
+                       textWidget: primaryButtonSize(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
                        onPressed: () async{
                          controller.oldCarImagePath.value = "";
                          await controller.getVehicleDetail(0);

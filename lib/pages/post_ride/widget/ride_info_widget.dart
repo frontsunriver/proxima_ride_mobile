@@ -116,7 +116,7 @@ Widget rideInfoWidget(
                 Align(
                   alignment: Alignment.centerRight,
                   child: elevatedButtonWidget(
-                      textWidget: txt18Size(
+                      textWidget: secondaryButtonSize(
                           title: '${controller.labelTextDetail['add_spot_button_label'] ?? "Add spot"}',
                           context: context,
                           textColor: Colors.white),

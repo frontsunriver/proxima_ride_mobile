@@ -184,7 +184,7 @@ class MyWallet extends GetView<MyWalletController> {
                                                         color: Colors.grey.shade100,
                                                         height: 50,
                                                         child: elevatedButtonWidget(
-                                                          textWidget: txt28Size(title: "${controller.labelTextDetail['balance_buy_more_button_text'] ?? "Buy more top up balance"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['balance_buy_more_button_text'] ?? "Buy more top up balance"}", textColor: Colors.white, context: context, fontFamily: regular),
                                                           onPressed: () async{
                                                             Get.toNamed('/top_up_balance');
                                                           },
@@ -237,7 +237,7 @@ class MyWallet extends GetView<MyWalletController> {
                                                       color: Colors.grey.shade100,
                                                       height: 50,
                                                       child: elevatedButtonWidget(
-                                                        textWidget: txt28Size(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                        textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
                                                         onPressed: () async{
                                                           await controller.claimMyReward('student');
                                                         },
@@ -370,7 +370,7 @@ class MyWallet extends GetView<MyWalletController> {
                                                         color: Colors.grey.shade100,
                                                         height: 50,
                                                         child: elevatedButtonWidget(
-                                                            textWidget: txt28Size(title: "${controller.labelTextDetail['request_transfer_label'] ?? "Request for transfer"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                            textWidget: primaryButtonSize(title: "${controller.labelTextDetail['request_transfer_label'] ?? "Request for transfer"}", textColor: Colors.white, context: context, fontFamily: regular),
                                                             onPressed: () async{
                                                               await controller.sendPayoutRequest();
                                                             }
@@ -449,7 +449,7 @@ class MyWallet extends GetView<MyWalletController> {
                                                         color: Colors.grey.shade100,
                                                         height: 50,
                                                         child: elevatedButtonWidget(
-                                                          textWidget: txt28Size(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
                                                           onPressed: () async{
                                                             await controller.claimMyReward('driver');
                                                           },

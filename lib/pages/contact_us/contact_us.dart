@@ -181,7 +181,7 @@ class ContactUsPage extends GetView<ContactUsController> {
                       )),
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(
+                          textWidget: primaryButtonSize(
                               title: "${controller.labelTextDetail['submit_button_text'] ?? "Submit"}",
                               fontFamily: regular,
                               textColor: Colors.white,

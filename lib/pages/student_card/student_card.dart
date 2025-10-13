@@ -167,7 +167,7 @@ class StudentCardPage extends GetView<StudentCardController> {
                       width: context.screenWidth,
                       height: 75,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: controller.oldImagePath.value == "" ? "${controller.labelTextDetail['upload_button_text'] ?? "Upload"}" : "${controller.labelTextDetail['update_button_text'] ?? "Update"}"
+                          textWidget: primaryButtonSize(title: controller.oldImagePath.value == "" ? "${controller.labelTextDetail['upload_button_text'] ?? "Upload"}" : "${controller.labelTextDetail['update_button_text'] ?? "Update"}"
 
 
 

@@ -560,7 +560,7 @@ class CloseMyAccount extends GetView<CloseAccountController> {
                       padding: const EdgeInsets.all(15.0),
                       width: context.screenWidth,
                       child:  elevatedButtonWidget(
-                        textWidget: txt28Size(
+                        textWidget: primaryButtonSize(
                             title: "${controller.labelTextDetail['close_account_button_text'] ?? "Close my account"}",
                             textColor: Colors.white,
                             context: context,

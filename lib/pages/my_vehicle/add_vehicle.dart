@@ -936,7 +936,7 @@ class AddVehiclePage extends StatelessWidget {
                       padding: const EdgeInsets.all(15.0),
                       color: Colors.grey.shade100,
                       child: elevatedButtonWidget(
-                        textWidget: txt28Size(
+                        textWidget: primaryButtonSize(
                             title: controller.vehicleId.value == 0
                                 ? "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}"
                                 : "${controller.labelTextDetail['update_vehicle_button_text'] ?? "Update vehicle"}",

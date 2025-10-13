@@ -48,7 +48,7 @@ class StageTwo extends GetView<StageTowController> {
                         Align(
                           alignment: Alignment.topRight,
                           child: elevatedButtonWidget(
-                              textWidget: txt16Size(
+                              textWidget: secondaryButtonSize(
                                   title:
                                       "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                                   fontFamily: regular,
@@ -126,7 +126,7 @@ class StageTwo extends GetView<StageTowController> {
                           Expanded(
                             flex: 10,
                             child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
                                     fontFamily: regular,
@@ -145,7 +145,7 @@ class StageTwo extends GetView<StageTowController> {
                           Expanded(
                             flex: 10,
                             child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['next_button_label'] ?? "Next"}",
                                     fontFamily: regular,

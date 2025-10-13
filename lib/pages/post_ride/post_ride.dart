@@ -261,7 +261,7 @@ class PostRidePage extends GetView<PostRideController> {
                       color: Colors.grey.shade100,
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(
+                          textWidget: primaryButtonSize(
                               title: controller.rideType.value == 'update' ? '${controller.labelTextDetail['update_button_label'] ?? "Update ride"}' : "${controller.labelTextDetail['submit_button_label'] ?? "Post ride"}",
                               context: context,
                               textColor: Colors.white),

@@ -39,7 +39,7 @@ Widget addMoreSpotRideWidget(
                         children: [
                           txt20Size(title: "${controller.labelTextDetail['from_label'] ?? "From"}", fontFamily: regular, context: context),
                           index == 0 ? SizedBox() : elevatedButtonWidget(
-                              textWidget: txt14Size(
+                              textWidget: secondaryButtonSize(
                                   title: '${controller.labelTextDetail['delete_spot_button_label'] ?? "Delete spot"}',
                                   context: context,
                                   textColor: Colors.white),

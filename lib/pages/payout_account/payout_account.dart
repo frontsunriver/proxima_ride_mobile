@@ -419,14 +419,14 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               width: context.screenWidth,
                                               child: controller.bankStatus.value == "admin_verify" ?
                                                   elevatedButtonWidget(
-                                                  textWidget: txt28Size(title: "${controller.labelTextDetail['verify_button_text'] ?? "Verify bank"}", fontFamily: regular, textColor: Colors.white, context: context),
+                                                  textWidget: primaryButtonSize(title: "${controller.labelTextDetail['verify_button_text'] ?? "Verify bank"}", fontFamily: regular, textColor: Colors.white, context: context),
                                                   onPressed: () async{
                                                   await controller.verifyBank();
                                                   },
                                                   context: context,
                                                   btnRadius: 5.0
                                                   ) : elevatedButtonWidget(
-                                                  textWidget: txt28Size(title: controller.bankBtnText.value == 1 ? "${controller.labelTextDetail['update_btn_label'] ?? "Update"}" : "${controller.labelTextDetail['save_btn_label'] ?? "Save"}", fontFamily: regular, textColor: Colors.white, context: context),
+                                                  textWidget: primaryButtonSize(title: controller.bankBtnText.value == 1 ? "${controller.labelTextDetail['update_btn_label'] ?? "Update"}" : "${controller.labelTextDetail['save_btn_label'] ?? "Save"}", fontFamily: regular, textColor: Colors.white, context: context),
                                                   onPressed: () async{
                                                     await controller.updateBankDetail();
                                                   },
@@ -513,7 +513,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                             SizedBox(
                                               width: context.screenWidth,
                                               child: elevatedButtonWidget(
-                                                  textWidget: txt28Size(title: controller.paypalBtnText.value == 1 ? "${controller.labelTextDetail['update_btn_label'] ?? "Update"}" : "${controller.labelTextDetail['save_btn_label'] ?? "Save"}", fontFamily: regular, textColor: Colors.white, context: context),
+                                                  textWidget: primaryButtonSize(title: controller.paypalBtnText.value == 1 ? "${controller.labelTextDetail['update_btn_label'] ?? "Update"}" : "${controller.labelTextDetail['save_btn_label'] ?? "Save"}", fontFamily: regular, textColor: Colors.white, context: context),
                                                   onPressed: () async{
                                                     await controller.updatePaypalDetail();
                                                   },

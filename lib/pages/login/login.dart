@@ -588,7 +588,7 @@
 //                       width: context.screenWidth,
 //                       height: 50,
 //                       child: elevatedButtonWidget(
-//                           textWidget: txt28Size(
+//                           textWidget: primaryButtonSize(
 //                               title:
 //                                   "${controller.labelTextDetail['submit_button_label'] ?? "Log in"}",
 //                               fontFamily: regular,
@@ -1226,7 +1226,7 @@ class LoginPage extends GetView<LoginController> {
                         width: MediaQuery.of(context).size.width,
                         height: 50,
                         child: elevatedButtonWidget(
-                          textWidget: txt28Size(
+                          textWidget: primaryButtonSize(
                             title: controller
                                     .labelTextDetail['submit_button_label'] ??
                                 "Log in",

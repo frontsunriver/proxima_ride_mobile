@@ -134,7 +134,7 @@ class UpdateEmailAddressPage extends StatelessWidget {
                       width: context.screenWidth,
                       // height: 75,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(
+                          textWidget: primaryButtonSize(
                               title: "${controller.labelTextDetail['save_btn_label'] ?? "Save"}",
                               fontFamily: regular,
                               textColor: Colors.white,

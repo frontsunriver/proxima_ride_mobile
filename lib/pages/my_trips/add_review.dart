@@ -227,7 +227,7 @@ class AddReviewPage extends StatelessWidget {
                       height: 50,
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: "${controller.labelTextTripDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
+                          textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
                           onPressed: () async{
 
                             controller.vehicleCondition.value = double.parse((controller.vehicleCondition.value).ceil().toString());

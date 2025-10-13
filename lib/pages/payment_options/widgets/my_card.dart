@@ -115,7 +115,7 @@ Widget myCard(
                   btnColor: Colors.red,
                   btnRadius: 2.0,
                   onPressed: onDelete,
-                  textWidget: txt16Size(
+                  textWidget: secondaryButtonSize(
                     context: context,
                     fontFamily: regular,
                     title: "${controller.labelTextDetail['delete_card_button_text'] ?? 'Delete card'}",
@@ -131,7 +131,7 @@ Widget myCard(
                   context: context,
                   btnRadius: 2.0,
                   onPressed: onSetPrimary,
-                  textWidget: txt16Size(
+                  textWidget: secondaryButtonSize(
                     context: context,
                     fontFamily: regular,
                     title: "${controller.labelTextDetail['set_primary_card_label'] ?? 'Set primary'}",

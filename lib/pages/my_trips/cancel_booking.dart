@@ -286,7 +286,7 @@ class CancelBookingPage extends StatelessWidget {
                             height: 50,
                             width: context.screenWidth,
                             child: elevatedButtonWidget(
-                                textWidget: txt28Size(
+                                textWidget: primaryButtonSize(
                                     title: "${controller.labelTextTripDetail['booking_cancel_btn_label'] ?? "Cancel ride"}",
                                     context: context,
                                     textColor: Colors.white),

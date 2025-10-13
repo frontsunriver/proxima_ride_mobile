@@ -272,8 +272,8 @@ class TripDetailPage extends GetView<TripDetailController> {
                       width: context.screenWidth,
                       child: controller.type == "findRide" ?
                       elevatedButtonWidget(
-                      textWidget: controller.ride['booking_method_id'] == "31" ? txt28Size(title: "${controller.labelTextDetail['instant_btn_label'] ?? "Instant booking"}", context: context, textColor: Colors.white) :
-                      txt28Size(title: "${controller.labelTextDetail['book_seat_btn_label'] ?? "Book your seats"}", context: context, textColor: Colors.white),
+                      textWidget: controller.ride['booking_method_id'] == "31" ? primaryButtonSize(title: "${controller.labelTextDetail['instant_btn_label'] ?? "Instant booking"}", context: context, textColor: Colors.white) :
+                      primaryButtonSize(title: "${controller.labelTextDetail['book_seat_btn_label'] ?? "Book your seats"}", context: context, textColor: Colors.white),
                           context: context,
                           onPressed: () async{
                             if(controller.ride['seats_left'] == 0){

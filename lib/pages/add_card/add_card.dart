@@ -493,7 +493,7 @@ class AddCard extends GetView<AddCardController> {
                     80, //added this height after the persisting argument from the QA that the height of this button is not similar to the rest of the buttons in the app
                     color: Colors.grey.shade100,
                     child: elevatedButtonWidget(
-                      textWidget: txt28Size(
+                      textWidget: primaryButtonSize(
                           title: controller.addEditType == 'add'
                               ? "${controller.labelTextDetail['save_button_text'] ?? "Save"}"
                               : "${controller.labelTextDetail['edit_card_button_text'] ?? "Edit card"}",

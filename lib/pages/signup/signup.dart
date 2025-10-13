@@ -876,7 +876,7 @@ class SignupPage extends GetView<RegisterController> {
                         width: context.screenWidth,
                         height: 60,
                         child: elevatedButtonWidget(
-                            textWidget: txt28Size(
+                            textWidget: primaryButtonSize(
                                 title:
                                     "${controller.labelTextDetail['button_label'] ?? "Sign up"}",
                                 fontFamily: regular,

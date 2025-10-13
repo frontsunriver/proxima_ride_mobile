@@ -330,5 +330,20 @@ Widget txt25SizeEllipsis({String title ="", String fontFamily= regular, Color te
   )).color(textColor).fontFamily(bold).ellipsis.make();
 }
 
+Widget secondaryButtonSize({String title ="", String fontFamily= regular, Color textColor = textColor, context}){
+  return title.text.size(getValueForScreenType<double>(
+    context: context,
+    mobile: 18.0,
+    tablet: 18.0,
+  )).color(textColor).fontFamily(fontFamily).make();
+}
+
+Widget primaryButtonSize({String title ="", String fontFamily= regular, Color textColor = textColor, context}){
+  return title.text.size(getValueForScreenType<double>(
+    context: context,
+    mobile: 22.0,
+    tablet: 22.0,
+  )).color(textColor).fontFamily(fontFamily).make();
+}
 
 

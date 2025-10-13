@@ -50,7 +50,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                           Align(
                             alignment: Alignment.topRight,
                             child: elevatedButtonWidget(
-                                textWidget: txt16Size(
+                                textWidget: secondaryButtonSize(
                                     title:
                                         "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                                     fontFamily: regular,
@@ -771,7 +771,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                               children: [
                                 // Expanded(
                                 //     child: elevatedButtonWidget(
-                                //   textWidget: txt28Size(
+                                //   textWidget: primaryButtonSize(
                                 //       title:
                                 //           "${controller.labelTextDetail['skip_vehicle_info'] ?? "Skip Vehicle"}",
                                 //       textColor: Colors.white,
@@ -789,7 +789,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                 // 2.widthBox,
                                 // Expanded(
                                 //     child: elevatedButtonWidget(
-                                //   textWidget: txt28Size(
+                                //   textWidget: primaryButtonSize(
                                 //       title:
                                 //           "${controller.labelTextDetail['next_button_label'] ?? "Add Vehicle"}",
                                 //       textColor: Colors.white,
@@ -805,7 +805,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
 
                                 Expanded(
                                     child: elevatedButtonWidget(
-                                  textWidget: txt28Size(
+                                  textWidget: primaryButtonSize(
                                       title:
                                           "${controller.labelTextDetail['skip_vehicle_info'] ?? "Skip Vehicle"}",
                                       textColor: Colors.white,
@@ -827,7 +827,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                               children: [
                                 Expanded(
                                     child: elevatedButtonWidget(
-                                  textWidget: txt28Size(
+                                  textWidget: primaryButtonSize(
                                       title:
                                           "${controller.labelTextDetail['next_button_label'] ?? "Add Vehicle"}",
                                       textColor: Colors.white,
@@ -923,7 +923,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                               children: [
                                 // Expanded(
                                 //     child: elevatedButtonWidget(
-                                //   textWidget: txt28Size(
+                                //   textWidget: primaryButtonSize(
                                 //       title:
                                 //           "${controller.labelTextDetail['skip_license'] ?? "Skip License"}",
                                 //       textColor: Colors.white,
@@ -940,7 +940,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                 // 2.widthBox,
                                 // Expanded(
                                 //     child: elevatedButtonWidget(
-                                //   textWidget: txt28Size(
+                                //   textWidget: primaryButtonSize(
                                 //       title:
                                 //           "${controller.labelTextDetail['finish_button_label'] ?? "Finish"}",
                                 //       textColor: Colors.white,
@@ -956,7 +956,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
 
                                 Expanded(
                                     child: elevatedButtonWidget(
-                                  textWidget: txt28Size(
+                                  textWidget: primaryButtonSize(
                                       title:
                                           "${controller.labelTextDetail['skip_license'] ?? "Skip License"}",
                                       textColor: Colors.white,
@@ -977,7 +977,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                               children: [
                                 Expanded(
                                     child: elevatedButtonWidget(
-                                  textWidget: txt28Size(
+                                  textWidget: primaryButtonSize(
                                       title:
                                           "${controller.labelTextDetail['next_button_label'] ?? "Add"}",
                                       textColor: Colors.white,
@@ -993,7 +993,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                 )),
                                 // Expanded(
                                 //     child: elevatedButtonWidget(
-                                //   textWidget: txt28Size(
+                                //   textWidget: primaryButtonSize(
                                 //       title:
                                 //           "${controller.labelTextDetail['back_to_vehicle'] ?? "Back to Vehicle"}",
                                 //       textColor: Colors.white,
@@ -1760,7 +1760,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //         children: [
                     //           Expanded(
                     //               child: elevatedButtonWidget(
-                    //             textWidget: txt28Size(
+                    //             textWidget: primaryButtonSize(
                     //                 title:
                     //                     "${controller.labelTextDetail['skip_vehicle_info'] ?? "Skip Vehicle"}",
                     //                 textColor: Colors.white,
@@ -1776,7 +1776,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //           2.widthBox,
                     //           // Expanded(
                     //           //     child: elevatedButtonWidget(
-                    //           //   textWidget: txt28Size(
+                    //           //   textWidget: primaryButtonSize(
                     //           //       title:
                     //           //           "${controller.labelTextDetail['skip_license'] ?? "license"}",
                     //           //       textColor: Colors.white,
@@ -1796,7 +1796,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //         children: [
                     //           // Expanded(
                     //           //     child: elevatedButtonWidget(
-                    //           //   textWidget: txt28Size(
+                    //           //   textWidget: primaryButtonSize(
                     //           //       title:
                     //           //           "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
                     //           //       textColor: Colors.white,
@@ -1812,7 +1812,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //           2.widthBox,
                     //           Expanded(
                     //               child: elevatedButtonWidget(
-                    //             textWidget: txt28Size(
+                    //             textWidget: primaryButtonSize(
                     //                 title:
                     //                     "${controller.labelTextDetail['next_button_label'] ?? "Add vehicle"}",
                     //                 textColor: Colors.white,

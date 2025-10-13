@@ -153,7 +153,7 @@ class DriverLicensePage extends GetView<DriverLicenseController> {
                     )),
                     width: context.screenWidth,
                     child: elevatedButtonWidget(
-                      textWidget: txt28Size(
+                      textWidget: primaryButtonSize(
                           title: controller.oldImagePath.value == ""
                               ? "${controller.labelTextDetail['upload_button_text'] ?? "Upload"}"
                               : "${controller.labelTextDetail['update_button_text'] ?? "Update"}",

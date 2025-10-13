@@ -48,7 +48,7 @@ class StageFour extends GetView<StageFourController> {
                         Align(
                           alignment: Alignment.topRight,
                           child: elevatedButtonWidget(
-                              textWidget: txt16Size(
+                              textWidget: secondaryButtonSize(
                                   title:
                                       "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                                   fontFamily: regular,
@@ -315,7 +315,7 @@ class StageFour extends GetView<StageFourController> {
                           Expanded(
                             flex: 10,
                             child: elevatedButtonWidget(
-                              textWidget: txt28Size(
+                              textWidget: primaryButtonSize(
                                   title:
                                       "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
                                   textColor: Colors.white,
@@ -333,7 +333,7 @@ class StageFour extends GetView<StageFourController> {
                           Expanded(
                             flex: 10,
                             child: elevatedButtonWidget(
-                              textWidget: txt28Size(
+                              textWidget: primaryButtonSize(
                                   title: controller.finishBtn.value == false
                                       ? "${controller.labelTextDetail['verify_button_label'] ?? "Verify"}"
                                       : "${controller.labelTextDetail['save_button_label'] ?? "Finish"}",

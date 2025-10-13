@@ -226,7 +226,7 @@ class NotificationAddReviewPage extends GetView<NotificationAddReviewController>
                       height: 50,
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: "${controller.labelTextDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
+                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
                           onPressed: () async{
 
                             controller.vehicleCondition.value = double.parse((controller.vehicleCondition.value).ceil().toString());

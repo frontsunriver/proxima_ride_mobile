@@ -500,7 +500,7 @@ class EditProfilePage extends GetView<EditProfileController> {
                             width: context.screenWidth,
                             height: 50,
                             child: elevatedButtonWidget(
-                              textWidget: txt28Size(
+                              textWidget: primaryButtonSize(
                                   title: "${controller.labelTextDetail['save_button_text'] ?? "Save"}",
                                   textColor: Colors.white,
                                   context: context,

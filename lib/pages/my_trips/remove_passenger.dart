@@ -214,7 +214,7 @@ class RemovePassengerPage extends StatelessWidget {
                       height: 70,
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
+                          textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
                           onPressed: controller.removePassengerType.value != "" &&
                               controller.reviewTextEditingController.text != "" &&
                               controller.tripCancelTextEditingController.text != "" &&

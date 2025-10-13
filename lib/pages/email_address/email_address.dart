@@ -66,7 +66,7 @@ class EmailAddressPage extends GetView<EmailAddressController> {
                       )),
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
+                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
                           onPressed: () async{
                             Get.toNamed('/update_email_address');
                           },

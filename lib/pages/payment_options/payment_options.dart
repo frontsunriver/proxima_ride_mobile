@@ -75,7 +75,7 @@ class PaymentOptions extends GetView<PaymentOptionController> {
               //     width: context.screenWidth,
               //     color: Colors.grey.shade100,
               //     child: elevatedButtonWidget(
-              //       textWidget: txt28Size(
+              //       textWidget: primaryButtonSize(
               //           title: "Add a new card",
               //           textColor: Colors.white,
               //           context: context,
@@ -97,7 +97,7 @@ class PaymentOptions extends GetView<PaymentOptionController> {
                     padding: const EdgeInsets.all(15.0),
                     color: Colors.grey.shade100,
                     child: elevatedButtonWidget(
-                      textWidget: txt28Size(
+                      textWidget: primaryButtonSize(
                           title: "${controller.labelTextDetail['add_new_card_button_text'] ?? "Add a new card"}",
                           textColor: Colors.white,
                           context: context,

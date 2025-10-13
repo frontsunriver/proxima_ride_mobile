@@ -233,7 +233,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                         height: 50,
                         width: context.screenWidth,
                         child: elevatedButtonWidget(
-                            textWidget: txt28Size(
+                            textWidget: primaryButtonSize(
                                 title: "${controller.labelTextDetail['search_section_button_label'] ?? "Search"}",
                                 context: context,
                                 textColor: Colors.white),

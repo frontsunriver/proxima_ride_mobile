@@ -54,7 +54,7 @@ class StageOne extends GetView<StageController> {
                         Align(
                           alignment: Alignment.topRight,
                           child: elevatedButtonWidget(
-                              textWidget: txt16Size(
+                              textWidget: secondaryButtonSize(
                                   title:
                                       "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                                   fontFamily: regular,
@@ -578,7 +578,7 @@ class StageOne extends GetView<StageController> {
                       )),
                       width: context.screenWidth,
                       child: elevatedButtonWidget(
-                          textWidget: txt28Size(
+                          textWidget: primaryButtonSize(
                               title:
                                   "${controller.labelTextDetail['button_label'] ?? "Next"}",
                               fontFamily: regular,

@@ -83,7 +83,7 @@ Widget bookingOptionWidget(
                                   tablet: 45.0,
                                 )),
                             5.widthBox,
-                            txt22Size(
+                            txt20Size(
                                 title: "${controller.bookingOptionLabelList[i]}",
                                 context: context,
                                 fontFamily: regular,

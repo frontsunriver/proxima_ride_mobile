@@ -199,7 +199,7 @@ class PasswordPage extends GetView<PasswordController> {
                         if(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_password") != null) ...[
                           toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_password"))
                         ],
-                        100.heightBox,
+                        120.heightBox,
 
                       ],
                     ),
@@ -207,24 +207,26 @@ class PasswordPage extends GetView<PasswordController> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: EdgeInsets.all(getValueForScreenType<double>(
-                      context: context,
-                      mobile: 15.0,
-                      tablet: 15.0,
-                    ),
-                    ),
-                    width: context.screenWidth,
-                    height: 75,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
-                        onPressed: () async{
-                          await controller.updatePassword();
-                        },
-
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.all(getValueForScreenType<double>(
                         context: context,
-                        btnRadius: 5.0
+                        mobile: 15.0,
+                        tablet: 15.0,
+                      ),
+                      ),
+                      width: context.screenWidth,
+                      height: 75,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
+                          onPressed: () async{
+                            await controller.updatePassword();
+                          },
+
+                          context: context,
+                          btnRadius: 5.0
+                      ),
                     ),
                   ),
                 ),

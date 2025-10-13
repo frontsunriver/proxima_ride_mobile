@@ -547,27 +547,29 @@ class CloseMyAccount extends GetView<CloseAccountController> {
                         if(controller.errors.firstWhereOrNull((element) => element['title'] == "check") != null) ...[
                           toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "check"))
                         ],
-                        80.heightBox,
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: const EdgeInsets.all(15.0),
-                    width: context.screenWidth,
-                    child:  elevatedButtonWidget(
-                      textWidget: txt28Size(
-                          title: "${controller.labelTextDetail['close_account_button_text'] ?? "Close my account"}",
-                          textColor: Colors.white,
-                          context: context,
-                          fontFamily: regular),
-                      onPressed: () async {
-                        controller.removeAccount();
-                      },
-                      btnColor: Colors.red,
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: const EdgeInsets.all(15.0),
+                      width: context.screenWidth,
+                      child:  elevatedButtonWidget(
+                        textWidget: txt28Size(
+                            title: "${controller.labelTextDetail['close_account_button_text'] ?? "Close my account"}",
+                            textColor: Colors.white,
+                            context: context,
+                            fontFamily: regular),
+                        onPressed: () async {
+                          controller.removeAccount();
+                        },
+                        btnColor: Colors.red,
+                      ),
                     ),
                   ),
                 ),

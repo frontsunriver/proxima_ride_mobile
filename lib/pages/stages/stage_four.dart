@@ -296,18 +296,20 @@ class StageFour extends GetView<StageFourController> {
                               ),
                             ),
                           ),
-                        ]
+                        ],
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                      width: context.screenWidth,
-                      padding: const EdgeInsets.all(15.0),
-                      color: Colors.grey.shade100,
-                      child: Row(
+                  child: SafeArea(
+                    child: Container(
+                        width: context.screenWidth,
+                        padding: const EdgeInsets.all(15.0),
+                        color: Colors.grey.shade100,
+                        child: Row(
                         children: [
                           Expanded(
                             flex: 10,
@@ -346,6 +348,7 @@ class StageFour extends GetView<StageFourController> {
                           )
                         ],
                       )),
+                  ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[
                   overlayWidget(context)

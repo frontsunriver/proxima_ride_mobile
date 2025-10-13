@@ -149,33 +149,35 @@ class StudentCardPage extends GetView<StudentCardController> {
                           ],
 
                         ],
-                        100.heightBox,
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: EdgeInsets.all(getValueForScreenType<double>(
-                      context: context,
-                      mobile: 15.0,
-                      tablet: 15.0,
-                    )),
-                    width: context.screenWidth,
-                    height: 75,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(title: controller.oldImagePath.value == "" ? "${controller.labelTextDetail['upload_button_text'] ?? "Upload"}" : "${controller.labelTextDetail['update_button_text'] ?? "Update"}"
-
-
-
-                            , fontFamily: regular, textColor: Colors.white, context: context),
-                        onPressed: () async{
-                          await controller.updateStudentCard();
-                        },
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.all(getValueForScreenType<double>(
                         context: context,
-                        btnRadius: 5.0
+                        mobile: 15.0,
+                        tablet: 15.0,
+                      )),
+                      width: context.screenWidth,
+                      height: 75,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(title: controller.oldImagePath.value == "" ? "${controller.labelTextDetail['upload_button_text'] ?? "Upload"}" : "${controller.labelTextDetail['update_button_text'] ?? "Update"}"
+
+
+
+                              , fontFamily: regular, textColor: Colors.white, context: context),
+                          onPressed: () async{
+                            await controller.updateStudentCard();
+                          },
+                          context: context,
+                          btnRadius: 5.0
+                      ),
                     ),
                   ),
                 ),

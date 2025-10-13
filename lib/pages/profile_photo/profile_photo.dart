@@ -148,6 +148,7 @@ class ProfilePhotoPage extends GetView<ProfilePhotoController> {
                               ),
                             )
                           ],
+                          120.heightBox,
                         ],
                       ),
                     ],
@@ -155,17 +156,19 @@ class ProfilePhotoPage extends GetView<ProfilePhotoController> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  padding: const EdgeInsets.all(15.0),
-                  color: Colors.grey.shade100,
-                  child: SizedBox(
-                    width: context.screenWidth,
-                    height: 50,
-                    child: elevatedButtonWidget(
-                      textWidget: txt28Size(title: "${controller.labelTextDetail['save_button_text'] ?? "Save"}", textColor: Colors.white, context: context, fontFamily: regular),
-                      onPressed: () async{
-                        await controller.uploadUserPhoto();
-                      },
+                child: SafeArea(
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    color: Colors.grey.shade100,
+                    child: SizedBox(
+                      width: context.screenWidth,
+                      height: 50,
+                      child: elevatedButtonWidget(
+                        textWidget: txt28Size(title: "${controller.labelTextDetail['save_button_text'] ?? "Save"}", textColor: Colors.white, context: context, fontFamily: regular),
+                        onPressed: () async{
+                          await controller.uploadUserPhoto();
+                        },
+                      ),
                     ),
                   ),
                 ),

@@ -54,7 +54,7 @@ class PaymentOptions extends GetView<PaymentOptionController> {
                           20.heightBox,
                         ],
                       ],
-                      50.heightBox,
+                      120.heightBox,
                     ],
                   ),
                 ),
@@ -89,21 +89,23 @@ class PaymentOptions extends GetView<PaymentOptionController> {
               // ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: context.screenWidth,
-                  height:
-                      80, //added this height after the persisting argument from the QA that the height of this button is not similar to the rest of the buttons in the app
-                  padding: const EdgeInsets.all(15.0),
-                  color: Colors.grey.shade100,
-                  child: elevatedButtonWidget(
-                    textWidget: txt28Size(
-                        title: "${controller.labelTextDetail['add_new_card_button_text'] ?? "Add a new card"}",
-                        textColor: Colors.white,
-                        context: context,
-                        fontFamily: regular),
-                    onPressed: () async {
-                      Get.toNamed('/add_card/add');
-                    },
+                child: SafeArea(
+                  child: Container(
+                    width: context.screenWidth,
+                    height:
+                        80, //added this height after the persisting argument from the QA that the height of this button is not similar to the rest of the buttons in the app
+                    padding: const EdgeInsets.all(15.0),
+                    color: Colors.grey.shade100,
+                    child: elevatedButtonWidget(
+                      textWidget: txt28Size(
+                          title: "${controller.labelTextDetail['add_new_card_button_text'] ?? "Add a new card"}",
+                          textColor: Colors.white,
+                          context: context,
+                          fontFamily: regular),
+                      onPressed: () async {
+                        Get.toNamed('/add_card/add');
+                      },
+                    ),
                   ),
                 ),
               ),

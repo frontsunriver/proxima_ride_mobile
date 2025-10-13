@@ -122,25 +122,27 @@ class MyVehiclePage extends GetView<MyVehicleController> {
                          ),
                        )
                      ],
-                     80.heightBox,
+                     120.heightBox,
                    ],
                  ),
                ),
              ),
              Align(
                alignment: Alignment.bottomCenter,
-               child: Container(
-                 color: Colors.grey.shade100,
-                 padding: const EdgeInsets.all(15.0),
-                 child: SizedBox(
-                   width: context.screenWidth,
-                   height: 50,
-                   child: elevatedButtonWidget(
-                     textWidget: txt28Size(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
-                     onPressed: () async{
-                       controller.oldCarImagePath.value = "";
-                       await controller.getVehicleDetail(0);
-                     },
+               child: SafeArea(
+                 child: Container(
+                   color: Colors.grey.shade100,
+                   padding: const EdgeInsets.all(15.0),
+                   child: SizedBox(
+                     width: context.screenWidth,
+                     height: 50,
+                     child: elevatedButtonWidget(
+                       textWidget: txt28Size(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
+                       onPressed: () async{
+                         controller.oldCarImagePath.value = "";
+                         await controller.getVehicleDetail(0);
+                       },
+                     ),
                    ),
                  ),
                ),

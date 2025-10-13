@@ -419,51 +419,53 @@ class MessagingPage extends GetView<MessagingController> {
                       if (controller.type != "old")
                         Align(
                           alignment: Alignment.bottomCenter,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: 6,
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10.0), // Add padding
-                                    child: TextFormField(
-                                      maxLines: 4,
-                                      controller:
-                                          controller.typedMessageController,
-                                      decoration: InputDecoration(
-                                        hintText:
-                                            "Please avoid sharing any contact details such as phone numbers, email addresses, or website links. Do not offer or agree to communicate or arrange payments outside the ProximaRide platform.",
-                                        // "${controller.labelTextDetail['type_message_placeholder'] ?? "Please avoid sharing any contact details such as phone numbers, email addresses, or website links. Do not offer or agree to communicate or arrange payments outside the ProximaRide platform.'"}", // Add hint text
-                                        enabledBorder: InputBorder
-                                            .none, // Remove all borders
-                                        focusedBorder: InputBorder
-                                            .none, // Remove focus border too
+                          child: SafeArea(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade100,
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    flex: 6,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10.0), // Add padding
+                                      child: TextFormField(
+                                        maxLines: 4,
+                                        controller:
+                                            controller.typedMessageController,
+                                        decoration: InputDecoration(
+                                          hintText:
+                                              "Please avoid sharing any contact details such as phone numbers, email addresses, or website links. Do not offer or agree to communicate or arrange payments outside the ProximaRide platform.",
+                                          // "${controller.labelTextDetail['type_message_placeholder'] ?? "Please avoid sharing any contact details such as phone numbers, email addresses, or website links. Do not offer or agree to communicate or arrange payments outside the ProximaRide platform.'"}", // Add hint text
+                                          enabledBorder: InputBorder
+                                              .none, // Remove all borders
+                                          focusedBorder: InputBorder
+                                              .none, // Remove focus border too
+                                        ),
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontFamily: regular,
+                                        ),
+                                        keyboardType:
+                                            TextInputType.visiblePassword,
+                                        textInputAction: TextInputAction.done,
                                       ),
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontFamily: regular,
-                                      ),
-                                      keyboardType:
-                                          TextInputType.visiblePassword,
-                                      textInputAction: TextInputAction.done,
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: InkWell(
-                                    onTap: () {
-                                      controller.sendMessage();
-                                    },
-                                    child: Image.asset(sendMessageIcon),
+                                  Expanded(
+                                    flex: 1,
+                                    child: InkWell(
+                                      onTap: () {
+                                        controller.sendMessage();
+                                      },
+                                      child: Image.asset(sendMessageIcon),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),

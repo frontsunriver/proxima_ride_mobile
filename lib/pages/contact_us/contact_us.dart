@@ -163,32 +163,34 @@ class ContactUsPage extends GetView<ContactUsController> {
                         if(controller.errors.firstWhereOrNull((element) => element['title'] == "message") != null) ...[
                           toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "message"))
                         ],
-                        100.heightBox,
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: EdgeInsets.all(getValueForScreenType<double>(
-                      context: context,
-                      mobile: 15.0,
-                      tablet: 15.0,
-                    )),
-                    width: context.screenWidth,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(
-                            title: "${controller.labelTextDetail['submit_button_text'] ?? "Submit"}",
-                            fontFamily: regular,
-                            textColor: Colors.white,
-                            context: context),
-                        onPressed: () async {
-                          await controller.storeContactUs();
-                        },
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.all(getValueForScreenType<double>(
                         context: context,
-                        btnRadius: 5.0),
+                        mobile: 15.0,
+                        tablet: 15.0,
+                      )),
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(
+                              title: "${controller.labelTextDetail['submit_button_text'] ?? "Submit"}",
+                              fontFamily: regular,
+                              textColor: Colors.white,
+                              context: context),
+                          onPressed: () async {
+                            await controller.storeContactUs();
+                          },
+                          context: context,
+                          btnRadius: 5.0),
+                    ),
                   ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[

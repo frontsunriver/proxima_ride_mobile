@@ -35,23 +35,25 @@ class BookAddCardPage extends StatelessWidget {
               addCardWidget(context: context, controller: controller),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  width: context.screenWidth,
-                  height: 70,
-                  color: Colors.grey.shade100,
-                  child: SizedBox(
+                child: SafeArea(
+                  child: Container(
+                    padding: const EdgeInsets.all(10.0),
                     width: context.screenWidth,
-                    height: 50,
-                    child: elevatedButtonWidget(
-                      textWidget: txt22Size(
-                          title: "Save",
-                          textColor: Colors.white,
-                          context: context,
-                          fontFamily: regular),
-                      onPressed: () async {
-                        // controller.addCard();
-                      },
+                    height: 70,
+                    color: Colors.grey.shade100,
+                    child: SizedBox(
+                      width: context.screenWidth,
+                      height: 50,
+                      child: elevatedButtonWidget(
+                        textWidget: txt22Size(
+                            title: "Save",
+                            textColor: Colors.white,
+                            context: context,
+                            fontFamily: regular),
+                        onPressed: () async {
+                          // controller.addCard();
+                        },
+                      ),
                     ),
                   ),
                 ),

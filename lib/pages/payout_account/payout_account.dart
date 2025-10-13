@@ -433,7 +433,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                                   btnRadius: 5.0
                                               ),
                                             ),
-                                            20.heightBox,
+                                            120.heightBox,
                                           ],
                                         ),
                                       ),
@@ -520,7 +520,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                                   btnRadius: 5.0
                                               ),
                                             ),
-                                            20.heightBox,
+                                            120.heightBox,
                                           ],
                                         ),
                                       ),

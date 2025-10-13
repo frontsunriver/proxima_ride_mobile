@@ -72,32 +72,35 @@ class ForgetPasswordPage extends GetView<ForgetPasswordController> {
                                 tip: controller.errors.firstWhereOrNull(
                                     (element) => element['title'] == "email"))
                           ],
+                          120.heightBox,
                         ],
                       ),
                     ),
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
-                    child: Container(
-                      padding: EdgeInsets.all(getValueForScreenType<double>(
-                        context: context,
-                        mobile: 15.0,
-                        tablet: 15.0,
-                      )),
-                      width: context.screenWidth,
-                      height: 75,
-                      child: elevatedButtonWidget(
-                          textWidget: txt22Size(
-                              title:
-                                  "${controller.labelTextDetail['button_label'] ?? "Reset password"}",
-                              fontFamily: regular,
-                              textColor: Colors.white,
-                              context: context),
-                          onPressed: () async {
-                            await controller.forgetPassword();
-                          },
+                    child: SafeArea(
+                      child: Container(
+                        padding: EdgeInsets.all(getValueForScreenType<double>(
                           context: context,
-                          btnRadius: 5.0),
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        )),
+                        width: context.screenWidth,
+                        height: 75,
+                        child: elevatedButtonWidget(
+                            textWidget: txt22Size(
+                                title:
+                                    "${controller.labelTextDetail['button_label'] ?? "Reset password"}",
+                                fontFamily: regular,
+                                textColor: Colors.white,
+                                context: context),
+                            onPressed: () async {
+                              await controller.forgetPassword();
+                            },
+                            context: context,
+                            btnRadius: 5.0),
+                      ),
                     ),
                   ),
                   if (controller.isOverlayLoading.value == true) ...[

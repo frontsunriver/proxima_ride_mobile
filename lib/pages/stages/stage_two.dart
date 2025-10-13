@@ -105,21 +105,23 @@ class StageTwo extends GetView<StageTowController> {
                               tip: controller.errors.firstWhereOrNull(
                                   (element) => element['title'] == "image"))
                         ],
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                      color: Colors.grey.shade100,
-                      padding: EdgeInsets.all(getValueForScreenType<double>(
-                        context: context,
-                        mobile: 15.0,
-                        tablet: 15.0,
-                      )),
-                      width: context.screenWidth,
-                      child: Row(
+                  child: SafeArea(
+                    child: Container(
+                        color: Colors.grey.shade100,
+                        padding: EdgeInsets.all(getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        )),
+                        width: context.screenWidth,
+                        child: Row(
                         children: [
                           Expanded(
                             flex: 10,
@@ -157,6 +159,7 @@ class StageTwo extends GetView<StageTowController> {
                           ),
                         ],
                       )),
+                  ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[
                   overlayWidget(context)

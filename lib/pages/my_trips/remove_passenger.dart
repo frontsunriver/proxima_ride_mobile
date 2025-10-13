@@ -194,34 +194,36 @@ class RemovePassengerPage extends StatelessWidget {
                               fontFamily: regular,
                               placeHolder: "${controller.labelTextTripDetail['passenger_remove_reason_placeholder'] ?? "Please tell the passenger why you are removing them from this ride"}"
                           ),
-                          100.heightBox,
+                          120.heightBox,
                         ],
                       )
                   )
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  height: 70,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(5.0)
-                  ),
-                  child: SizedBox(
+                child: SafeArea(
+                  child: Container(
+                    padding: const EdgeInsets.all(10.0),
                     height: 70,
-                    width: context.screenWidth,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
-                        onPressed: controller.removePassengerType.value != "" &&
-                            controller.reviewTextEditingController.text != "" &&
-                            controller.tripCancelTextEditingController.text != "" &&
-                            ((controller.removePassengerType.value == "1" && controller.removePassenger.value != "") || controller.removePassengerType.value == "0") &&
-                            ((controller.removePassenger.value == "temporarily" && controller.blockDaysTextEditingController.text != "") || controller.removePassenger.value == "permanently" || controller.removePassenger.value == "") ?
-                            () async{
-                          await controller.removePassengerFromRide(Get.parameters['rideId'] ?? "0");
-                        }: null,
-                        context: context
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(5.0)
+                    ),
+                    child: SizedBox(
+                      height: 70,
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
+                          onPressed: controller.removePassengerType.value != "" &&
+                              controller.reviewTextEditingController.text != "" &&
+                              controller.tripCancelTextEditingController.text != "" &&
+                              ((controller.removePassengerType.value == "1" && controller.removePassenger.value != "") || controller.removePassengerType.value == "0") &&
+                              ((controller.removePassenger.value == "temporarily" && controller.blockDaysTextEditingController.text != "") || controller.removePassenger.value == "permanently" || controller.removePassenger.value == "") ?
+                              () async{
+                            await controller.removePassengerFromRide(Get.parameters['rideId'] ?? "0");
+                          }: null,
+                          context: context
+                      ),
                     ),
                   ),
                 ),

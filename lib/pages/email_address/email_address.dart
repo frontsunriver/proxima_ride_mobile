@@ -48,27 +48,30 @@ class EmailAddressPage extends GetView<EmailAddressController> {
                         txt20Size(context: context,title: "${controller.labelTextDetail['email_label'] ?? 'E-mail'}", textColor: Colors.black,fontFamily: regular),
                         10.heightBox,
                         fieldsWidget(fieldType: "email", readonly: true, fontFamily: regular, fontSize: 18.0, placeHolder: "${controller.serviceController.loginUserDetail["email"]}", hintTextColor: Colors.grey),
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: EdgeInsets.all(getValueForScreenType<double>(
-                      context: context,
-                      mobile: 15.0,
-                      tablet: 15.0,
-                    )),
-                    width: context.screenWidth,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
-                        onPressed: () async{
-                          Get.toNamed('/update_email_address');
-                        },
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.all(getValueForScreenType<double>(
                         context: context,
-                        btnRadius: 5.0
+                        mobile: 15.0,
+                        tablet: 15.0,
+                      )),
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(title: "${controller.labelTextDetail['update_button_text'] ?? "Update"}", fontFamily: regular, textColor: Colors.white, context: context),
+                          onPressed: () async{
+                            Get.toNamed('/update_email_address');
+                          },
+                          context: context,
+                          btnRadius: 5.0
+                      ),
                     ),
                   ),
                 ),

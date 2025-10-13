@@ -923,28 +923,30 @@ class AddVehiclePage extends StatelessWidget {
                               ],
                             ),
                           ],
-                          80.heightBox,
+                          120.heightBox,
                         ],
                       ),
                     )),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    width: context.screenWidth,
-                    padding: const EdgeInsets.all(15.0),
-                    color: Colors.grey.shade100,
-                    child: elevatedButtonWidget(
-                      textWidget: txt28Size(
-                          title: controller.vehicleId.value == 0
-                              ? "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}"
-                              : "${controller.labelTextDetail['update_vehicle_button_text'] ?? "Update vehicle"}",
-                          textColor: Colors.white,
-                          context: context,
-                          fontFamily: regular),
-                      onPressed: () async {
-                        await controller.addNewVehicle(
-                            context, context.screenHeight);
-                      },
+                  child: SafeArea(
+                    child: Container(
+                      width: context.screenWidth,
+                      padding: const EdgeInsets.all(15.0),
+                      color: Colors.grey.shade100,
+                      child: elevatedButtonWidget(
+                        textWidget: txt28Size(
+                            title: controller.vehicleId.value == 0
+                                ? "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}"
+                                : "${controller.labelTextDetail['update_vehicle_button_text'] ?? "Update vehicle"}",
+                            textColor: Colors.white,
+                            context: context,
+                            fontFamily: regular),
+                        onPressed: () async {
+                          await controller.addNewVehicle(
+                              context, context.screenHeight);
+                        },
+                      ),
                     ),
                   ),
                 ),

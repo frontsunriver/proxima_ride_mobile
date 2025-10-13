@@ -206,45 +206,47 @@ class NotificationAddReviewPage extends GetView<NotificationAddReviewController>
                                 ),
                               )
                           ),
-                          100.heightBox,
+                          120.heightBox,
                         ],
                       )
                   )
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  height: 70,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(5.0)
-                  ),
-                  child: SizedBox(
-                    height: 50,
-                    width: context.screenWidth,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(title: "${controller.labelTextDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
-                        onPressed: () async{
+                child: SafeArea(
+                  child: Container(
+                    padding: const EdgeInsets.all(10.0),
+                    height: 70,
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(5.0)
+                    ),
+                    child: SizedBox(
+                      height: 50,
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(title: "${controller.labelTextDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
+                          onPressed: () async{
 
-                          controller.vehicleCondition.value = double.parse((controller.vehicleCondition.value).ceil().toString());
-                          controller.conscious.value = double.parse((controller.conscious.value).ceil().toString());
-                          controller.comfort.value = double.parse((controller.comfort.value).ceil().toString());
-                          controller.communication.value = double.parse((controller.communication.value).ceil().toString());
-                          controller.attitude.value = double.parse((controller.attitude.value).ceil().toString());
-                          controller.hygiene.value = double.parse((controller.hygiene.value).ceil().toString());
-                          controller.respect.value = double.parse((controller.respect.value).ceil().toString());
-                          controller.safety.value = double.parse((controller.safety.value).ceil().toString());
-                          controller.timeliness.value = double.parse((controller.timeliness.value).ceil().toString());
+                            controller.vehicleCondition.value = double.parse((controller.vehicleCondition.value).ceil().toString());
+                            controller.conscious.value = double.parse((controller.conscious.value).ceil().toString());
+                            controller.comfort.value = double.parse((controller.comfort.value).ceil().toString());
+                            controller.communication.value = double.parse((controller.communication.value).ceil().toString());
+                            controller.attitude.value = double.parse((controller.attitude.value).ceil().toString());
+                            controller.hygiene.value = double.parse((controller.hygiene.value).ceil().toString());
+                            controller.respect.value = double.parse((controller.respect.value).ceil().toString());
+                            controller.safety.value = double.parse((controller.safety.value).ceil().toString());
+                            controller.timeliness.value = double.parse((controller.timeliness.value).ceil().toString());
 
-                          if(controller.reviewType == "driver"){
-                            await controller.postDriverReview(controller.ride['id']);
-                          }else if(controller.reviewType == "passenger"){
-                            await controller.storePassengerReview(controller.passengerBookingId.value);
-                          }
+                            if(controller.reviewType == "driver"){
+                              await controller.postDriverReview(controller.ride['id']);
+                            }else if(controller.reviewType == "passenger"){
+                              await controller.storePassengerReview(controller.passengerBookingId.value);
+                            }
 
-                        },
-                        context: context
+                          },
+                          context: context
+                      ),
                     ),
                   ),
                 ),

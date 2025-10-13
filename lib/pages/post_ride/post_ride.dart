@@ -249,25 +249,27 @@ class PostRidePage extends GetView<PostRideController> {
                             toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "agree_terms"))
                           ],
 
-                          90.heightBox,
+                          120.heightBox,
                         ],
                       ),
                     )),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: const EdgeInsets.all(15.0),
-                    color: Colors.grey.shade100,
-                    width: context.screenWidth,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(
-                            title: controller.rideType.value == 'update' ? '${controller.labelTextDetail['update_button_label'] ?? "Update ride"}' : "${controller.labelTextDetail['submit_button_label'] ?? "Post ride"}",
-                            context: context,
-                            textColor: Colors.white),
-                        context: context,
-                        onPressed: () async {
-                          await controller.postRide(context, context.screenHeight);
-                        }),
+                  child: SafeArea(
+                    child: Container(
+                      padding: const EdgeInsets.all(15.0),
+                      color: Colors.grey.shade100,
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(
+                              title: controller.rideType.value == 'update' ? '${controller.labelTextDetail['update_button_label'] ?? "Update ride"}' : "${controller.labelTextDetail['submit_button_label'] ?? "Post ride"}",
+                              context: context,
+                              textColor: Colors.white),
+                          context: context,
+                          onPressed: () async {
+                            await controller.postRide(context, context.screenHeight);
+                          }),
+                    ),
                   ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[

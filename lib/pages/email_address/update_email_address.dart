@@ -115,34 +115,36 @@ class UpdateEmailAddressPage extends StatelessWidget {
                         if(controller.errors.firstWhereOrNull((element) => element['title'] == "email_confirmation") != null) ...[
                           toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "email_confirmation"))
                         ],
-                        100.heightBox,
+                        120.heightBox,
                       ],
                     ),
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
-                    color: Colors.grey.shade100,
-                    padding: EdgeInsets.all(getValueForScreenType<double>(
-                      context: context,
-                      mobile: 15.0,
-                      tablet: 15.0,
-                    )),
-                    width: context.screenWidth,
-                    // height: 75,
-                    child: elevatedButtonWidget(
-                        textWidget: txt28Size(
-                            title: "${controller.labelTextDetail['save_btn_label'] ?? "Save"}",
-                            fontFamily: regular,
-                            textColor: Colors.white,
-                            context: context),
-                        onPressed: () async {
-                          controller.currentEmailTextEditingController.text = "";
-                          await controller.updateEmailAddress();
-                        },
+                  child: SafeArea(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.all(getValueForScreenType<double>(
                         context: context,
-                        btnRadius: 5.0),
+                        mobile: 15.0,
+                        tablet: 15.0,
+                      )),
+                      width: context.screenWidth,
+                      // height: 75,
+                      child: elevatedButtonWidget(
+                          textWidget: txt28Size(
+                              title: "${controller.labelTextDetail['save_btn_label'] ?? "Save"}",
+                              fontFamily: regular,
+                              textColor: Colors.white,
+                              context: context),
+                          onPressed: () async {
+                            controller.currentEmailTextEditingController.text = "";
+                            await controller.updateEmailAddress();
+                          },
+                          context: context,
+                          btnRadius: 5.0),
+                    ),
                   ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[

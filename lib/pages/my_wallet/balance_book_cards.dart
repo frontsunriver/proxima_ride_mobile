@@ -68,19 +68,21 @@ class BalanceBookCardsPage extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: paymentCardButtonWidget(
-                  btn1Title: "${controller.labelTextDetail['add_card_label'] ?? "Add new card"}",
-                  onPressed1: () async{
-                    await controller.clearCardFields();
-                    // Get.toNamed("/book_add_cards");
-                    Get.toNamed('/add_card/add');
-                  },
-                  btn2Title: controller.primaryCardCheck.value == true ? "${controller.labelTextDetail['1_tap_btn_label'] ?? "1 tap buy"}" : "${controller.labelTextDetail['pay_label'] ?? "Pay"}",
-                  onPressed2: () async{
-                    await controller.buyTopUpBalance();
-                  },
-                  context: context,
-                  screenWidth: context.screenWidth
+                child: SafeArea(
+                  child: paymentCardButtonWidget(
+                    btn1Title: "${controller.labelTextDetail['add_card_label'] ?? "Add new card"}",
+                    onPressed1: () async{
+                      await controller.clearCardFields();
+                      // Get.toNamed("/book_add_cards");
+                      Get.toNamed('/add_card/add');
+                    },
+                    btn2Title: controller.primaryCardCheck.value == true ? "${controller.labelTextDetail['1_tap_btn_label'] ?? "1 tap buy"}" : "${controller.labelTextDetail['pay_label'] ?? "Pay"}",
+                    onPressed2: () async{
+                      await controller.buyTopUpBalance();
+                    },
+                    context: context,
+                    screenWidth: context.screenWidth
+                  ),
                 ),
               ),
               if(controller.isOverlayLoading.value == true)...[

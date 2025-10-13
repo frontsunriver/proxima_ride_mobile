@@ -95,7 +95,7 @@ Widget vehicleWidget(
                               controller.carImageName.value = "";
                               controller.vehicleId.value = "";
                             },
-                            child: txt16Size(
+                            child: txt18Size(
                                 title: "${controller.labelTextDetail['skip_label'] ?? "Skip for now"}",
                                 context: context,
                                 fontFamily: bold,
@@ -137,7 +137,7 @@ Widget vehicleWidget(
                               controller.skipNow.value = false;
                               controller.alreadyAdded.value = false;
                             },
-                            child: txt16Size(
+                            child: txt18Size(
                                 title: "${controller.labelTextDetail['add_vehicle_label'] ?? "Add new vehicle"}",
                                 context: context,
                                 fontFamily: bold),
@@ -205,7 +205,7 @@ Widget vehicleWidget(
                                 controller.carImageName.value = "";
                                 controller.vehicleId.value = "";
                               },
-                              child: txt16Size(
+                              child: txt18Size(
                                   title: "${controller.labelTextDetail['existing_label'] ?? "Existing"}",
                                   context: context,
                                   fontFamily: bold,
@@ -228,7 +228,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     placeHolder: "${controller.labelTextDetail['make_placeholder'] ?? "Example: Honda"}",
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "make")) {
@@ -252,7 +252,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     placeHolder: "${controller.labelTextDetail['model_placeholder'] ?? "Example: Accord"}",
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "model")) {
@@ -279,7 +279,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "license_no")) {
                         controller.errors.removeWhere((error) => error['title'] == "license_no");
@@ -302,7 +302,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "color")) {
                         controller.errors.removeWhere((error) => error['title'] == "color");
@@ -325,7 +325,7 @@ Widget vehicleWidget(
                     fieldType: "number",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "year")) {
                         controller.errors.removeWhere((error) => error['title'] == "year");
@@ -457,7 +457,7 @@ Widget vehicleWidget(
                             onTap: bookingCheck == true ? null : (){
                               controller.fuel.value = controller.fuel.value == "Electric car" ? "" : "Electric car";
                             },
-                            child: txt16Size(
+                            child: txt18Size(
                                 title: "${controller.labelTextDetail['electric_car_label'] ?? "Electric"}",
                                 context: context,
                                 fontFamily: regular),
@@ -497,7 +497,7 @@ Widget vehicleWidget(
                             onTap: bookingCheck == true ? null : (){
                               controller.fuel.value = controller.fuel.value == "Hybrid car" ? "" : "Hybrid car";
                             },
-                            child: txt16Size(
+                            child: txt18Size(
                                 title: "${controller.labelTextDetail['hybrid_car_label'] ?? "Hybrid"}",
                                 context: context,
                                 fontFamily: regular),
@@ -537,7 +537,7 @@ Widget vehicleWidget(
                             onTap: bookingCheck == true ? null : (){
                               controller.fuel.value = controller.fuel.value == "Gas" ? "" : "Gas";
                             },
-                            child: txt16Size(
+                            child: txt18Size(
                                 title: "${controller.labelTextDetail['gas_car_label'] ?? "Gas"}",
                                 context: context,
                                 fontFamily: regular),

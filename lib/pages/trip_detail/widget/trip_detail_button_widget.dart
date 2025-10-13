@@ -12,7 +12,7 @@ String cancelBookingBtn = "Cancel booking", String chatWithDriverBtn = "Chat wit
         SizedBox(
           width: 500,
           child: elevatedButtonWidget(
-              textWidget: txt28SizeAlignCenter(title: cancelBookingBtn, context: context, textColor: Colors.white),
+              textWidget: primaryButtonSize(title: cancelBookingBtn, context: context, textColor: Colors.white),
               context: context,
               onPressed: () async{
                 Get.toNamed('/cancel_booking/trip');
@@ -26,7 +26,7 @@ String cancelBookingBtn = "Cancel booking", String chatWithDriverBtn = "Chat wit
         SizedBox(
           width: 500,
           child: elevatedButtonWidget(
-              textWidget: txt28SizeAlignCenter(title: noShowDriverLabel, context: context, textColor: Colors.white),
+              textWidget: primaryButtonSize(title: noShowDriverLabel, context: context, textColor: Colors.white),
               context: context,
               onPressed: onPressed,
               btnColor: Colors.red
@@ -37,7 +37,7 @@ String cancelBookingBtn = "Cancel booking", String chatWithDriverBtn = "Chat wit
       SizedBox(
         width: 500,
         child: elevatedButtonWidget(
-            textWidget: txt28SizeAlignCenter(title: chatWithDriverBtn, context: context, textColor: Colors.white),
+            textWidget: primaryButtonSize(title: chatWithDriverBtn, context: context, textColor: Colors.white),
             context: context,
             onPressed: () async{
               Get.toNamed('/messaging_page/$driverId/$rideId/new');
@@ -50,7 +50,7 @@ String cancelBookingBtn = "Cancel booking", String chatWithDriverBtn = "Chat wit
         SizedBox(
           width: 500,
           child: elevatedButtonWidget(
-              textWidget: txt28SizeAlignCenter(title: updateBookingBtn, context: context, textColor: Colors.white),
+              textWidget: primaryButtonSize(title: updateBookingBtn, context: context, textColor: Colors.white),
               context: context,
               onPressed: () async{
                 Get.toNamed("/book_seat/$rideId/$bookedSeat/$rideDetailId");

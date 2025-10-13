@@ -60,7 +60,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: fromLocationImage),
                         placeHolder: "${controller.labelTextDetail['from_placeholder'] ?? "Origin"}",
@@ -87,7 +87,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: toLocationImage),
                         placeHolder: "${controller.labelTextDetail['to_placeholder'] ?? "Destination"}",
@@ -109,7 +109,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "number",
                         readonly: false,
                         fontFamily: regular,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         placeHolder: "\$",
                         onChanged: (value) {
 

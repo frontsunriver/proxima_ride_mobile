@@ -50,7 +50,7 @@ Widget rideInfoWidget(
                   fieldType: "text",
                   readonly: true,
                   fontFamily: regular,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   prefixIcon: preFixIconWidget(
                       context: context, imagePath: fromLocationImage),
                   placeHolder: "${controller.labelTextDetail['from_placeholder'] ?? "Origin"}",
@@ -85,7 +85,7 @@ Widget rideInfoWidget(
                   fieldType: "text",
                   readonly: true,
                   fontFamily: regular,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   prefixIcon: preFixIconWidget(
                       context: context, imagePath: toLocationImage),
                   placeHolder: "${controller.labelTextDetail['to_placeholder'] ?? "Destination"}",
@@ -140,7 +140,7 @@ Widget rideInfoWidget(
                   textController:
                       controller.pickUpLocationTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   fontFamily: regular,
                   placeHolder:
                       "${controller.labelTextDetail['pick_up_placeholder'] ?? "Please describe the meeting point: landmark, address, intersection, metro station…. etc"}",
@@ -173,7 +173,7 @@ Widget rideInfoWidget(
                   textController:
                       controller.dropOffLocationTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   fontFamily: regular,
                   placeHolder:
                       "${controller.labelTextDetail['drop_off_placeholder'] ?? "Please describe the arrival point: landmark, address, intersection, metro station…. etc"}",
@@ -210,7 +210,7 @@ Widget rideInfoWidget(
                       child: dateFieldWidget(
                         textController: controller.dateTextEditingController,
                         fontFamily: regular,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         onTap: () async {
                           DateTime? dobDate = await controller.serviceController
                               .datePicker(context,allowPast: false);
@@ -237,7 +237,7 @@ Widget rideInfoWidget(
                       child: dateFieldWidget(
                         textController: controller.timeTextEditingController,
                         fontFamily: regular,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         onTap: () async {
                           TimeOfDay? picked = await controller.serviceController
                               .timePicker(context);
@@ -322,7 +322,7 @@ Widget rideInfoWidget(
                       onTap: bookingCheck == true ? null : (){
                         controller.recurring.value = controller.recurring.value == true ? false : true;
                       },
-                      child: txt16Size(
+                      child: txt18Size(
                           title: "${controller.labelTextDetail['recurring_label'] ?? "Recurring trip"}",
                           context: context,
                           fontFamily: bold),
@@ -403,7 +403,7 @@ Widget rideInfoWidget(
                     fieldType: "number",
                     readonly: false,
                     fontFamily: regular,
-                    fontSize: fontSizeRegular,
+                    fontSize: fontSizeMedium,
                     placeHolder: "${controller.labelTextDetail['recurring_trips_placeholder'] ?? "Enter a number, example: 10"}",
                     isError: controller.errors
                         .where((error) => error == "recurring_trips")

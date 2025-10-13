@@ -251,11 +251,11 @@ class TripDetailPage extends GetView<TripDetailController> {
                             if(controller.type == "ride")...[
                               10.heightBox,
                             ]else if(controller.type == "findRide")...[
-                              80.heightBox,
+                              200.heightBox,
                             ]else if(controller.status.toString() != "upcoming" && controller.type == "trip")...[
                               10.heightBox,
                             ]else...[
-                              160.heightBox,
+                              280.heightBox,
                             ]
                           ],
 
@@ -266,7 +266,8 @@ class TripDetailPage extends GetView<TripDetailController> {
                 if(controller.type != "ride")...[
                   Positioned(
                     bottom: 0,
-                    child: Container(
+                    child: SafeArea(
+                      child: Container(
                       padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
                       color: Colors.grey.shade100,
                       width: context.screenWidth,
@@ -301,6 +302,7 @@ class TripDetailPage extends GetView<TripDetailController> {
                           await controller.noShowDriverData();
                         },
                       ) : const SizedBox(),
+                    ),
                     ),
                   ),
                 ],

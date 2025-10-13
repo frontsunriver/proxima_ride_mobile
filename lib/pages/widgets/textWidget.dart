@@ -341,8 +341,8 @@ Widget secondaryButtonSize({String title ="", String fontFamily= regular, Color 
 Widget primaryButtonSize({String title ="", String fontFamily= regular, Color textColor = textColor, context}){
   return title.text.size(getValueForScreenType<double>(
     context: context,
-    mobile: 22.0,
-    tablet: 22.0,
+    mobile: 24.0,
+    tablet: 24.0,
   )).color(textColor).fontFamily(fontFamily).make();
 }
 

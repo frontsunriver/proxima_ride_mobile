@@ -33,7 +33,7 @@ Widget anythingWidget(
                 textAreaWidget(
                   textController: controller.anythingTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   fontFamily: regular,
                   placeHolder: "${controller.labelTextDetail['anything_to_add_placeholder'] ?? "What else do you want to tell your passengers?"}",
                   maxLines: 5,

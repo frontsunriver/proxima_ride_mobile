@@ -35,7 +35,7 @@ Widget checkBoxSelectionWidget({context, String title = "",  bool value = false,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  InkWell(onTap: onTap, child: txt16Size(title: title, fontFamily: bold, context: context, textColor: textColor)),
+                  InkWell(onTap: onTap, child: txt18Size(title: title, fontFamily: bold, context: context, textColor: textColor)),
                   const SizedBox(width: 10),
                   Tooltip(
                     margin: EdgeInsets.fromLTRB(
@@ -82,13 +82,13 @@ Widget checkBoxSelectionWidget({context, String title = "",  bool value = false,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InkWell(onTap: onTap, child: txt16Size(title: title, fontFamily: bold, context: context, textColor: textColor)),
+                InkWell(onTap: onTap, child: txt18Size(title: title, fontFamily: bold, context: context, textColor: textColor)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    txt16Size(title: "*", context: context, textColor: Colors.red),
-                    Expanded(child: InkWell(onTap: onTap, child: txt16Size(title: extraChargesToolTip, context: context, textColor: textColor))),
+                    txt18Size(title: "*", context: context, textColor: Colors.red),
+                    Expanded(child: InkWell(onTap: onTap, child: txt18Size(title: extraChargesToolTip, context: context, textColor: textColor))),
                     Tooltip(
                       margin: EdgeInsets.fromLTRB(
                           getValueForScreenType<double>(
@@ -167,7 +167,7 @@ Widget checkBoxSelectionWidget({context, String title = "",  bool value = false,
             )
           ),
         ]else...[
-          Expanded(child: InkWell(onTap: onTap, child: txt16Size(title: title, fontFamily: bold, context: context, textColor: textColor))),
+          Expanded(child: InkWell(onTap: onTap, child: txt18Size(title: title, fontFamily: bold, context: context, textColor: textColor))),
         ],
         5.widthBox,
         SizedBox(

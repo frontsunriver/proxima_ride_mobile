@@ -74,7 +74,7 @@ Widget luggageWidget(
                           onTap: (){
                             controller.acceptMoreLuggage.value = controller.acceptMoreLuggage.value == "1" ? "" : "1";
                           },
-                          child: txt16Size(
+                          child: txt18Size(
                               title: "${controller.labelTextDetail['luggage_checkbox_label1'] ?? "I accept more luggage for extra charge"}",
                               fontFamily: bold,
                               context: context,

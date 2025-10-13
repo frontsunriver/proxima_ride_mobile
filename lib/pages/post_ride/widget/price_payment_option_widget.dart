@@ -40,7 +40,7 @@ Widget pricePaymentOptionWidget(
                   fieldType: "number",
                   readonly: false,
                   fontFamily: regular,
-                  fontSize: fontSizeRegular,
+                  fontSize: fontSizeMedium,
                   placeHolder: "\$",
                   onChanged: (value) {
                     if (controller.errors.any((error) => error['title'] == "price")) {

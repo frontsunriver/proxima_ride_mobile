@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/foundation.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
@@ -50,7 +51,7 @@ getBottomSheet(controller, context, height, onSubmit,errors) {
                   fieldsWidget(
                     textController: controller.securedCashTextEditingController,
                     readonly: false,
-                    fontSize: 18.0,
+                    fontSize: fontSizeMedium,
                     fontFamily: regular,
                     placeHolder: "Enter secured cash payment code",
                     onChanged: (value){

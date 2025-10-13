@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/search_ride/SearchRideController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
@@ -62,7 +63,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: 18.0,
+                        fontSize: fontSizeMedium,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: fromLocationImage),
                         placeHolder: "${controller.labelTextDetail['search_section_from_placeholder'] ?? "Origin"}",
@@ -109,7 +110,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: 18.0,
+                        fontSize: fontSizeMedium,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: toLocationImage),
                         placeHolder: "${controller.labelTextDetail['search_section_to_placeholder'] ?? "Destination"}",
@@ -144,7 +145,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                         fieldType: "text",
                         readonly: false,
                         fontFamily: regular,
-                        fontSize: 18.0,
+                        fontSize: fontSizeMedium,
                       ),
                       10.heightBox,
                       txt20Size(
@@ -155,7 +156,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                       dateFieldWidget(
                         textController: controller.dateTextEditingController,
                         fontFamily: regular,
-                        fontSize: 18.0,
+                        fontSize: fontSizeMedium,
                         onTap: () async {
                           DateTime? dobDate = await controller.serviceController
                               .datePicker(context);

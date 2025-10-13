@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/my_trips/MyTripController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
@@ -139,7 +140,7 @@ class CancelBookingPage extends StatelessWidget {
                                                   .tripCancelTextEditingController,
                                               fieldType: "number",
                                               readonly: false,
-                                              fontSize: 16.0,
+                                              fontSize: fontSizeRegular,
                                               fontFamily: regular,
                                               onChanged: (value) {
                                                 controller.errors.clear();
@@ -202,7 +203,7 @@ class CancelBookingPage extends StatelessWidget {
                                   controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: 16.0,
+                              fontSize: fontSizeRegular,
                               fontFamily: regular,
                               onChanged: (data){
                                 if(data != ""){
@@ -231,7 +232,7 @@ class CancelBookingPage extends StatelessWidget {
                                 controller.tripCancelTextEditingController,
                                 readonly: false,
                                 maxLines: 6,
-                                fontSize: 16.0,
+                                fontSize: fontSizeRegular,
                                 fontFamily: regular,
                                 onChanged: (data){
                                   if(data != ""){

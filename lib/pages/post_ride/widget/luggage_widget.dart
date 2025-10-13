@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
 import 'package:proximaride_app/pages/widgets/luggage_option_Widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
@@ -105,7 +106,7 @@ Widget luggageWidget(
                             )),
                         triggerMode: TooltipTriggerMode.tap,
                         message: "${controller.labelTextDetail['luggage_checkbox_label1_tooltip'] ?? 'Must be agreed upon with the driver BEFORE booking'}",
-                        textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                        textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                         showDuration: const Duration(days: 100),
                         waitDuration: Duration.zero,
                         child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(

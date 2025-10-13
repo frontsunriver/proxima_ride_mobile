@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 Widget checkBoxSelectionWidget({context, String title = "",  bool value = false, onChanged, onTap, Color textColor = textColor, String infoText = "", bool showToolTipBottom = false, bool isError = false, String extraChargesLabel = "Extra charges may apply; must be agreed in advance", String extraChargesToolTip = "Extra charges may apply; must be agreed in advance", String tooltipMessage= "'Must be agreed upon with the driver BEFORE booking'"}){
   return Padding(
     padding: EdgeInsets.fromLTRB(
@@ -60,7 +61,7 @@ Widget checkBoxSelectionWidget({context, String title = "",  bool value = false,
                         )),
                     triggerMode: TooltipTriggerMode.tap,
                     message: infoText,
-                    textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                    textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                     showDuration: const Duration(days: 100),
                     waitDuration: Duration.zero,
                     child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(
@@ -112,7 +113,7 @@ Widget checkBoxSelectionWidget({context, String title = "",  bool value = false,
                           )),
                       triggerMode: TooltipTriggerMode.tap,
                       message: tooltipMessage,
-                      textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                      textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                       showDuration: const Duration(days: 100),
                       waitDuration: Duration.zero,
                       child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(
@@ -196,7 +197,7 @@ Future<bool> showConfirmationToolTip(message) async {
   return await Get.defaultDialog(
     title: 'Confirm',
     middleText: message,
-    middleTextStyle: const TextStyle(fontSize: 18),
+    middleTextStyle: const TextStyle(fontSize: fontSizeMedium),
     actions: [
       ElevatedButton(
         onPressed: (){

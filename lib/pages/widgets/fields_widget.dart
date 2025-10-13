@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../consts/constFileLink.dart';
+import '../../consts/font_sizes.dart';
 
 Widget fieldsWidget({textController, fieldType, readonly, fontSize, fontFamily, onChanged, String placeHolder = "", suffix, prefixIcon,hintTextColor = textColor, bool isError = false, maxLength = 500,focusNode, onTap, bool autoFocus = false, onFieldSubmitted})
 {
@@ -13,7 +14,7 @@ Widget fieldsWidget({textController, fieldType, readonly, fontSize, fontFamily, 
     maxLength: maxLength,
     keyboardType: fieldType == "text" ? TextInputType.text : fieldType == "email" ? TextInputType.emailAddress : fieldType == "phone" ? TextInputType.phone : TextInputType.number,
     decoration: InputDecoration(
-        errorStyle: const TextStyle(color: primaryColor,fontSize: 16),
+        errorStyle: const TextStyle(color: primaryColor,fontSize: fontSizeRegular),
         counterText: "",
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),

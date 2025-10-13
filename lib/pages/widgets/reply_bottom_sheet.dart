@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/foundation.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
@@ -50,7 +51,7 @@ String replySubmitButtonLabel = "Submit"}) {
               textAreaWidget(
                 textController: controller.replyTextController,
                 readonly: false,
-                fontSize: 16.0,
+                fontSize: fontSizeRegular,
                 fontFamily: regular,
                 placeHolder: replyPlaceholder,
                 maxLines: 4,

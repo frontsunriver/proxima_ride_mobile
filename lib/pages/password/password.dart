@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/password/PasswordController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
@@ -86,7 +87,7 @@ class PasswordPage extends GetView<PasswordController> {
                             ),
                           ),
                           style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular
                           ),
                           obscureText: !controller.isOldPasswordVisible.value,
@@ -137,7 +138,7 @@ class PasswordPage extends GetView<PasswordController> {
                             ),
                           ),
                           style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular
                           ),
                           obscureText: !controller.isNewPasswordVisible.value,
@@ -188,7 +189,7 @@ class PasswordPage extends GetView<PasswordController> {
                             ),
                           ),
                           style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular
                           ),
                           obscureText: !controller.isConfirmPasswordVisible.value,

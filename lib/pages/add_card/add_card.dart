@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
@@ -87,7 +88,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "text",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "name_on_card") != null)
                                 {
@@ -120,7 +121,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "number",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "card_number") != null)
                                 {
@@ -242,7 +243,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "number",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "cvv") != null)
                                 {
@@ -279,7 +280,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "text",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "street") != null)
                                 {
@@ -307,7 +308,7 @@ class AddCard extends GetView<AddCardController> {
                                 fieldType: "text",
                                 readonly: false,
                                 fontFamily: regular,
-                                fontSize: 18.0),
+                                fontSize: fontSizeMedium),
 
                             10.heightBox,
                             Row(
@@ -325,7 +326,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "text",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "city") != null)
                                 {
@@ -358,7 +359,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "text",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "province") != null)
                                 {
@@ -391,7 +392,7 @@ class AddCard extends GetView<AddCardController> {
                               fieldType: "text",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "country") != null)
                                 {
@@ -425,7 +426,7 @@ class AddCard extends GetView<AddCardController> {
                               maxLength: 7,
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               onChanged: (value) {
                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "postal_code") != null)
                                 {

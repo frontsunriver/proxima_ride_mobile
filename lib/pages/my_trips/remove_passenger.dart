@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/my_trips/MyTripController.dart';
 import 'package:proximaride_app/pages/post_ride/widget/seat_number_widget.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
@@ -153,7 +154,7 @@ class RemovePassengerPage extends StatelessWidget {
                               fieldType: "number",
                               readonly: false,
                               fontFamily: regular,
-                              fontSize: 18.0,
+                              fontSize: fontSizeMedium,
                               placeHolder: "${controller.labelTextTripDetail['remove_day_placeholder'] ?? "Select days"}",
                               hintTextColor: textColor,
                               onChanged: (value) {
@@ -173,7 +174,7 @@ class RemovePassengerPage extends StatelessWidget {
                               textController: controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: 16.0,
+                              fontSize: fontSizeRegular,
                               fontFamily: regular,
                               placeHolder: "${controller.labelTextTripDetail['driver_remove_reason_placeholder'] ?? "Please tell us why you want to remove this passenger from your ride\nYour passenger will not receive a copy of this message"}"
                           ),
@@ -190,7 +191,7 @@ class RemovePassengerPage extends StatelessWidget {
                               textController: controller.tripCancelTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: 16.0,
+                              fontSize: fontSizeRegular,
                               fontFamily: regular,
                               placeHolder: "${controller.labelTextTripDetail['passenger_remove_reason_placeholder'] ?? "Please tell the passenger why you are removing them from this ride"}"
                           ),

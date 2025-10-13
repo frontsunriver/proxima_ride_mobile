@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/stages/StageController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
@@ -103,7 +104,7 @@ class StageOne extends GetView<StageController> {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             placeHolder: "",
                             onChanged: (value) {
                               if (controller.errors.firstWhereOrNull(
@@ -146,7 +147,7 @@ class StageOne extends GetView<StageController> {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             placeHolder: "",
                             onChanged: (value) {
                               if (controller.errors.firstWhereOrNull(
@@ -293,7 +294,7 @@ class StageOne extends GetView<StageController> {
                                 textController:
                                     controller.dobTextEditingController,
                                 fontFamily: regular,
-                                fontSize: 16.0,
+                                fontSize: fontSizeRegular,
                                 onTap: () async {
                                   if (controller.errors.firstWhereOrNull(
                                           (element) =>
@@ -500,7 +501,7 @@ class StageOne extends GetView<StageController> {
                             maxLength: 7,
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             placeHolder: "",
                             onChanged: (value) {
                               if (controller.errors.firstWhereOrNull(
@@ -540,7 +541,7 @@ class StageOne extends GetView<StageController> {
                               controller.miniBioTextEditingController,
                           readonly: false,
                           fontFamily: regular,
-                          fontSize: 18.0,
+                          fontSize: fontSizeMedium,
                           maxLines: 4,
                           onChanged: (value) {
                             if (controller.errors.firstWhereOrNull(

@@ -4,6 +4,7 @@ import 'package:proximaride_app/pages/widgets/prefix_icon_widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/post_ride/widget/post_ride_widget.dart';
 
 import '../../widgets/tool_tip.dart';
@@ -59,7 +60,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: fromLocationImage),
                         placeHolder: "${controller.labelTextDetail['from_placeholder'] ?? "Origin"}",
@@ -86,7 +87,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "text",
                         readonly: true,
                         fontFamily: regular,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         prefixIcon: preFixIconWidget(
                             context: context, imagePath: toLocationImage),
                         placeHolder: "${controller.labelTextDetail['to_placeholder'] ?? "Destination"}",
@@ -108,7 +109,7 @@ Widget addMoreSpotRideWidget(
                         fieldType: "number",
                         readonly: false,
                         fontFamily: regular,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         placeHolder: "\$",
                         onChanged: (value) {
 

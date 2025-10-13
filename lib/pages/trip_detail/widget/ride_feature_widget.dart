@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/card_shadow_widget.dart';
 import 'package:proximaride_app/pages/widgets/circle_icon_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
@@ -68,7 +69,7 @@ Widget rideFeatureWidget({context, featureList, rideDetail, double screenWidth =
                               triggerMode: TooltipTriggerMode.tap,
                               message: featureList[i]['title'] == 'Pink rides' ? '${featureList[i]['tooltip']}'
                                   : '${featureList[i]['tooltip']}',
-                              textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                              textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                               showDuration: const Duration(days: 100),
                               waitDuration: Duration.zero,
                               child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(
@@ -136,7 +137,7 @@ Widget rideFeatureWidget({context, featureList, rideDetail, double screenWidth =
                                     )),
                                 triggerMode: TooltipTriggerMode.tap,
                                 message: "${rideDetail['luggage_tooltip']}",
-                                textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                                textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                                 showDuration: const Duration(days: 100),
                                 waitDuration: Duration.zero,
                                 child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(

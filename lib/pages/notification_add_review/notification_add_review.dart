@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/notification_add_review/NotificationAddReviewController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/card_shadow_widget.dart';
@@ -93,7 +94,7 @@ class NotificationAddReviewPage extends GetView<NotificationAddReviewController>
                               textController: controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: 16.0,
+                              fontSize: fontSizeRegular,
                               fontFamily: regular,
                               placeHolder: controller.reviewType.toString() == "driver" ?
                               "${controller.labelTextDetail['driver_review_placeholder'] ?? "You can write a text review that will be public for our community to see\nYou can include specific feedback, comments or compliments about the driver’s performance"}" :

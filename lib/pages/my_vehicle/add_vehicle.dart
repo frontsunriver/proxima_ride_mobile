@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/my_vehicle/MyVehicleController.dart';
 import 'package:proximaride_app/pages/my_vehicle/widget/image_edit_delete_btn_widget.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
@@ -91,7 +92,7 @@ class AddVehiclePage extends StatelessWidget {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             placeHolder:
                                 "${controller.labelTextDetail['make_placeholder'] ?? "Example: Honda, Toyota"}",
                             isError: controller.errors.firstWhereOrNull(
@@ -139,7 +140,7 @@ class AddVehiclePage extends StatelessWidget {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             placeHolder:
                                 "${controller.labelTextDetail['model_placeholder'] ?? "Example: Accord, Corolla"}",
                             isError: controller.errors.firstWhereOrNull(
@@ -187,7 +188,7 @@ class AddVehiclePage extends StatelessWidget {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             isError: controller.errors.firstWhereOrNull(
                                     (element) =>
                                         element['title'] == "liscense_no") !=
@@ -235,7 +236,7 @@ class AddVehiclePage extends StatelessWidget {
                             fieldType: "text",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             isError: controller.errors.firstWhereOrNull(
                                     (element) => element['title'] == "color") !=
                                 null,
@@ -281,7 +282,7 @@ class AddVehiclePage extends StatelessWidget {
                             fieldType: "number",
                             readonly: false,
                             fontFamily: regular,
-                            fontSize: 18.0,
+                            fontSize: fontSizeMedium,
                             isError: controller.errors.firstWhereOrNull(
                                     (element) => element['title'] == "year") !=
                                 null,

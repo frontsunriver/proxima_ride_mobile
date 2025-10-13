@@ -8,6 +8,7 @@ import 'package:proximaride_app/pages/widgets/date_field_widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
 import 'package:proximaride_app/pages/post_ride/widget/post_ride_widget.dart';
 
@@ -49,7 +50,7 @@ Widget rideInfoWidget(
                   fieldType: "text",
                   readonly: true,
                   fontFamily: regular,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   prefixIcon: preFixIconWidget(
                       context: context, imagePath: fromLocationImage),
                   placeHolder: "${controller.labelTextDetail['from_placeholder'] ?? "Origin"}",
@@ -84,7 +85,7 @@ Widget rideInfoWidget(
                   fieldType: "text",
                   readonly: true,
                   fontFamily: regular,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   prefixIcon: preFixIconWidget(
                       context: context, imagePath: toLocationImage),
                   placeHolder: "${controller.labelTextDetail['to_placeholder'] ?? "Destination"}",
@@ -139,7 +140,7 @@ Widget rideInfoWidget(
                   textController:
                       controller.pickUpLocationTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   fontFamily: regular,
                   placeHolder:
                       "${controller.labelTextDetail['pick_up_placeholder'] ?? "Please describe the meeting point: landmark, address, intersection, metro station…. etc"}",
@@ -172,7 +173,7 @@ Widget rideInfoWidget(
                   textController:
                       controller.dropOffLocationTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   fontFamily: regular,
                   placeHolder:
                       "${controller.labelTextDetail['drop_off_placeholder'] ?? "Please describe the arrival point: landmark, address, intersection, metro station…. etc"}",
@@ -209,7 +210,7 @@ Widget rideInfoWidget(
                       child: dateFieldWidget(
                         textController: controller.dateTextEditingController,
                         fontFamily: regular,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         onTap: () async {
                           DateTime? dobDate = await controller.serviceController
                               .datePicker(context,allowPast: false);
@@ -236,7 +237,7 @@ Widget rideInfoWidget(
                       child: dateFieldWidget(
                         textController: controller.timeTextEditingController,
                         fontFamily: regular,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         onTap: () async {
                           TimeOfDay? picked = await controller.serviceController
                               .timePicker(context);
@@ -402,7 +403,7 @@ Widget rideInfoWidget(
                     fieldType: "number",
                     readonly: false,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     placeHolder: "${controller.labelTextDetail['recurring_trips_placeholder'] ?? "Enter a number, example: 10"}",
                     isError: controller.errors
                         .where((error) => error == "recurring_trips")

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 
 class BottomNavigationBarScaffold extends StatefulWidget {
   final Widget child;
@@ -38,11 +39,11 @@ class _BottomNavigationBarScaffoldState extends State<BottomNavigationBarScaffol
         backgroundColor: Colors.grey.shade100,
         currentIndex: currentIndex,
         unselectedLabelStyle: const TextStyle(
-          fontSize: 18,
+          fontSize: fontSizeMedium,
           fontFamily: bold,
         ),
         selectedLabelStyle: const TextStyle(
-          fontSize: 18,
+          fontSize: fontSizeMedium,
           fontFamily: bold
         ),
         selectedItemColor: primaryColor,

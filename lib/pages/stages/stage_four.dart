@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/stages/StageFourController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
@@ -132,7 +133,7 @@ class StageFour extends GetView<StageFourController> {
                                 controller:
                                     controller.countryCodeTextEditingController,
                                 style: const TextStyle(
-                                    fontSize: 18, fontFamily: regular),
+                                    fontSize: fontSizeMedium, fontFamily: regular),
                                 keyboardType: TextInputType.visiblePassword,
                                 textInputAction: TextInputAction.done,
                                 onChanged: (value) {
@@ -185,7 +186,7 @@ class StageFour extends GetView<StageFourController> {
                                 controller:
                                     controller.phoneNumberTextEditingController,
                                 style: const TextStyle(
-                                    fontSize: 18, fontFamily: regular),
+                                    fontSize: fontSizeMedium, fontFamily: regular),
                                 keyboardType: TextInputType.visiblePassword,
                                 textInputAction: TextInputAction.done,
                                 onChanged: (value) {

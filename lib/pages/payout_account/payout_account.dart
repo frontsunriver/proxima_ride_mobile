@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/payout_account/PayoutAccountController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
@@ -62,11 +63,11 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                   unselectedLabelColor: textColor,
                                   labelStyle: const TextStyle(
                                       fontFamily: regular,
-                                      fontSize: 22
+                                      fontSize: fontSizeXLarge
                                   ),
                                   unselectedLabelStyle: const TextStyle(
                                       fontFamily: regular,
-                                      fontSize: 22
+                                      fontSize: fontSizeXLarge
                                   ),
                                   indicator: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5), // Creates border
@@ -185,7 +186,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "branch") != null)
                                                 {
@@ -210,7 +211,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "institution_number") != null)
                                                 {
@@ -236,7 +237,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "branch_address") != null)
                                                 {
@@ -261,7 +262,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "branch_number") != null)
                                                 {
@@ -287,7 +288,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "account_holder_name") != null)
                                                 {
@@ -312,7 +313,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "number",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "account_holder_number") != null)
                                                 {
@@ -338,7 +339,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "text",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "account_holder_address") != null)
                                                 {
@@ -364,7 +365,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                                 fieldType: "number",
                                                 readonly: false,
                                                 fontFamily: regular,
-                                                fontSize: 18.0,
+                                                fontSize: fontSizeMedium,
                                                 onChanged: (value) {
                                                   if(controller.errors.firstWhereOrNull((element) => element['title'] == "user_verify_amount") != null)
                                                   {
@@ -460,7 +461,7 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                               fieldType: "email",
                                               readonly: false,
                                               fontFamily: regular,
-                                              fontSize: 18.0,
+                                              fontSize: fontSizeMedium,
                                               onChanged: (value) {
                                                 if(controller.errors.firstWhereOrNull((element) => element['title'] == "paypal_email") != null)
                                                 {

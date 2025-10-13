@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
 import 'package:proximaride_app/pages/post_ride/widget/post_ride_widget.dart';
 
@@ -37,7 +38,7 @@ Widget meetingDropOffWidget({
                       textController:
                           controller.dropOffDescriptionTextEditingController,
                       readonly: bookingCheck,
-                      fontSize: 18.0,
+                      fontSize: fontSizeMedium,
                       fontFamily: regular,
                       placeHolder:
                       "${controller.labelTextDetail['meeting_drop_off_description_placeholder'] ?? "Describe the place where you will meet your passengers, and the place where you will drop them of. Please elaborate, and be as accurate as possible"}",

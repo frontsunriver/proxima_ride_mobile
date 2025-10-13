@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/stages/StageProvider.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -199,7 +200,7 @@ class Service extends GetxService {
         timeInSecForIosWeb: 1,
         backgroundColor: Colors.black.withOpacity(0.7),
         textColor: Colors.white,
-        fontSize: 12.0);
+        fontSize: fontSizeXSmall);
   }
 
   Future<bool> showConfirmationDialog(message,
@@ -208,7 +209,7 @@ class Service extends GetxService {
       title: "Confirm",
       barrierDismissible: false,
       middleText: message,
-      middleTextStyle: const TextStyle(fontSize: 18),
+      middleTextStyle: const TextStyle(fontSize: fontSizeMedium),
       actions: [
         ElevatedButton(
           onPressed: () {
@@ -258,7 +259,7 @@ class Service extends GetxService {
       titlePadding: title == "" ? EdgeInsets.zero : EdgeInsets.all(5.0),
       middleText: message,
       barrierDismissible: false,
-      middleTextStyle: const TextStyle(fontSize: 20),
+      middleTextStyle: const TextStyle(fontSize: fontSizeLarge),
       actions: [
         if (link != "") ...[
           ElevatedButton(
@@ -309,8 +310,8 @@ class Service extends GetxService {
       middleText:
           "${welcomeMessage1.isEmpty ? "Hey" : welcomeMessage1.value} ${loginUserDetail['first_name']},  ${welcomeMessage2.isEmpty ? "nice to meet you\nPlease complete your profile, it only takes a couple of minutes" : welcomeMessage2.value}",
       barrierDismissible: false,
-      titleStyle: const TextStyle(fontSize: 24, color: primaryColor),
-      middleTextStyle: const TextStyle(fontSize: 16),
+      titleStyle: const TextStyle(fontSize: fontSizeTitle, color: primaryColor),
+      middleTextStyle: const TextStyle(fontSize: fontSizeRegular),
       actions: [
         ElevatedButton(
           onPressed: () {

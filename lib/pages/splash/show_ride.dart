@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 
 class ShowRidePage extends StatelessWidget {
   const ShowRidePage({super.key});
@@ -7,7 +8,7 @@ class ShowRidePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      child: const Text("Hello",style: TextStyle(color: Colors.white, fontSize: 25),),
+      child: const Text("Hello",style: TextStyle(color: Colors.white, fontSize: fontSizeHero),),
     );
   }
 }

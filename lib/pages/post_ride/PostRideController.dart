@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/post_ride/PostRideProvider.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/services/service.dart';
@@ -1390,7 +1391,7 @@ void onInit() async {
               titlePadding: EdgeInsets.zero,
               middleText: resp['message'].toString(),
               barrierDismissible: false,
-              middleTextStyle: const TextStyle(fontSize: 20),
+              middleTextStyle: const TextStyle(fontSize: fontSizeLarge),
               actions: [
                 ElevatedButton(
                   onPressed: (){

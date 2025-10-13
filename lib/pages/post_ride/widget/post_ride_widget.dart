@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 
 
 
@@ -75,7 +76,7 @@ Widget postRideWidget(
                     )),
                 triggerMode: TooltipTriggerMode.tap,
                 message: infoIcon,
-                textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                 showDuration: const Duration(days: 100),
                 waitDuration: Duration.zero,
                 child: Image.asset(infoImage,color: Colors.white, width: getValueForScreenType<double>(

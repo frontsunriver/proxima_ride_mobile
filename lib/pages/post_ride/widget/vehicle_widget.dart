@@ -6,6 +6,7 @@ import 'package:proximaride_app/pages/widgets/image_upload_bottom_sheet.dart';
 import 'package:proximaride_app/pages/widgets/image_upload_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/post_ride/widget/post_ride_widget.dart';
 
 import '../../widgets/tool_tip.dart';
@@ -227,7 +228,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     placeHolder: "${controller.labelTextDetail['make_placeholder'] ?? "Example: Honda"}",
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "make")) {
@@ -251,7 +252,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     placeHolder: "${controller.labelTextDetail['model_placeholder'] ?? "Example: Accord"}",
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "model")) {
@@ -278,7 +279,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "license_no")) {
                         controller.errors.removeWhere((error) => error['title'] == "license_no");
@@ -301,7 +302,7 @@ Widget vehicleWidget(
                     fieldType: "text",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "color")) {
                         controller.errors.removeWhere((error) => error['title'] == "color");
@@ -324,7 +325,7 @@ Widget vehicleWidget(
                     fieldType: "number",
                     readonly: bookingCheck,
                     fontFamily: regular,
-                    fontSize: 16.0,
+                    fontSize: fontSizeRegular,
                     onChanged: (value) {
                       if (controller.errors.any((error) => error['title'] == "year")) {
                         controller.errors.removeWhere((error) => error['title'] == "year");

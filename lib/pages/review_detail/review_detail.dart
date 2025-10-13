@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proximaride_app/pages/review_detail/ReviewDetailController.dart';
 import 'package:proximaride_app/pages/widgets/average_rating_stars_widget.dart';
 import '../../consts/constFileLink.dart';
+import '../../consts/font_sizes.dart';
 import '../widgets/card_shadow_widget.dart';
 import '../widgets/network_cache_image_widget.dart';
 import '../widgets/progress_circular_widget.dart';
@@ -102,7 +103,7 @@ class ReviewDetail extends GetView<ReviewDetailController> {
                           child: textAreaWidget(
                               readonly: true,
                               maxLines: 6,
-                              fontSize: 16.0,
+                              fontSize: fontSizeRegular,
                               fontFamily: bold,
                               placeHolder:
                                   "${controller.reviewDetail['review'] ?? " "}"),

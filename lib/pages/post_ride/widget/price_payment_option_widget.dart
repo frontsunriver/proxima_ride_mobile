@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
@@ -39,7 +40,7 @@ Widget pricePaymentOptionWidget(
                   fieldType: "number",
                   readonly: false,
                   fontFamily: regular,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   placeHolder: "\$",
                   onChanged: (value) {
                     if (controller.errors.any((error) => error['title'] == "price")) {
@@ -149,7 +150,7 @@ Widget pricePaymentOptionWidget(
                                 )),
                             triggerMode: TooltipTriggerMode.tap,
                             message: controller.paymentOptionToolTipList[i],
-                            textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                            textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                             showDuration: const Duration(days: 100),
                             waitDuration: Duration.zero,
                             child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(

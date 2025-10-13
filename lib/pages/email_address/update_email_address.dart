@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/email_address/EmailAddressController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/fields_widget.dart';
@@ -51,7 +52,7 @@ class UpdateEmailAddressPage extends StatelessWidget {
                           fieldType: "email",
                           readonly: true,
                           fontFamily: regular,
-                          fontSize: 18.0,
+                          fontSize: fontSizeMedium,
                         ),
                         10.heightBox,
                         Row(
@@ -77,7 +78,7 @@ class UpdateEmailAddressPage extends StatelessWidget {
                           fieldType: "email",
                           readonly: false,
                           fontFamily: regular,
-                          fontSize: 18.0,
+                          fontSize: fontSizeMedium,
                           placeHolder: "",
                           focusNode: controller.focusNodes[1.toString()],
                         ),
@@ -108,7 +109,7 @@ class UpdateEmailAddressPage extends StatelessWidget {
                           fieldType: "email",
                           readonly: false,
                           fontFamily: regular,
-                          fontSize: 18.0,
+                          fontSize: fontSizeMedium,
                           placeHolder: "",
                           focusNode: controller.focusNodes[2.toString()],
                         ),

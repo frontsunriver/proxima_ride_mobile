@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/search_ride/widget/luggage_widget.dart';
 import 'package:proximaride_app/pages/search_ride/widget/pet_animal_widget.dart';
 import 'package:proximaride_app/pages/search_ride/widget/ride_preference_widget.dart';
@@ -267,7 +268,7 @@ Widget filterSideWidget({context, controller, double screenWidth = 0.0, double s
                   10.heightBox,
                   txt20Size(title: "${controller.labelTextDetail['driver_know_label'] ?? "Driver you know"}", context: context),
                   5.heightBox,
-                  fieldsWidget(textController: controller.driverNameEditingController, fieldType: "text", fontSize: 18.0, fontFamily: regular, placeHolder: "${controller.labelTextDetail['driver_know_placeholder'] ?? "Enter"}", readonly: false, hintTextColor: textColor),
+                  fieldsWidget(textController: controller.driverNameEditingController, fieldType: "text", fontSize: fontSizeMedium, fontFamily: regular, placeHolder: "${controller.labelTextDetail['driver_know_placeholder'] ?? "Enter"}", readonly: false, hintTextColor: textColor),
                   10.heightBox,
                   txt24Size(title: "${controller.labelTextDetail['filter2_passengers_heading'] ?? "Passenger travelling in same car"}", context: context, textColor: primaryColor),
                   10.heightBox,
@@ -372,7 +373,7 @@ Widget filterSideWidget({context, controller, double screenWidth = 0.0, double s
                             )),
                         triggerMode: TooltipTriggerMode.tap,
                         message: paymentToolTip,
-                        textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                        textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                         showDuration: const Duration(days: 100),
                         waitDuration: Duration.zero,
                         child: const Icon(Icons.question_mark, size: 15,)

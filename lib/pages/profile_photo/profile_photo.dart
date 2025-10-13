@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/profile_photo/ProfilePhotoController.dart';
 import 'package:proximaride_app/pages/widgets/button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/image_upload_bottom_sheet.dart';
@@ -76,7 +77,7 @@ class ProfilePhotoPage extends GetView<ProfilePhotoController> {
                                     )),
                                 triggerMode: TooltipTriggerMode.tap,
                                 message: "${controller.labelTextDetail['mobile_upload_photo_tooltip'] ?? 'Upload photo'}",
-                                textStyle: const TextStyle(fontSize: 16,color: Colors.white),
+                                textStyle: const TextStyle(fontSize: fontSizeRegular,color: Colors.white),
                                 showDuration: const Duration(days: 100),
                                 waitDuration: Duration.zero,
                                 child: Image.asset(infoImage,color: Colors.black, width: getValueForScreenType<double>(

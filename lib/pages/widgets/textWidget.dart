@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../consts/constFileLink.dart';
+import '../../consts/font_sizes.dart';
 
 
 Widget txt44Size({String title ="", String fontFamily= regular, Color textColor = textColor, context}){
@@ -175,7 +176,7 @@ Widget txt10Size({String title ="", String fontFamily= regular, Color textColor 
 Widget txt14SizeWithOutContext({String title ="", String fontFamily= regular, Color textColor = textColor}){
   return Text(title,style: TextStyle(
     fontFamily: fontFamily,
-    fontSize: 14,
+    fontSize: fontSizeSmall,
     color: textColor,
   ),);
 }
@@ -183,7 +184,7 @@ Widget txt14SizeWithOutContext({String title ="", String fontFamily= regular, Co
 Widget txt16SizeWithOutContext({String title ="", String fontFamily= regular, Color textColor = textColor}){
   return Text(title,style: TextStyle(
     fontFamily: fontFamily,
-    fontSize: 16,
+    fontSize: fontSizeRegular,
     color: textColor,
   ),);
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
 import 'package:proximaride_app/consts/const_api.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/signup/RegisterController.dart';
 import 'package:proximaride_app/pages/widgets/language_bottom_sheet.dart';
 import 'package:proximaride_app/pages/widgets/network_cache_image_widget.dart';
@@ -159,7 +160,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.firstNameTextController,
                         fieldType: "text",
                         readonly: false,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull((element) =>
@@ -206,7 +207,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.lastNameTextController,
                         fieldType: "text",
                         readonly: false,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull((element) =>
@@ -253,7 +254,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.emailTextController,
                         fieldType: "email",
                         readonly: false,
-                        fontSize: 16.0,
+                        fontSize: fontSizeRegular,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull(
@@ -440,7 +441,7 @@ class SignupPage extends GetView<RegisterController> {
                                 // },
                                 decoration: InputDecoration(
                                   errorStyle: const TextStyle(
-                                      color: primaryColor, fontSize: 16),
+                                      color: primaryColor, fontSize: fontSizeRegular),
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(5.0),
                                       borderSide: BorderSide(
@@ -475,7 +476,7 @@ class SignupPage extends GetView<RegisterController> {
                                   ),
                                 ),
                                 style: const TextStyle(
-                                    fontSize: 16,
+                                    fontSize: fontSizeRegular,
                                     fontFamily: regular,
                                     color: textColor),
                                 obscureText:
@@ -606,7 +607,7 @@ class SignupPage extends GetView<RegisterController> {
                           ),
                         ),
                         style:
-                            const TextStyle(fontSize: 16, fontFamily: regular),
+                            const TextStyle(fontSize: fontSizeRegular, fontFamily: regular),
                         obscureText: !controller.isConfirmPasswordVisible.value,
                         keyboardType: TextInputType.visiblePassword,
                         textInputAction: TextInputAction.done,

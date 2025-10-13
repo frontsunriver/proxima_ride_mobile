@@ -10,6 +10,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import '../../consts/constFileLink.dart';
+import '../../consts/font_sizes.dart';
 import '../widgets/button_Widget.dart';
 import '../widgets/second_appbar_widget.dart';
 import 'MyWalletController.dart';
@@ -53,7 +54,7 @@ class MyWallet extends GetView<MyWalletController> {
                             unselectedLabelColor: textColor,
                             labelStyle: const TextStyle(
                               fontFamily: regular,
-                              fontSize: 22,
+                              fontSize: fontSizeXLarge,
                             ),
                             unselectedLabelStyle: const TextStyle(
                                 fontFamily: regular,
@@ -90,11 +91,11 @@ class MyWallet extends GetView<MyWalletController> {
                                           unselectedLabelColor: textColor,
                                           labelStyle: const TextStyle(
                                               fontFamily: regular,
-                                              fontSize: 20
+                                              fontSize: fontSizeLarge
                                           ),
                                           unselectedLabelStyle: const TextStyle(
                                               fontFamily: regular,
-                                              fontSize: 20
+                                              fontSize: fontSizeLarge
                                           ),
                                           indicator: BoxDecoration(
                                               borderRadius: BorderRadius.circular(5), // Creates border
@@ -275,11 +276,11 @@ class MyWallet extends GetView<MyWalletController> {
                                           unselectedLabelColor: textColor,
                                           labelStyle: const TextStyle(
                                               fontFamily: regular,
-                                              fontSize: 20
+                                              fontSize: fontSizeLarge
                                           ),
                                           unselectedLabelStyle: const TextStyle(
                                               fontFamily: regular,
-                                              fontSize: 20
+                                              fontSize: fontSizeLarge
                                           ),
                                           indicator: BoxDecoration(
                                               borderRadius: BorderRadius.circular(5), // Creates border

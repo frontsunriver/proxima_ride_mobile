@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
 import 'package:proximaride_app/pages/post_ride/widget/post_ride_widget.dart';
 
@@ -32,7 +33,7 @@ Widget anythingWidget(
                 textAreaWidget(
                   textController: controller.anythingTextEditingController,
                   readonly: bookingCheck,
-                  fontSize: 16.0,
+                  fontSize: fontSizeRegular,
                   fontFamily: regular,
                   placeHolder: "${controller.labelTextDetail['anything_to_add_placeholder'] ?? "What else do you want to tell your passengers?"}",
                   maxLines: 5,

@@ -1,4 +1,5 @@
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/pages/widgets/check_box_widget.dart';
 import 'package:proximaride_app/pages/widgets/drop_down_date_widget.dart';
@@ -54,7 +55,7 @@ Widget addCardWidget({context, controller}){
               fieldType: "text",
               readonly: false,
               fontFamily: regular,
-              fontSize: 18.0,
+              fontSize: fontSizeMedium,
             ),
             // if(controller.errors.firstWhereOrNull((element) => element['title'] == "name_on_card") != null) ...[
             //   toolTip(tip: controller.errors.firstWhereOrNull((element) => element['title'] == "name_on_card"))

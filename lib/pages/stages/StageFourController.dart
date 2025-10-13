@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:proximaride_app/consts/color.dart';
 import 'package:proximaride_app/consts/const_api.dart';
 import 'package:proximaride_app/consts/font.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/login/LoginProvider.dart';
 import 'package:proximaride_app/pages/my_phone_number/MyPhoneNumberProvider.dart';
 import 'package:proximaride_app/pages/navigation/NavigationController.dart';
@@ -248,12 +249,12 @@ class StageFourController extends GetxController {
             radius: 10,
             barrierDismissible: false,
             titleStyle: const TextStyle(
-              fontSize: 22,
+              fontSize: fontSizeXLarge,
               fontWeight: FontWeight.bold,
             ),
             middleText: "Your profile is all set. Welcome to ProximaRide!",
             middleTextStyle: const TextStyle(
-              fontSize: 18,
+              fontSize: fontSizeMedium,
               fontWeight: FontWeight.normal,
             ),
             actions: [
@@ -348,12 +349,12 @@ class StageFourController extends GetxController {
           radius: 10,
           barrierDismissible: false,
           titleStyle: const TextStyle(
-            fontSize: 22,
+            fontSize: fontSizeXLarge,
             fontWeight: FontWeight.bold,
           ),
           middleText: "Your profile is all set. Welcome to ProximaRide!",
           middleTextStyle: const TextStyle(
-            fontSize: 18,
+            fontSize: fontSizeMedium,
             fontWeight: FontWeight.normal,
           ),
           actions: [

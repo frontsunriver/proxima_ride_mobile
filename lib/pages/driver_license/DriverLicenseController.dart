@@ -170,7 +170,10 @@ class DriverLicenseController extends GetxController{
 
   removeDriverLicense() async {
 
-    bool isConfirmed = await serviceController.showConfirmationDialog("${popupTextDetail['remove_driver_license_message'] ?? "Are you sure you want to remove the driver license"}");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "${popupTextDetail['remove_driver_license_message'] ?? "Are you sure you want to remove the driver license"}",
+        cancelYesBtn: popupTextDetail['remove_driver_license_yes_btn'] ?? "Yes, remove it",
+        cancelNoBtn: popupTextDetail['remove_driver_license_no_btn'] ?? "No, keep it");
     if(isConfirmed){
       try {
         isOverlayLoading(true);

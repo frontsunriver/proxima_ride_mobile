@@ -239,7 +239,10 @@ class SearchRideController extends GetxController{
       }
       
       if(filter.value == true && actionType.value == "clear"){
-        bool isConfirmed = await serviceController.showConfirmationDialog("${popupTextDetail['search_result_clear_message'] ?? "Are you sure you want to clear your search result?"}");
+        bool isConfirmed = await serviceController.showConfirmationDialog(
+            "${popupTextDetail['search_result_clear_message'] ?? "Are you sure you want to clear your search result?"}",
+            cancelYesBtn: popupTextDetail['search_result_clear_yes_btn'] ?? "Yes, clear it",
+            cancelNoBtn: popupTextDetail['search_result_clear_no_btn'] ?? "No, cancel");
         if(isConfirmed == false){
           actionType.value = "";
           filter.value = false;

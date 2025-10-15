@@ -156,7 +156,9 @@ class Service extends GetxService {
 
   logoutUser() async {
     bool isConfirmed = await showConfirmationDialog(
-        "${logoutLabelTextDetail['confirmation_message_heading'] ?? "Are you sure you want to log out?"}");
+        "${logoutLabelTextDetail['confirmation_message_heading'] ?? "Are you sure you want to log out?"}",
+        cancelYesBtn: logoutLabelTextDetail['confirmation_yes_label'] ?? "Yes",
+        cancelNoBtn: logoutLabelTextDetail['confirmation_no_label'] ?? "No");
 
     if (isConfirmed) {
       try {
@@ -220,11 +222,11 @@ class Service extends GetxService {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5))),
           child: cancelNoBtn != ""
-              ? txt14SizeWithOutContext(
+              ? txt18SizeWithOutContext(
                   title: cancelNoBtn,
                   textColor: Colors.white,
                   fontFamily: regular)
-              : txt14SizeWithOutContext(
+              : txt18SizeWithOutContext(
                   title:
                       "${logoutLabelTextDetail['confirmation_no_label'] ?? "No"}",
                   textColor: Colors.white,
@@ -239,11 +241,11 @@ class Service extends GetxService {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5))),
           child: cancelYesBtn != ""
-              ? txt14SizeWithOutContext(
+              ? txt18SizeWithOutContext(
                   title: cancelYesBtn,
                   textColor: Colors.white,
                   fontFamily: regular)
-              : txt14SizeWithOutContext(
+              : txt18SizeWithOutContext(
                   title:
                       "${logoutLabelTextDetail['confirmation_yes_label'] ?? "Yes"}",
                   textColor: Colors.white,
@@ -273,7 +275,7 @@ class Service extends GetxService {
                 backgroundColor: secondaryColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5))),
-            child: txt16SizeWithOutContext(
+            child: txt18SizeWithOutContext(
                 title: requestVerificationEmailLabel.value,
                 textColor: Colors.white,
                 fontFamily: regular),
@@ -294,7 +296,7 @@ class Service extends GetxService {
               backgroundColor: btnPrimaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5))),
-          child: txt16SizeWithOutContext(
+          child: txt18SizeWithOutContext(
               title: closeBtnLabel.value,
               textColor: Colors.white,
               fontFamily: regular),
@@ -321,7 +323,7 @@ class Service extends GetxService {
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5))),
-          child: txt14SizeWithOutContext(
+          child: txt18SizeWithOutContext(
               title: welcomeButton1.isEmpty ? "Proceed" : welcomeButton1.value,
               textColor: Colors.white,
               fontFamily: regular),
@@ -351,7 +353,7 @@ class Service extends GetxService {
         //           borderRadius: BorderRadius.circular(5)
         //       )
         //   ),
-        //   child: txt14SizeWithOutContext(title: welcomeButton2.isEmpty ? "I will do that later" : welcomeButton2.value, textColor: Colors.white, fontFamily: regular),
+        //   child: txt18SizeWithOutContext(title: welcomeButton2.isEmpty ? "I will do that later" : welcomeButton2.value, textColor: Colors.white, fontFamily: regular),
         // )
       ],
       contentPadding:

@@ -109,7 +109,10 @@ class CloseAccountController extends GetxController {
       return;
     }
 
-    bool isConfirmed = await serviceController.showConfirmationDialog("Are you sure you want to close your account?");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "Are you sure you want to close your account?",
+        cancelYesBtn: "Yes, close it",
+        cancelNoBtn: "No, keep it");
 
     if (isConfirmed) {
       try {

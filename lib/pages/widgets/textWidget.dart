@@ -181,6 +181,14 @@ Widget txt14SizeWithOutContext({String title ="", String fontFamily= regular, Co
   ),);
 }
 
+Widget txt18SizeWithOutContext({String title ="", String fontFamily= regular, Color textColor = textColor}){
+  return Text(title,style: TextStyle(
+    fontFamily: fontFamily,
+    fontSize: fontSizeMedium,
+    color: textColor,
+  ),);
+}
+
 Widget txt16SizeWithOutContext({String title ="", String fontFamily= regular, Color textColor = textColor}){
   return Text(title,style: TextStyle(
     fontFamily: fontFamily,

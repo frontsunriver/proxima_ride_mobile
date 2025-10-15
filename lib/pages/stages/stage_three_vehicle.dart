@@ -74,23 +74,23 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                         "Step 3 of 5 - Vehicle Information",
                                     context: context)),
                             5.heightBox,
-                            // txt16Size(
+                            // txt18Size(
                             //     title:
                             //         "${controller.labelTextDetail['sub_heading'] ?? "Please provide your vehicle details"}",
                             //     context: context,
                             //     textColor: Colors.red),
                             5.heightBox,
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "${controller.labelTextDetail['main_label'] ?? "If you are signing up as a driver, please note that to be eligible to post Pink Rides and Extra-Care Rides, you must state your vehicle details on every ride"}",
                                 context: context),
                             5.heightBox,
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "${controller.labelTextDetail['sub_main_label'] ?? "If you intend to use ProximaRide as a passenger only, then this point is not applicable to you. You may 'Skip' it"}",
                                 context: context),
                             5.heightBox,
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "* ${controller.labelTextDetail['required_label'] ?? " * Indicates required fields"}",
                                 context: context,
@@ -571,7 +571,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                                   "car_type"));
                                         }
                                       },
-                                      child: txt16Size(
+                                      child: txt18Size(
                                           title:
                                               "${controller.labelTextDetail['electric_option_label'] ?? "Electric car"}",
                                           context: context,
@@ -646,7 +646,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                                   "car_type"));
                                         }
                                       },
-                                      child: txt16Size(
+                                      child: txt18Size(
                                           title:
                                               "${controller.labelTextDetail['hybrid_option_label'] ?? "Hybrid car"}",
                                           context: context,
@@ -717,7 +717,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                                   "car_type"));
                                         }
                                       },
-                                      child: txt16Size(
+                                      child: txt18Size(
                                           title:
                                               "${controller.labelTextDetail['gas_option_label'] ?? "Gas"}",
                                           context: context,
@@ -844,7 +844,8 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                   },
                                 )),
                               ],
-                            )
+                            ),
+                            SizedBox(height: NavigationUtils.getBottomSpacing(context)),
                           ] else if (controller.currentStep.value == 2) ...[
                             Center(
                                 child: txt25Size(
@@ -852,7 +853,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                         // "${controller.labelTextDetail['main_heading'] ?? "Step 3 of 5 - Vehicle Information"}",
                                         "${"Step 4 of 5 -  ${controller.labelTextDetail['driver_license_label'] ?? "Driver license"}"}",
                                     context: context)),
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "${controller.labelTextDetail['sub_main_label'] ?? "If you intend to use ProximaRide as a passenger only, then this point is not applicable to you. You may 'Skip' it"}",
                                 context: context),
@@ -873,13 +874,13 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                             //       textColor: Colors.white),
                             // ),
                             10.heightBox,
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "${controller.labelTextDetail['driver_license_label'] ?? "Driver license"}",
                                 fontFamily: regular,
                                 context: context),
                             5.heightBox,
-                            txt16Size(
+                            txt18Size(
                                 title:
                                     "${controller.labelTextDetail['driver_license_sub_label'] ?? 'To be eligible to post "Pink rides" and "Extra-care rides", you must upload your driver\'s license'}",
                                 fontFamily: regular,
@@ -1020,7 +1021,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //       Align(
                     //         alignment: Alignment.topRight,
                     //         child: elevatedButtonWidget(
-                    //             textWidget: txt16Size(
+                    //             textWidget: txt18Size(
                     //                 title:
                     //                     "${controller.labelTextDetail['logout_button_label'] ?? "Logout"}",
                     //                 fontFamily: regular,
@@ -1042,23 +1043,23 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //                   "${controller.labelTextDetail['main_heading'] ?? "Step 3 of 4 - Vehicle Information"}",
                     //               context: context)),
                     //       5.heightBox,
-                    //       txt16Size(
+                    //       txt18Size(
                     //           title:
                     //               "${controller.labelTextDetail['sub_heading'] ?? "Don't forget your driver's license below"}",
                     //           context: context,
                     //           textColor: Colors.red),
                     //       5.heightBox,
-                    //       txt16Size(
+                    //       txt18Size(
                     //           title:
                     //               "${controller.labelTextDetail['main_label'] ?? "If you are signing up as a driver, please note that to be eligible to post Pink Rides and Extra-Care Rides, you must state your vehicle details on every ride, and must upload a valid driver's license"}",
                     //           context: context),
                     //       5.heightBox,
-                    //       txt16Size(
+                    //       txt18Size(
                     //           title:
                     //               "${controller.labelTextDetail['sub_main_label'] ?? "If you intend to use ProximaRide as a passenger only, then this point is not applicable to you. You may 'Skip' it"}",
                     //           context: context),
                     //       5.heightBox,
-                    //       txt16Size(
+                    //       txt18Size(
                     //           title:
                     //               "* ${controller.labelTextDetail['required_label'] ?? ""}",
                     //           context: context,
@@ -1519,7 +1520,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //                             "car_type"));
                     //                   }
                     //                 },
-                    //                 child: txt16Size(
+                    //                 child: txt18Size(
                     //                     title:
                     //                         "${controller.labelTextDetail['electric_option_label'] ?? "Electric car"}",
                     //                     context: context,
@@ -1591,7 +1592,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //                             "car_type"));
                     //                   }
                     //                 },
-                    //                 child: txt16Size(
+                    //                 child: txt18Size(
                     //                     title:
                     //                         "${controller.labelTextDetail['hybrid_option_label'] ?? "Hybrid car"}",
                     //                     context: context,
@@ -1658,7 +1659,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                     //                             "car_type"));
                     //                   }
                     //                 },
-                    //                 child: txt16Size(
+                    //                 child: txt18Size(
                     //                     title:
                     //                         "${controller.labelTextDetail['gas_option_label'] ?? "Gas"}",
                     //                     context: context,

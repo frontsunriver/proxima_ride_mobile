@@ -50,7 +50,7 @@ Widget rideInfoWidget(
                   fieldType: "text",
                   readonly: true,
                   fontFamily: regular,
-                  fontSize: fontSizeMedium,
+                  fontSize: fontSizeInput,
                   prefixIcon: preFixIconWidget(
                       context: context, imagePath: fromLocationImage),
                   placeHolder: "${controller.labelTextDetail['from_placeholder'] ?? "Origin"}",

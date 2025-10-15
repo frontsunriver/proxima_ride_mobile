@@ -91,7 +91,10 @@ serviceController.showDialogue(err.toString());
   }
 
   deleteCard(id) async {
-    bool isConfirmed = await serviceController.showConfirmationDialog("${popupTextDetail['delete_card_message'] ?? "Are you sure you want to delete this card"}");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "${popupTextDetail['delete_card_message'] ?? "Are you sure you want to delete this card"}",
+        cancelYesBtn: popupTextDetail['delete_card_yes_btn'] ?? "Yes, delete it",
+        cancelNoBtn: popupTextDetail['delete_card_no_btn'] ?? "No, keep it");
 
     if (isConfirmed) {
       try {

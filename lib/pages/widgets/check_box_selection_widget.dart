@@ -199,17 +199,23 @@ Future<bool> showConfirmationToolTip(message) async {
     middleText: message,
     middleTextStyle: const TextStyle(fontSize: fontSizeMedium),
     actions: [
-      ElevatedButton(
-        onPressed: (){
-          Get.back(result: true);
-        },
-        style: ElevatedButton.styleFrom(
-            backgroundColor: btnPrimaryColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5)
-            )
-        ),
-        child: txt14SizeWithOutContext(title: "Close", textColor: Colors.white, fontFamily: regular),
+      Row(
+        children: [
+          Expanded(
+            child: ElevatedButton(
+              onPressed: (){
+                Get.back(result: true);
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: btnPrimaryColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)
+                  )
+              ),
+              child: txt18SizeWithOutContext(title: "Close", textColor: Colors.white, fontFamily: regular),
+            ),
+          ),
+        ],
       ),
     ],
   );

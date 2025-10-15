@@ -314,7 +314,10 @@ class MyWalletController extends GetxController with GetTickerProviderStateMixin
   }
 
   sendPayoutRequest() async{
-    bool isConfirmed = await serviceController.showConfirmationDialog("${popupTextDetail['withdraw_message'] ?? "Are you sure you want to request admin for withdraw"}");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "${popupTextDetail['withdraw_message'] ?? "Are you sure you want to request admin for withdraw"}",
+        cancelYesBtn: popupTextDetail['withdraw_yes_btn'] ?? "Yes, request",
+        cancelNoBtn: popupTextDetail['withdraw_no_btn'] ?? "No, cancel");
     if(isConfirmed){
       try{
         isOverlayLoading(true);

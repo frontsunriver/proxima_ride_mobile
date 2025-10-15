@@ -25,3 +25,10 @@ const double fontSizeTitle = 24.0;
 // Splash/Hero text
 const double fontSizeHero = 25.0;
 
+const double fontSizeSectionTitle = 22.0;
+
+const double fontSizeInputLabel = 20.0;
+
+const double fontSizeInput = 18.0; // All inputs and checkboxes
+
+const double fontSizeDialogButton = 18.0;

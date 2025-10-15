@@ -39,7 +39,7 @@ Widget postRideWidget(
                         context: context,
                         fontFamily: regular,
                         textColor: Colors.white,
-                        textSize: 22.0),
+                        textSize: fontSizeSectionTitle),
                     isRequired ? textSpan(
                       title: "*",
                       context: context,

@@ -420,7 +420,10 @@ class MyVehicleController extends GetxController{
   }
 
   removeVehicle(deleteVehicleId) async{
-    bool isConfirmed = await serviceController.showConfirmationDialog("${popupTextDetail['delete_vehicle_message'] ?? "Are you sure you want to delete this vehicle"}");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "${popupTextDetail['delete_vehicle_message'] ?? "Are you sure you want to delete this vehicle"}",
+        cancelYesBtn: popupTextDetail['delete_vehicle_yes_btn'] ?? "Yes, delete it",
+        cancelNoBtn: popupTextDetail['delete_vehicle_no_btn'] ?? "No, keep it");
     if(isConfirmed){
       try{
         isOverlayLoading(true);
@@ -523,7 +526,10 @@ class MyVehicleController extends GetxController{
   }
 
   confirmationRemoveCarPhoto() async{
-    bool isConfirmed = await serviceController.showConfirmationDialog("${labelTextDetail['delete_photo_message'] ?? "Are you sure you want to delete this car photo"}");
+    bool isConfirmed = await serviceController.showConfirmationDialog(
+        "${labelTextDetail['delete_photo_message'] ?? "Are you sure you want to delete this car photo"}",
+        cancelYesBtn: labelTextDetail['delete_photo_yes_btn'] ?? "Yes, delete it",
+        cancelNoBtn: labelTextDetail['delete_photo_no_btn'] ?? "No, keep it");
 
     if(isConfirmed){
       removeCarPhoto.value = true;

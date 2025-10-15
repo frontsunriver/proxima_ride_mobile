@@ -11,6 +11,7 @@ import 'package:proximaride_app/pages/widgets/radio_button_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 class RemovePassengerPage extends StatelessWidget {
   const RemovePassengerPage({super.key});
@@ -202,29 +203,31 @@ class RemovePassengerPage extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SafeArea(
-                  child: Container(
-                    padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                    right: 10.0,
+                    top: 10.0,
+                    bottom: 10.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(5.0)
+                  ),
+                  child: SizedBox(
                     height: 70,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(5.0)
-                    ),
-                    child: SizedBox(
-                      height: 70,
-                      width: context.screenWidth,
-                      child: elevatedButtonWidget(
-                          textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
-                          onPressed: controller.removePassengerType.value != "" &&
-                              controller.reviewTextEditingController.text != "" &&
-                              controller.tripCancelTextEditingController.text != "" &&
-                              ((controller.removePassengerType.value == "1" && controller.removePassenger.value != "") || controller.removePassengerType.value == "0") &&
-                              ((controller.removePassenger.value == "temporarily" && controller.blockDaysTextEditingController.text != "") || controller.removePassenger.value == "permanently" || controller.removePassenger.value == "") ?
-                              () async{
-                            await controller.removePassengerFromRide(Get.parameters['rideId'] ?? "0");
-                          }: null,
-                          context: context
-                      ),
+                    width: context.screenWidth,
+                    child: elevatedButtonWidget(
+                        textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['passenger_cancel_ride_btn_label'] ?? "Cancel ride"}", context: context, textColor: Colors.white),
+                        onPressed: controller.removePassengerType.value != "" &&
+                            controller.reviewTextEditingController.text != "" &&
+                            controller.tripCancelTextEditingController.text != "" &&
+                            ((controller.removePassengerType.value == "1" && controller.removePassenger.value != "") || controller.removePassengerType.value == "0") &&
+                            ((controller.removePassenger.value == "temporarily" && controller.blockDaysTextEditingController.text != "") || controller.removePassenger.value == "permanently" || controller.removePassenger.value == "") ?
+                            () async{
+                          await controller.removePassengerFromRide(Get.parameters['rideId'] ?? "0");
+                        }: null,
+                        context: context
                     ),
                   ),
                 ),

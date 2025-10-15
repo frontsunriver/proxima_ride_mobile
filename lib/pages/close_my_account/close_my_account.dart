@@ -7,6 +7,7 @@ import '../widgets/button_Widget.dart';
 import '../widgets/overlay_widget.dart';
 import '../widgets/textWidget.dart';
 import '../widgets/tool_tip.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import 'CloseAccountController.dart';
 
 class CloseMyAccount extends GetView<CloseAccountController> {
@@ -554,22 +555,25 @@ class CloseMyAccount extends GetView<CloseAccountController> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: Container(
-                      color: Colors.grey.shade100,
-                      padding: const EdgeInsets.all(15.0),
-                      width: context.screenWidth,
-                      child:  elevatedButtonWidget(
-                        textWidget: primaryButtonSize(
-                            title: "${controller.labelTextDetail['close_account_button_text'] ?? "Close my account"}",
-                            textColor: Colors.white,
-                            context: context,
-                            fontFamily: regular),
-                        onPressed: () async {
-                          controller.removeAccount();
-                        },
-                        btnColor: Colors.red,
-                      ),
+                  child: Container(
+                    color: Colors.grey.shade100,
+                    padding: EdgeInsets.only(
+                      left: 15.0,
+                      right: 15.0,
+                      top: 15.0,
+                      bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                    ),
+                    width: context.screenWidth,
+                    child:  elevatedButtonWidget(
+                      textWidget: primaryButtonSize(
+                          title: "${controller.labelTextDetail['close_account_button_text'] ?? "Close my account"}",
+                          textColor: Colors.white,
+                          context: context,
+                          fontFamily: regular),
+                      onPressed: () async {
+                        controller.removeAccount();
+                      },
+                      btnColor: Colors.red,
                     ),
                   ),
                 ),

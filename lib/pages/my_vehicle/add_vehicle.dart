@@ -13,6 +13,7 @@ import 'package:proximaride_app/pages/widgets/network_cache_image_widget.dart';
 import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 
 import '../widgets/tool_tip.dart';
@@ -924,30 +925,33 @@ class AddVehiclePage extends StatelessWidget {
                               ],
                             ),
                           ],
-                          120.heightBox,
+                          SizedBox(height: NavigationUtils.getBottomPadding(context, threeButtonPadding: 150.0, gesturePadding: 20.0)),
                         ],
                       ),
                     )),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: Container(
-                      width: context.screenWidth,
-                      padding: const EdgeInsets.all(15.0),
-                      color: Colors.grey.shade100,
-                      child: elevatedButtonWidget(
-                        textWidget: primaryButtonSize(
-                            title: controller.vehicleId.value == 0
-                                ? "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}"
-                                : "${controller.labelTextDetail['update_vehicle_button_text'] ?? "Update vehicle"}",
-                            textColor: Colors.white,
-                            context: context,
-                            fontFamily: regular),
-                        onPressed: () async {
-                          await controller.addNewVehicle(
-                              context, context.screenHeight);
-                        },
-                      ),
+                  child: Container(
+                    width: context.screenWidth,
+                    padding: EdgeInsets.only(
+                      left: 15.0,
+                      right: 15.0,
+                      top: 15.0,
+                      bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                    ),
+                    color: Colors.grey.shade100,
+                    child: elevatedButtonWidget(
+                      textWidget: primaryButtonSize(
+                          title: controller.vehicleId.value == 0
+                              ? "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}"
+                              : "${controller.labelTextDetail['update_vehicle_button_text'] ?? "Update vehicle"}",
+                          textColor: Colors.white,
+                          context: context,
+                          fontFamily: regular),
+                      onPressed: () async {
+                        await controller.addNewVehicle(
+                            context, context.screenHeight);
+                      },
                     ),
                   ),
                 ),

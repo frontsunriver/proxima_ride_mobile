@@ -20,6 +20,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import '../widgets/tool_tip.dart';
 
 class PostRidePage extends GetView<PostRideController> {
@@ -255,21 +256,24 @@ class PostRidePage extends GetView<PostRideController> {
                     )),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: Container(
-                      padding: const EdgeInsets.all(15.0),
-                      color: Colors.grey.shade100,
-                      width: context.screenWidth,
-                      child: elevatedButtonWidget(
-                          textWidget: primaryButtonSize(
-                              title: controller.rideType.value == 'update' ? '${controller.labelTextDetail['update_button_label'] ?? "Update ride"}' : "${controller.labelTextDetail['submit_button_label'] ?? "Post ride"}",
-                              context: context,
-                              textColor: Colors.white),
-                          context: context,
-                          onPressed: () async {
-                            await controller.postRide(context, context.screenHeight);
-                          }),
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      left: 15.0,
+                      right: 15.0,
+                      top: 15.0,
+                      bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
                     ),
+                    color: Colors.grey.shade100,
+                    width: context.screenWidth,
+                    child: elevatedButtonWidget(
+                        textWidget: primaryButtonSize(
+                            title: controller.rideType.value == 'update' ? '${controller.labelTextDetail['update_button_label'] ?? "Update ride"}' : "${controller.labelTextDetail['submit_button_label'] ?? "Post ride"}",
+                            context: context,
+                            textColor: Colors.white),
+                        context: context,
+                        onPressed: () async {
+                          await controller.postRide(context, context.screenHeight);
+                        }),
                   ),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[

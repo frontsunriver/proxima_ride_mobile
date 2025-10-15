@@ -23,6 +23,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 
 class TripDetailPage extends GetView<TripDetailController> {
@@ -266,9 +267,13 @@ class TripDetailPage extends GetView<TripDetailController> {
                 if(controller.type != "ride")...[
                   Positioned(
                     bottom: 0,
-                    child: SafeArea(
-                      child: Container(
-                      padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                    child: Container(
+                      padding: EdgeInsets.only(
+                        left: 15.0,
+                        right: 15.0,
+                        top: 10.0,
+                        bottom: 10.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                      ),
                       color: Colors.grey.shade100,
                       width: context.screenWidth,
                       child: controller.type == "findRide" ?
@@ -302,7 +307,6 @@ class TripDetailPage extends GetView<TripDetailController> {
                           await controller.noShowDriverData();
                         },
                       ) : const SizedBox(),
-                    ),
                     ),
                   ),
                 ],

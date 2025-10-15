@@ -13,6 +13,7 @@ import '../../consts/constFileLink.dart';
 import '../../consts/font_sizes.dart';
 import '../widgets/button_Widget.dart';
 import '../widgets/second_appbar_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import 'MyWalletController.dart';
 
 class MyWallet extends GetView<MyWalletController> {
@@ -178,17 +179,17 @@ class MyWallet extends GetView<MyWalletController> {
 
                                                   Align(
                                                     alignment: Alignment.bottomCenter,
-                                                    child: SafeArea(
-                                                      child: Container(
-                                                        width: context.screenWidth,
-                                                        color: Colors.grey.shade100,
-                                                        height: 50,
-                                                        child: elevatedButtonWidget(
-                                                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['balance_buy_more_button_text'] ?? "Buy more top up balance"}", textColor: Colors.white, context: context, fontFamily: regular),
-                                                          onPressed: () async{
-                                                            Get.toNamed('/top_up_balance');
-                                                          },
-                                                        ),
+                                                    child: Container(
+                                                      width: context.screenWidth,
+                                                      color: Colors.grey.shade100,
+                                                      padding: EdgeInsets.only(
+                                                        bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                                                      ),
+                                                      child: elevatedButtonWidget(
+                                                        textWidget: primaryButtonSize(title: "${controller.labelTextDetail['balance_buy_more_button_text'] ?? "Buy more top up balance"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                        onPressed: () async{
+                                                          Get.toNamed('/top_up_balance');
+                                                        },
                                                       ),
                                                     ),
                                                   ),
@@ -231,17 +232,17 @@ class MyWallet extends GetView<MyWalletController> {
                                                 ),
                                                 Align(
                                                   alignment: Alignment.bottomCenter,
-                                                  child: SafeArea(
-                                                    child: Container(
-                                                      width: context.screenWidth,
-                                                      color: Colors.grey.shade100,
-                                                      height: 50,
-                                                      child: elevatedButtonWidget(
-                                                        textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
-                                                        onPressed: () async{
-                                                          await controller.claimMyReward('student');
-                                                        },
-                                                      ),
+                                                  child: Container(
+                                                    width: context.screenWidth,
+                                                    color: Colors.grey.shade100,
+                                                    padding: EdgeInsets.only(
+                                                      bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                                                    ),
+                                                    child: elevatedButtonWidget(
+                                                      textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                      onPressed: () async{
+                                                        await controller.claimMyReward('student');
+                                                      },
                                                     ),
                                                   ),
                                                 ),
@@ -364,17 +365,17 @@ class MyWallet extends GetView<MyWalletController> {
                                                   ) : Center(child: txt20Size(title: "${controller.labelTextDetail['no_balance_found_message'] ?? "No balance available found"}", context: context)),
                                                   controller.driverAvailableList.isNotEmpty ? Align(
                                                     alignment: Alignment.bottomCenter,
-                                                    child: SafeArea(
-                                                      child: Container(
-                                                        width: context.screenWidth,
-                                                        color: Colors.grey.shade100,
-                                                        height: 50,
-                                                        child: elevatedButtonWidget(
-                                                            textWidget: primaryButtonSize(title: "${controller.labelTextDetail['request_transfer_label'] ?? "Request for transfer"}", textColor: Colors.white, context: context, fontFamily: regular),
-                                                            onPressed: () async{
-                                                              await controller.sendPayoutRequest();
-                                                            }
-                                                        ),
+                                                    child: Container(
+                                                      width: context.screenWidth,
+                                                      color: Colors.grey.shade100,
+                                                      padding: EdgeInsets.only(
+                                                        bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                                                      ),
+                                                      child: elevatedButtonWidget(
+                                                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['request_transfer_label'] ?? "Request for transfer"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                          onPressed: () async{
+                                                            await controller.sendPayoutRequest();
+                                                          }
                                                       ),
                                                     ),
                                                   ) : const SizedBox(),
@@ -443,17 +444,17 @@ class MyWallet extends GetView<MyWalletController> {
                                                   ),
                                                   Align(
                                                     alignment: Alignment.bottomCenter,
-                                                    child: SafeArea(
-                                                      child: Container(
-                                                        width: context.screenWidth,
-                                                        color: Colors.grey.shade100,
-                                                        height: 50,
-                                                        child: elevatedButtonWidget(
-                                                          textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
-                                                          onPressed: () async{
-                                                            await controller.claimMyReward('driver');
-                                                          },
-                                                        ),
+                                                    child: Container(
+                                                      width: context.screenWidth,
+                                                      color: Colors.grey.shade100,
+                                                      padding: EdgeInsets.only(
+                                                        bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                                                      ),
+                                                      child: elevatedButtonWidget(
+                                                        textWidget: primaryButtonSize(title: "${controller.labelTextDetail['claim_my_reward_button_text'] ?? "Claim my reward"}", textColor: Colors.white, context: context, fontFamily: regular),
+                                                        onPressed: () async{
+                                                          await controller.claimMyReward('driver');
+                                                        },
                                                       ),
                                                     ),
                                                   ),

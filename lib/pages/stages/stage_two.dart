@@ -9,6 +9,7 @@ import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import '../widgets/image_upload_bottom_sheet.dart';
 import '../widgets/image_upload_widget.dart';
 import '../widgets/tool_tip.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 class StageTwo extends GetView<StageTowController> {
   const StageTwo({super.key});
@@ -112,54 +113,69 @@ class StageTwo extends GetView<StageTowController> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: Container(
-                        color: Colors.grey.shade100,
-                        padding: EdgeInsets.all(getValueForScreenType<double>(
+                  child: Container(
+                      color: Colors.grey.shade100,
+                      padding: EdgeInsets.only(
+                        left: getValueForScreenType<double>(
                           context: context,
                           mobile: 15.0,
                           tablet: 15.0,
-                        )),
-                        width: context.screenWidth,
-                        child: Row(
-                        children: [
-                          Expanded(
-                            flex: 10,
-                            child: elevatedButtonWidget(
-                                textWidget: primaryButtonSize(
-                                    title:
-                                        "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
-                                    fontFamily: regular,
-                                    textColor: Colors.white,
-                                    context: context),
-                                onPressed: () async {
-                                  await controller.setStageTwo(true);
-                                },
-                                btnColor: primaryColor,
-                                context: context,
-                                btnRadius: 5.0),
-                          ),
-                          const Spacer(
-                            flex: 1,
-                          ),
-                          Expanded(
-                            flex: 10,
-                            child: elevatedButtonWidget(
-                                textWidget: primaryButtonSize(
-                                    title:
-                                        "${controller.labelTextDetail['next_button_label'] ?? "Next"}",
-                                    fontFamily: regular,
-                                    textColor: Colors.white,
-                                    context: context),
-                                onPressed: () async {
-                                  await controller.setStageTwo(false);
-                                },
-                                context: context,
-                                btnRadius: 5.0),
-                          ),
-                        ],
-                      )),
-                  ),
+                        ),
+                        right: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ),
+                        top: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ),
+                        bottom: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ) + NavigationUtils.getAdditionalBottomPadding(context),
+                      ),
+                      width: context.screenWidth,
+                      child: Row(
+                      children: [
+                        Expanded(
+                          flex: 10,
+                          child: elevatedButtonWidget(
+                              textWidget: primaryButtonSize(
+                                  title:
+                                      "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
+                                  fontFamily: regular,
+                                  textColor: Colors.white,
+                                  context: context),
+                              onPressed: () async {
+                                await controller.setStageTwo(true);
+                              },
+                              btnColor: primaryColor,
+                              context: context,
+                              btnRadius: 5.0),
+                        ),
+                        const Spacer(
+                          flex: 1,
+                        ),
+                        Expanded(
+                          flex: 10,
+                          child: elevatedButtonWidget(
+                              textWidget: primaryButtonSize(
+                                  title:
+                                      "${controller.labelTextDetail['next_button_label'] ?? "Next"}",
+                                  fontFamily: regular,
+                                  textColor: Colors.white,
+                                  context: context),
+                              onPressed: () async {
+                                await controller.setStageTwo(false);
+                              },
+                              context: context,
+                              btnRadius: 5.0),
+                        ),
+                      ],
+                    )),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[
                   overlayWidget(context)

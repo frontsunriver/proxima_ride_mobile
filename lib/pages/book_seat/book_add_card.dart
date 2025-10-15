@@ -8,6 +8,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 
 class BookAddCardPage extends StatelessWidget {
@@ -35,25 +36,27 @@ class BookAddCardPage extends StatelessWidget {
               addCardWidget(context: context, controller: controller),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SafeArea(
-                  child: Container(
-                    padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                    right: 10.0,
+                    top: 10.0,
+                    bottom: 10.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                  ),
+                  width: context.screenWidth,
+                  color: Colors.grey.shade100,
+                  child: SizedBox(
                     width: context.screenWidth,
-                    height: 70,
-                    color: Colors.grey.shade100,
-                    child: SizedBox(
-                      width: context.screenWidth,
-                      height: 50,
-                      child: elevatedButtonWidget(
-                        textWidget: txt22Size(
-                            title: "Save",
-                            textColor: Colors.white,
-                            context: context,
-                            fontFamily: regular),
-                        onPressed: () async {
-                          // controller.addCard();
-                        },
-                      ),
+                    height: 50,
+                    child: elevatedButtonWidget(
+                      textWidget: txt22Size(
+                          title: "Save",
+                          textColor: Colors.white,
+                          context: context,
+                          fontFamily: regular),
+                      onPressed: () async {
+                        // controller.addCard();
+                      },
                     ),
                   ),
                 ),

@@ -285,7 +285,7 @@ class MyPhoneNumberPage extends GetView<MyPhoneNumberController> {
                             ),
                           ],
                         ),
-                        50.heightBox,
+                        80.heightBox,
                       ],
                     ),
                   ),

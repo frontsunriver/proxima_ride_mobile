@@ -510,7 +510,7 @@ class EditProfilePage extends GetView<EditProfileController> {
                               },
                             ),
                           ),
-                          // 10.heightBox,
+                          80.heightBox,
                         ],
                       ),
                     )),

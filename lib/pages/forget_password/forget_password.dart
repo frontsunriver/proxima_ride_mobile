@@ -8,6 +8,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 import '../widgets/tool_tip.dart';
 
@@ -80,28 +81,42 @@ class ForgetPasswordPage extends GetView<ForgetPasswordController> {
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
-                    child: SafeArea(
-                      child: Container(
-                        padding: EdgeInsets.all(getValueForScreenType<double>(
+                    child: Container(
+                      padding: EdgeInsets.only(
+                        left: getValueForScreenType<double>(
                           context: context,
                           mobile: 15.0,
                           tablet: 15.0,
-                        )),
-                        width: context.screenWidth,
-                        height: 75,
-                        child: elevatedButtonWidget(
-                            textWidget: txt22Size(
-                                title:
-                                    "${controller.labelTextDetail['button_label'] ?? "Reset password"}",
-                                fontFamily: regular,
-                                textColor: Colors.white,
-                                context: context),
-                            onPressed: () async {
-                              await controller.forgetPassword();
-                            },
-                            context: context,
-                            btnRadius: 5.0),
+                        ),
+                        right: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ),
+                        top: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ),
+                        bottom: getValueForScreenType<double>(
+                          context: context,
+                          mobile: 15.0,
+                          tablet: 15.0,
+                        ) + NavigationUtils.getAdditionalBottomPadding(context),
                       ),
+                      width: context.screenWidth,
+                      child: elevatedButtonWidget(
+                          textWidget: txt22Size(
+                              title:
+                                  "${controller.labelTextDetail['button_label'] ?? "Reset password"}",
+                              fontFamily: regular,
+                              textColor: Colors.white,
+                              context: context),
+                          onPressed: () async {
+                            await controller.forgetPassword();
+                          },
+                          context: context,
+                          btnRadius: 5.0),
                     ),
                   ),
                   if (controller.isOverlayLoading.value == true) ...[

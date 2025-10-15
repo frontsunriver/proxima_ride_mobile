@@ -38,39 +38,49 @@ imageUploadBottomSheet(controller, context){
 }
 
 getBottomSheet(controller, context){
+  // Detect navigation mode by checking bottom padding
+  // 3-button nav has higher padding (48+), gesture nav is lower (0-24)
+  final bottomPadding = MediaQuery.of(context).viewPadding.bottom;
+  final isThreeButtonNav = bottomPadding >= 30;
+  final dynamicPadding = isThreeButtonNav ? 80.0 : 20.0;
+  final dynamicHeight = isThreeButtonNav ? 200.0 : 140.0;
+  
   return SizedBox(
-    height: 120,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        InkWell(
-          child: Ink(
-            child: Row(
-              children: [
-                Image.asset(cameraImage,width: 50,height: 50, fit: BoxFit.fill),
-                "Camera".text.sm.semiBold.make()
-              ],
+    height: dynamicHeight,
+    child: Padding(
+      padding: EdgeInsets.only(bottom: dynamicPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          InkWell(
+            child: Ink(
+              child: Row(
+                children: [
+                  Image.asset(cameraImage,width: 50,height: 50, fit: BoxFit.fill),
+                  "Camera".text.sm.semiBold.make()
+                ],
+              ),
             ),
+            onTap: () async{
+              controller.getImage(ImageSource.camera);
+            },
           ),
-          onTap: () async{
-            controller.getImage(ImageSource.camera);
-          },
-        ),
-        const Divider(),
-        InkWell(
-          child: Ink(
-            child: Row(
-              children: [
-                Image.asset(galleryImage,width: 50,height: 50, fit: BoxFit.fill),
-                "Gallery".text.sm.semiBold.make()
-              ],
+          const Divider(),
+          InkWell(
+            child: Ink(
+              child: Row(
+                children: [
+                  Image.asset(galleryImage,width: 50,height: 50, fit: BoxFit.fill),
+                  "Gallery".text.sm.semiBold.make()
+                ],
+              ),
             ),
-          ),
-          onTap: () async{
-            controller.getImage(ImageSource.gallery);
-          },
-        )
-      ],
+            onTap: () async{
+              controller.getImage(ImageSource.gallery);
+            },
+          )
+        ],
+      ),
     ),
   );
 }

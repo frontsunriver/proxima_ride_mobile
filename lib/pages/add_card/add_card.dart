@@ -10,6 +10,7 @@ import '../widgets/check_box_widget.dart';
 import '../widgets/drop_down_date_widget.dart';
 import '../widgets/fields_widget.dart';
 import '../widgets/tool_tip.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import 'AddCardController.dart';
 
 class AddCard extends GetView<AddCardController> {
@@ -485,25 +486,26 @@ class AddCard extends GetView<AddCardController> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SafeArea(
-                  child: Container(
-                    padding: const EdgeInsets.all(15.0),
-                    width: context.screenWidth,
-                    height:
-                    80, //added this height after the persisting argument from the QA that the height of this button is not similar to the rest of the buttons in the app
-                    color: Colors.grey.shade100,
-                    child: elevatedButtonWidget(
-                      textWidget: primaryButtonSize(
-                          title: controller.addEditType == 'add'
-                              ? "${controller.labelTextDetail['save_button_text'] ?? "Save"}"
-                              : "${controller.labelTextDetail['edit_card_button_text'] ?? "Edit card"}",
-                          textColor: Colors.white,
-                          context: context,
-                          fontFamily: regular),
-                      onPressed: () async {
-                        controller.addCard(context, context.screenHeight);
-                      },
-                    ),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 15.0,
+                    right: 15.0,
+                    top: 15.0,
+                    bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                  ),
+                  width: context.screenWidth,
+                  color: Colors.grey.shade100,
+                  child: elevatedButtonWidget(
+                    textWidget: primaryButtonSize(
+                        title: controller.addEditType == 'add'
+                            ? "${controller.labelTextDetail['save_button_text'] ?? "Save"}"
+                            : "${controller.labelTextDetail['edit_card_button_text'] ?? "Edit card"}",
+                        textColor: Colors.white,
+                        context: context,
+                        fontFamily: regular),
+                    onPressed: () async {
+                      controller.addCard(context, context.screenHeight);
+                    },
                   ),
                 ),
               ),

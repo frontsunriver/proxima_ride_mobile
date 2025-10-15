@@ -12,6 +12,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/step_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import '../widgets/tool_tip.dart';
 
 class StageThreeVehicle extends GetView<StageThreeController> {
@@ -1006,6 +1007,7 @@ class StageThreeVehicle extends GetView<StageThreeController> {
                                 // )),
                               ],
                             ),
+                            SizedBox(height: NavigationUtils.getBottomSpacing(context)),
                           ],
                         ],
                       ),

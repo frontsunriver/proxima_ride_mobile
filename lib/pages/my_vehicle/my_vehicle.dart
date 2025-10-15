@@ -8,6 +8,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 
 class MyVehiclePage extends GetView<MyVehicleController> {
@@ -129,20 +130,23 @@ class MyVehiclePage extends GetView<MyVehicleController> {
              ),
              Align(
                alignment: Alignment.bottomCenter,
-               child: SafeArea(
-                 child: Container(
-                   color: Colors.grey.shade100,
-                   padding: const EdgeInsets.all(15.0),
-                   child: SizedBox(
-                     width: context.screenWidth,
-                     height: 50,
-                     child: elevatedButtonWidget(
-                       textWidget: primaryButtonSize(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
-                       onPressed: () async{
-                         controller.oldCarImagePath.value = "";
-                         await controller.getVehicleDetail(0);
-                       },
-                     ),
+               child: Container(
+                 color: Colors.grey.shade100,
+                 padding: EdgeInsets.only(
+                   left: 15.0,
+                   right: 15.0,
+                   top: 15.0,
+                   bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                 ),
+                 child: SizedBox(
+                   width: context.screenWidth,
+                   height: 50,
+                   child: elevatedButtonWidget(
+                     textWidget: primaryButtonSize(title: "${controller.labelTextDetail['add_vehicle_button_text'] ?? "Add vehicle"}", textColor: Colors.white, context: context, fontFamily: regular),
+                     onPressed: () async{
+                       controller.oldCarImagePath.value = "";
+                       await controller.getVehicleDetail(0);
+                     },
                    ),
                  ),
                ),

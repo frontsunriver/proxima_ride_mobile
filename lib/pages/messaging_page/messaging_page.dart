@@ -240,6 +240,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import '../widgets/network_cache_image_widget.dart';
 import '../widgets/progress_circular_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 import 'MessagingController.dart';
 
 class MessagingPage extends GetView<MessagingController> {
@@ -420,13 +421,15 @@ class MessagingPage extends GetView<MessagingController> {
                       if (controller.type != "old")
                         Align(
                           alignment: Alignment.bottomCenter,
-                          child: SafeArea(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade100,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: Row(
+                          child: Container(
+                            padding: EdgeInsets.only(
+                              bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade100,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Row(
                                 children: [
                                   Expanded(
                                     flex: 6,
@@ -469,7 +472,6 @@ class MessagingPage extends GetView<MessagingController> {
                               ),
                             ),
                           ),
-                        ),
                     ],
                   ),
                 ),

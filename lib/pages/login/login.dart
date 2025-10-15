@@ -825,6 +825,7 @@ import 'package:get/get.dart';
 // import 'package:flutter_web_auth/flutter_web_auth.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
 import 'package:proximaride_app/consts/const_api.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/login/LoginController.dart';
 import 'package:proximaride_app/pages/widgets/language_bottom_sheet.dart';
 import 'package:proximaride_app/pages/widgets/network_cache_image_widget.dart';
@@ -906,7 +907,7 @@ class LoginPage extends GetView<LoginController> {
                             textController: controller.emailTextController,
                             fieldType: "email",
                             readonly: false,
-                            fontSize: 16.0,
+                            fontSize: fontSizeMedium,
                             fontFamily: regular,
                             onChanged: (value) {
                               // Clear email error when user starts typing
@@ -1413,6 +1414,7 @@ class LoginPage extends GetView<LoginController> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 80),
                     ],
                   ),
                 ),

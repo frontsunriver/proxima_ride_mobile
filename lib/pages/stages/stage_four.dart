@@ -8,6 +8,7 @@ import 'package:proximaride_app/pages/widgets/overlay_widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/step_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 import '../widgets/tool_tip.dart';
 
@@ -305,51 +306,54 @@ class StageFour extends GetView<StageFourController> {
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: SafeArea(
-                    child: Container(
-                        width: context.screenWidth,
-                        padding: const EdgeInsets.all(15.0),
-                        color: Colors.grey.shade100,
-                        child: Row(
-                        children: [
-                          Expanded(
-                            flex: 10,
-                            child: elevatedButtonWidget(
-                              textWidget: primaryButtonSize(
-                                  title:
-                                      "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
-                                  textColor: Colors.white,
-                                  context: context,
-                                  fontFamily: regular),
-                              onPressed: () async {
-                                controller.setStageFour(true);
-                              },
-                              btnColor: primaryColor,
-                            ),
+                  child: Container(
+                      width: context.screenWidth,
+                      padding: EdgeInsets.only(
+                        left: 15.0,
+                        right: 15.0,
+                        top: 15.0,
+                        bottom: 15.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                      ),
+                      color: Colors.grey.shade100,
+                      child: Row(
+                      children: [
+                        Expanded(
+                          flex: 10,
+                          child: elevatedButtonWidget(
+                            textWidget: primaryButtonSize(
+                                title:
+                                    "${controller.labelTextDetail['skip_button_label'] ?? "Skip"}",
+                                textColor: Colors.white,
+                                context: context,
+                                fontFamily: regular),
+                            onPressed: () async {
+                              controller.setStageFour(true);
+                            },
+                            btnColor: primaryColor,
                           ),
-                          const Spacer(
-                            flex: 1,
+                        ),
+                        const Spacer(
+                          flex: 1,
+                        ),
+                        Expanded(
+                          flex: 10,
+                          child: elevatedButtonWidget(
+                            textWidget: primaryButtonSize(
+                                title: controller.finishBtn.value == false
+                                    ? "${controller.labelTextDetail['verify_button_label'] ?? "Verify"}"
+                                    : "${controller.labelTextDetail['save_button_label'] ?? "Finish"}",
+                                textColor: Colors.white,
+                                context: context,
+                                fontFamily: regular),
+                            onPressed: () async {
+                              controller.finishBtn.value == false
+                                  ? controller.sendVerificationCode()
+                                  : controller.verifyPhoneNumber();
+                            },
                           ),
-                          Expanded(
-                            flex: 10,
-                            child: elevatedButtonWidget(
-                              textWidget: primaryButtonSize(
-                                  title: controller.finishBtn.value == false
-                                      ? "${controller.labelTextDetail['verify_button_label'] ?? "Verify"}"
-                                      : "${controller.labelTextDetail['save_button_label'] ?? "Finish"}",
-                                  textColor: Colors.white,
-                                  context: context,
-                                  fontFamily: regular),
-                              onPressed: () async {
-                                controller.finishBtn.value == false
-                                    ? controller.sendVerificationCode()
-                                    : controller.verifyPhoneNumber();
-                              },
-                            ),
-                          )
-                        ],
-                      )),
-                  ),
+                        )
+                      ],
+                    )),
                 ),
                 if (controller.isOverlayLoading.value == true) ...[
                   overlayWidget(context)

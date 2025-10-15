@@ -7,6 +7,7 @@ import 'package:proximaride_app/pages/widgets/payment_card_body_Widget.dart';
 import 'package:proximaride_app/pages/widgets/payment_card_button_Widget.dart';
 import 'package:proximaride_app/pages/widgets/progress_circular_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 
 class BalanceBookCardsPage extends StatelessWidget {
@@ -68,7 +69,10 @@ class BalanceBookCardsPage extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: NavigationUtils.getAdditionalBottomPadding(context),
+                  ),
                   child: paymentCardButtonWidget(
                     btn1Title: "${controller.labelTextDetail['add_card_label'] ?? "Add new card"}",
                     onPressed1: () async{

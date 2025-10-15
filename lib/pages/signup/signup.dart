@@ -954,7 +954,8 @@ class SignupPage extends GetView<RegisterController> {
                           ),
                           5.widthBox,
                         ],
-                      )
+                      ),
+                      80.heightBox,
                     ],
                   ),
                 ),

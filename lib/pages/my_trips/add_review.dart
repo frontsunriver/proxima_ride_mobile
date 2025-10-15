@@ -10,6 +10,7 @@ import 'package:proximaride_app/pages/widgets/rating_widget.dart';
 import 'package:proximaride_app/pages/widgets/second_appbar_widget.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/pages/widgets/text_area_widget.dart';
+import 'package:proximaride_app/utils/navigation_utils.dart';
 
 import '../widgets/tool_tip.dart';
 
@@ -215,20 +216,23 @@ class AddReviewPage extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: SafeArea(
-                  child: Container(
-                    padding: const EdgeInsets.all(10.0),
-                    height: 70,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(5.0)
-                    ),
-                    child: SizedBox(
-                      height: 50,
-                      width: context.screenWidth,
-                      child: elevatedButtonWidget(
-                          textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
-                          onPressed: () async{
+                child: Container(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                    right: 10.0,
+                    top: 10.0,
+                    bottom: 10.0 + NavigationUtils.getAdditionalBottomPadding(context),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(5.0)
+                  ),
+                  child: SizedBox(
+                    height: 50,
+                    width: context.screenWidth,
+                    child: elevatedButtonWidget(
+                        textWidget: primaryButtonSize(title: "${controller.labelTextTripDetail['review_submit_btn_label'] ?? "Submit"}", context: context, textColor: Colors.white),
+                        onPressed: () async{
 
                             controller.vehicleCondition.value = double.parse((controller.vehicleCondition.value).ceil().toString());
                             controller.conscious.value = double.parse((controller.conscious.value).ceil().toString());
@@ -252,7 +256,6 @@ class AddReviewPage extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
               if(controller.isOverlayLoading.value == true)...[
                 overlayWidget(context),
               ]

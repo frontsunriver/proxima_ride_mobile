@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
+import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/book_seat/BookSeatController.dart';
 import 'package:proximaride_app/pages/book_seat/widget/online_payment_widget.dart';
 import 'package:proximaride_app/pages/book_seat/widget/pricing_widget.dart';
@@ -67,7 +68,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                       textAreaWidget(
                         textController: controller.messageDriverTextEditingController,
                         readonly: false,
-                        fontSize: 18.0,
+                        fontSize: fontSizeMedium,
                         fontFamily: regular,
                         placeHolder: "${controller.labelTextDetail['message_driver_placeholder'] ?? "Tell the driver why you're traveling, introduce yourself, or just say hi\nDrivers are more likely to accept passengers who introduce themselves"}",
                         maxLines: 4,
@@ -139,7 +140,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                                   controller.errors.add(err);
                                 }
                               },
-                              child: txt16Size(
+                              child: txt18Size(
                                     title:
                                     "${controller.labelTextDetail['booking_term_agree_text'] ?? "I agree to these rules, and I have read, and agree to ProximaRide's terms and conditions. I also confirm that I am at least 18 years of age"}",
                                     fontFamily: bold,
@@ -177,24 +178,24 @@ class BookSeatPage extends GetView<BookSeatController> {
                             ),
                             3.widthBox,
                             Expanded(
-                              child: InkWell(
-                                onTap: () async{
-                                  controller.firmAgreeTerms.value = controller.firmAgreeTerms.value == true ? false : true;
-                                  if(controller.firmAgreeTerms.value == true){
-                                    controller.errors.remove(controller.errors.firstWhereOrNull((element) => element['title'] == "firm_agree_terms"));
-                                  }else{
-                                    var err = {
-                                      'title': "firm_agree_terms",
-                                      'eList': ['Please select agree terms']
-                                    };
-                                    controller.errors.add(err);
-                                  }
-                                },
-                                child: txt16Size(
-                                    title: controller.firmDisclaimer.value != "" ? controller.firmDisclaimer.value : "I know that this ride has the Firm cancellation policy which entitles me to a 10% discount of the booking price, and it is not refundable; regardless of the cancellation time",
-                                    fontFamily: bold,
-                                    context: context),
-                              ),
+                            child: InkWell(
+                              onTap: () async{
+                                controller.firmAgreeTerms.value = controller.firmAgreeTerms.value == true ? false : true;
+                                if(controller.firmAgreeTerms.value == true){
+                                  controller.errors.remove(controller.errors.firstWhereOrNull((element) => element['title'] == "firm_agree_terms"));
+                                }else{
+                                  var err = {
+                                    'title': "firm_agree_terms",
+                                    'eList': ['Please select agree terms']
+                                  };
+                                  controller.errors.add(err);
+                                }
+                              },
+                              child: txt18Size(
+                                  title: controller.firmDisclaimer.value != "" ? controller.firmDisclaimer.value : "I know that this ride has the Firm cancellation policy which entitles me to a 10% discount of the booking price, and it is not refundable; regardless of the cancellation time",
+                                  fontFamily: bold,
+                                  context: context),
+                            ),
                             ),
 
                           ],
@@ -241,7 +242,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                                     controller.errors.add(err);
                                   }
                                 },
-                                child: txt16Size(
+                                child: txt18Size(
                                     title: controller.pinkDisclaimer.value != "" ? controller.pinkDisclaimer.value : "Pink ride disclaimer",
                                     fontFamily: bold,
                                     context: context),
@@ -292,7 +293,7 @@ class BookSeatPage extends GetView<BookSeatController> {
                                     controller.errors.add(err);
                                   }
                                 },
-                                child: txt16Size(
+                                child: txt18Size(
                                     title: controller.extraCareDisclaimer.value != "" ? controller.extraCareDisclaimer.value : "Extra ride disclaimer",
                                     fontFamily: bold,
                                     context: context),

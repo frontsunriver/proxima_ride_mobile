@@ -529,16 +529,16 @@ class CloseMyAccount extends GetView<CloseAccountController> {
                             10.widthBox,
                             Row(
                               children: [
-                                InkWell(
-                                  onTap: (){
-                                    controller.closingAccount.value = controller.closingAccount.value == true ? false : true;
-                                  },
-                                  child: txt16Size(
-                                      title: "${controller.labelTextDetail['close_my_account_checkbox'] ?? 'Close my account'}",
-                                      context: context,
-                                      textColor: Colors.black,
-                                      fontFamily: regular),
-                                ),
+                              InkWell(
+                                onTap: (){
+                                  controller.closingAccount.value = controller.closingAccount.value == true ? false : true;
+                                },
+                                child: txt18Size(
+                                    title: "${controller.labelTextDetail['close_my_account_checkbox'] ?? 'Close my account'}",
+                                    context: context,
+                                    textColor: Colors.black,
+                                    fontFamily: regular),
+                              ),
                                 txt20Size(title: '*',context: context,fontFamily: bold,textColor: Colors.red)
                               ],
                             ),

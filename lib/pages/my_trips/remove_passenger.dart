@@ -174,7 +174,7 @@ class RemovePassengerPage extends StatelessWidget {
                               textController: controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: fontSizeRegular,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular,
                               placeHolder: "${controller.labelTextTripDetail['driver_remove_reason_placeholder'] ?? "Please tell us why you want to remove this passenger from your ride\nYour passenger will not receive a copy of this message"}"
                           ),
@@ -191,7 +191,7 @@ class RemovePassengerPage extends StatelessWidget {
                               textController: controller.tripCancelTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: fontSizeRegular,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular,
                               placeHolder: "${controller.labelTextTripDetail['passenger_remove_reason_placeholder'] ?? "Please tell the passenger why you are removing them from this ride"}"
                           ),

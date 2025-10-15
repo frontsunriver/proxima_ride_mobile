@@ -160,7 +160,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.firstNameTextController,
                         fieldType: "text",
                         readonly: false,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull((element) =>
@@ -207,7 +207,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.lastNameTextController,
                         fieldType: "text",
                         readonly: false,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull((element) =>
@@ -254,7 +254,7 @@ class SignupPage extends GetView<RegisterController> {
                         textController: controller.emailTextController,
                         fieldType: "email",
                         readonly: false,
-                        fontSize: fontSizeRegular,
+                        fontSize: fontSizeMedium,
                         fontFamily: regular,
                         onChanged: (value) {
                           if (controller.errors.firstWhereOrNull(
@@ -441,7 +441,7 @@ class SignupPage extends GetView<RegisterController> {
                                 // },
                                 decoration: InputDecoration(
                                   errorStyle: const TextStyle(
-                                      color: primaryColor, fontSize: fontSizeRegular),
+                                      color: primaryColor, fontSize: fontSizeMedium),
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(5.0),
                                       borderSide: BorderSide(
@@ -476,7 +476,7 @@ class SignupPage extends GetView<RegisterController> {
                                   ),
                                 ),
                                 style: const TextStyle(
-                                    fontSize: fontSizeRegular,
+                                    fontSize: fontSizeMedium,
                                     fontFamily: regular,
                                     color: textColor),
                                 obscureText:
@@ -607,7 +607,7 @@ class SignupPage extends GetView<RegisterController> {
                           ),
                         ),
                         style:
-                            const TextStyle(fontSize: fontSizeRegular, fontFamily: regular),
+                            const TextStyle(fontSize: fontSizeMedium, fontFamily: regular),
                         obscureText: !controller.isConfirmPasswordVisible.value,
                         keyboardType: TextInputType.visiblePassword,
                         textInputAction: TextInputAction.done,

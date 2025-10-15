@@ -48,7 +48,7 @@ class EmailAddressPage extends GetView<EmailAddressController> {
                         10.heightBox,
                         txt20Size(context: context,title: "${controller.labelTextDetail['email_label'] ?? 'E-mail'}", textColor: Colors.black,fontFamily: regular),
                         10.heightBox,
-                        fieldsWidget(fieldType: "email", readonly: true, fontFamily: regular, fontSize: 18.0, placeHolder: "${controller.serviceController.loginUserDetail["email"]}", hintTextColor: Colors.grey),
+                        fieldsWidget(fieldType: "email", readonly: true, fontFamily: regular, fontSize: fontSizeMedium, placeHolder: "${controller.serviceController.loginUserDetail["email"]}", hintTextColor: Colors.grey),
                         120.heightBox,
                       ],
                     ),

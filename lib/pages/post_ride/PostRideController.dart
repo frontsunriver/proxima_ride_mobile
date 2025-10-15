@@ -7,6 +7,7 @@ import 'package:proximaride_app/consts/font_sizes.dart';
 import 'package:proximaride_app/pages/post_ride/PostRideProvider.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 
 class PostRideController extends GetxController{
@@ -214,30 +215,27 @@ void onInit() async {
     List<String> errorList = [];
 
     if (isRequired && fieldValue.isEmpty) {
-      var message = validationMessageDetail['required'];
-      if(fieldName == "from"){
-        message = message.replaceAll(":Attribute", labelTextDetail['from_error'] ?? "From");
-      }else if(fieldName == "to"){
-        message = message.replaceAll(":Attribute", labelTextDetail['to_error'] ?? "To");
-      }else if(fieldName == "pickup"){
-        message = message.replaceAll(":Attribute", labelTextDetail['pick_up_error'] ?? "Pickup");
-      }else if(fieldName == "dropoff"){
-        message = message.replaceAll(":Attribute", labelTextDetail['drop_off_error'] ?? "Dropoff");
-      }else if(fieldName == "details"){
-        message = message.replaceAll(":Attribute", labelTextDetail['meeting_drop_off_description_error'] ?? "Details");
-      }else if(fieldName == "make"){
-        message = message.replaceAll(":Attribute", labelTextDetail['make_error'] ?? "Make");
-      }else if(fieldName == "model"){
-        message = message.replaceAll(":Attribute", labelTextDetail['model_error'] ?? "Model");
-      }else if(fieldName == "license_no"){
-        message = message.replaceAll(":Attribute", labelTextDetail['license_error'] ?? "License no");
-      }else if(fieldName == "color"){
-        message = message.replaceAll(":Attribute", labelTextDetail['color_error'] ?? "Color");
-      }else if(fieldName == "year"){
-        message = message.replaceAll(":Attribute", labelTextDetail['year_error'] ?? "Year");
-      }else if(fieldName == "price"){
-        message = message.replaceAll(":Attribute", labelTextDetail['price_error'] ?? "Price");
-      }
+      final fieldLabels = {
+        "from": labelTextDetail['from_error'] ?? "From",
+        "to": labelTextDetail['to_error'] ?? "To",
+        "pickup": labelTextDetail['pick_up_error'] ?? "Pickup",
+        "dropoff": labelTextDetail['drop_off_error'] ?? "Dropoff",
+        "details": labelTextDetail['meeting_drop_off_description_error'] ?? "Details",
+        "make": labelTextDetail['make_error'] ?? "Make",
+        "model": labelTextDetail['model_error'] ?? "Model",
+        "license_no": labelTextDetail['license_error'] ?? "License no",
+        "color": labelTextDetail['color_error'] ?? "Color",
+        "year": labelTextDetail['year_error'] ?? "Year",
+        "price": labelTextDetail['price_error'] ?? "Price",
+      };
+      
+      String displayName = fieldLabels[fieldName] ?? fieldName;
+      String message = ErrorMessageHelper.getErrorMessage(
+        validationMessages: validationMessageDetail,
+        validationType: 'required',
+        fieldName: displayName,
+      );
+      
       errorList.add(message);
       errors.add({
         'title': fieldName,
@@ -249,35 +247,50 @@ void onInit() async {
     switch (type) {
       case 'numeric':
         if (fieldValue.isNotEmpty && double.tryParse(fieldValue) == null) {
-          var message = validationMessageDetail['numeric'];
-          if(fieldName == "price"){
-              message = message.replaceAll(":attribute", labelTextDetail['price_error'] ?? "price");
-          }else if(fieldName == "year"){
-              message = message.replaceAll(":attribute", labelTextDetail['year_error'] ?? "year");
-          }
+          final fieldLabels = {
+            "price": labelTextDetail['price_error'] ?? "price",
+            "year": labelTextDetail['year_error'] ?? "year",
+          };
+          
+          String displayName = fieldLabels[fieldName] ?? fieldName;
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'numeric',
+            fieldName: displayName,
+          );
+          
           errorList.add(message);
         }
         break;
       case 'date':
         if (fieldValue.isNotEmpty && DateTime.tryParse(fieldValue) == null) {
-          var message = validationMessageDetail['date'];
-          message = message.replaceAll(":attribute", labelTextDetail['date_error'] ?? "date");
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'date',
+            fieldName: labelTextDetail['date_error'] ?? "date",
+          );
           errorList.add(message);
         }
         break;
       case 'time':
         if (fieldValue.isNotEmpty && !RegExp(r'^\d{2}:\d{2}$').hasMatch(fieldValue)) {
-          var message = validationMessageDetail['date_format'];
-          message = message.replaceAll(":attribute", labelTextDetail['time_error'] ?? "time");
-          message = message.replaceAll(":format", 'HH:MM');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'date_format',
+            fieldName: labelTextDetail['time_error'] ?? "time",
+            additionalReplacements: {':format': 'HH:MM'},
+          );
           errorList.add(message);
         }
         break;
       case 'max_words':
         if (fieldValue.isNotEmpty && fieldValue.split(' ').length > wordsLimit) {
-          var message = validationMessageDetail['max_words'];
-          message = message.replaceAll(":attribute", fieldName);
-          message = message.replaceAll(":max", wordsLimit);
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'max_words',
+            fieldName: fieldName,
+            additionalReplacements: {':max': wordsLimit.toString()},
+          );
           errorList.add(message);
         }
         break;
@@ -881,12 +894,16 @@ void onInit() async {
         int sizeInBytes = file.lengthSync();
         double sizeInMb = sizeInBytes / (1024 * 1024);
         if (sizeInMb > 10){
-          var message = validationMessageDetail['max.file'];
-          message = message.replaceAll(":max", '10');
-          message = message.replaceAll(":attribute", labelTextDetail['photo_error'] ?? 'car image');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'max.file',
+            fieldName: labelTextDetail['photo_error'] ?? 'car image',
+            fallbackMessage: 'Can not upload image size greater than 10MB',
+            additionalReplacements: {':max': '10'},
+          );
           var err = {
             'title': "image",
-            'eList' : [message ?? 'Can not upload image size greater than 10MB']
+            'eList' : [message]
           };
           errors.add(err);
           return;

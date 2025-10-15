@@ -94,7 +94,7 @@ class NotificationAddReviewPage extends GetView<NotificationAddReviewController>
                               textController: controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: fontSizeRegular,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular,
                               placeHolder: controller.reviewType.toString() == "driver" ?
                               "${controller.labelTextDetail['driver_review_placeholder'] ?? "You can write a text review that will be public for our community to see\nYou can include specific feedback, comments or compliments about the driver’s performance"}" :

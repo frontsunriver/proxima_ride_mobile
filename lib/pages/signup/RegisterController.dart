@@ -10,6 +10,7 @@ import 'package:proximaride_app/consts/const_api.dart';
 import 'package:proximaride_app/pages/login/LoginProvider.dart';
 import 'package:proximaride_app/pages/signup/SignupProvider.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 class RegisterController extends GetxController {
   late TextEditingController firstNameTextController,
@@ -137,23 +138,20 @@ class RegisterController extends GetxController {
     List<String> errorList = [];
 
     if (isRequired && fieldValue.isEmpty) {
-      var message = validationMessageDetail['required'];
-      if (fieldName == "first_name") {
-        message = message.replaceAll(
-            ":Attribute", labelTextDetail['first_name_error'] ?? "First name");
-      } else if (fieldName == "last_name") {
-        message = message.replaceAll(
-            ":Attribute", labelTextDetail['last_name_error'] ?? "Last name");
-      } else if (fieldName == "email") {
-        message = message.replaceAll(
-            ":Attribute", labelTextDetail['email_error'] ?? "Email");
-      } else if (fieldName == "password") {
-        message = message.replaceAll(
-            ":Attribute", labelTextDetail['password_error'] ?? "Password");
-      } else if (fieldName == "password_confirmation") {
-        message = message.replaceAll(":Attribute",
-            labelTextDetail['confirm_password_error'] ?? "First name");
-      }
+      final fieldLabels = {
+        "first_name": labelTextDetail['first_name_error'] ?? "First name",
+        "last_name": labelTextDetail['last_name_error'] ?? "Last name",
+        "email": labelTextDetail['email_error'] ?? "Email",
+        "password": labelTextDetail['password_error'] ?? "Password",
+        "password_confirmation": labelTextDetail['confirm_password_error'] ?? "Confirm password",
+      };
+      
+      String displayName = fieldLabels[fieldName] ?? fieldName;
+      String message = ErrorMessageHelper.getErrorMessage(
+        validationMessages: validationMessageDetail,
+        validationType: 'required',
+        fieldName: displayName,
+      );
 
       errorList.add(message);
       errors.add({
@@ -167,21 +165,25 @@ class RegisterController extends GetxController {
     switch (type) {
       case 'password':
         if (checkPassword()) {
-          var message = validationMessageDetail['regex'];
-          message = message.replaceAll(
-              ":attribute", labelTextDetail['password_error'] ?? "password");
-          errorList.add(message ??
-              'The password format is invalid; The password length should be at least 8 characters and must include one lower case, one uppercase, one number, and one special character');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'regex',
+            fieldName: labelTextDetail['password_error'] ?? "password",
+            fallbackMessage: 'The password format is invalid; The password length should be at least 8 characters and must include one lower case, one uppercase, one number, and one special character',
+          );
+          errorList.add(message);
         }
         break;
 
       case 'confirmPassword':
         if (passwordTextController.text != confirmPasswordTextController.text) {
-          var message = validationMessageDetail['confirmed'];
-          message = message.replaceAll(":attribute",
-              labelTextDetail['confirm_password_error'] ?? "confirm password");
-          errorList
-              .add(message ?? 'Password and confirm password does not match');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'confirmed',
+            fieldName: labelTextDetail['confirm_password_error'] ?? "confirm password",
+            fallbackMessage: 'Password and confirm password does not match',
+          );
+          errorList.add(message);
         }
         break;
 

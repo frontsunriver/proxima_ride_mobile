@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
 import 'package:proximaride_app/pages/student_card/StudentCardProvider.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 
 class StudentCardController extends GetxController{
@@ -106,20 +107,28 @@ class StudentCardController extends GetxController{
     try{
       if(oldImagePath.value == "" && studentCardImageName.value == "" || month.value == "" || year.value == "") {
         if (oldImagePath.value == "" && studentCardImageName.value == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['photo_error'] ?? 'Student card image');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['photo_error'] ?? 'Student card image',
+            fallbackMessage: 'Student card image is required',
+          );
           var err = {
             'title': "student_card",
-            'eList': [message ?? 'Student card image is required']
+            'eList': [message]
           };
           errors.add(err);
         }
         if (month.value == "" || year.value == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['photo_error'] ?? 'Expiration date');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['photo_error'] ?? 'Expiration date',
+            fallbackMessage: 'Expiration date is required',
+          );
           var err = {
             'title': "student_card_exp_date",
-            'eList': [message ?? 'Expiration date is required']
+            'eList': [message]
           };
           errors.add(err);
         }
@@ -131,12 +140,16 @@ class StudentCardController extends GetxController{
         int sizeInBytes = file.lengthSync();
         double sizeInMb = sizeInBytes / (1024 * 1024);
         if (sizeInMb > 10){
-          var message = validationMessageDetail['max.file'];
-          message = message.replaceAll(":attribute", labelTextDetail['photo_error'] ?? 'student card image');
-          message = message.replaceAll(":max", '10');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'max.file',
+            fieldName: labelTextDetail['photo_error'] ?? 'student card image',
+            fallbackMessage: 'Can not upload image size greater than 10MB',
+            additionalReplacements: {':max': '10'},
+          );
           var err = {
             'title': "student_card",
-            'eList' : [message ?? 'Can not upload image size greater than 10MB']
+            'eList' : [message]
           };
           errors.add(err);
           return;

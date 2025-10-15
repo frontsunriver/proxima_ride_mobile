@@ -380,15 +380,15 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                             ],
                                             Row(
                                               children: [
-                                                InkWell(
-                                                  onTap: (){
-                                                    controller.setDefault.value = controller.setDefault.value == "bank" ? "" : "bank";
-                                                  },
-                                                  child: txt20Size(
-                                                      title: "${controller.labelTextDetail['set_default_checkbox_label'] ?? "Set default"}",
-                                                      fontFamily: regular,
-                                                      context: context),
-                                                ),
+                                              InkWell(
+                                                onTap: (){
+                                                  controller.setDefault.value = controller.setDefault.value == "bank" ? "" : "bank";
+                                                },
+                                                child: txt18Size(
+                                                    title: "${controller.labelTextDetail['set_default_checkbox_label'] ?? "Set default"}",
+                                                    fontFamily: regular,
+                                                    context: context),
+                                              ),
                                                 txt20Size(title: "*", fontFamily: regular, context: context,textColor: Colors.red),
                                                 5.widthBox,
                                                 SizedBox(
@@ -475,15 +475,15 @@ class PayoutAccountPage extends GetView<PayoutAccountController> {
                                             10.heightBox,
                                             Row(
                                               children: [
-                                                InkWell(
-                                                  onTap: (){
-                                                    controller.setDefault.value = controller.setDefault.value == "paypal" ? "" : "paypal";
-                                                  },
-                                                  child: txt20Size(
-                                                      title: "${controller.labelTextDetail['paypal_set_default_checkbox_label'] ?? "Set default"}",
-                                                      fontFamily: regular,
-                                                      context: context),
-                                                ),
+                                              InkWell(
+                                                onTap: (){
+                                                  controller.setDefault.value = controller.setDefault.value == "paypal" ? "" : "paypal";
+                                                },
+                                                child: txt18Size(
+                                                    title: "${controller.labelTextDetail['paypal_set_default_checkbox_label'] ?? "Set default"}",
+                                                    fontFamily: regular,
+                                                    context: context),
+                                              ),
                                                 txt20Size(title: "*", fontFamily: regular, context: context,textColor: Colors.red),
                                                 5.widthBox,
                                                 SizedBox(

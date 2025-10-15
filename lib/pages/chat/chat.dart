@@ -86,7 +86,7 @@ class ChatPage extends GetView<ChatController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(noChats),
-                              txt16Size(
+                              txt18Size(
                                   title:
                                       "${controller.labelTextDetail['no_messages_label'] ?? "You have no messages"}",
                                   context: context),

@@ -140,7 +140,7 @@ class CancelBookingPage extends StatelessWidget {
                                                   .tripCancelTextEditingController,
                                               fieldType: "number",
                                               readonly: false,
-                                              fontSize: fontSizeRegular,
+                                              fontSize: fontSizeMedium,
                                               fontFamily: regular,
                                               onChanged: (value) {
                                                 controller.errors.clear();
@@ -203,7 +203,7 @@ class CancelBookingPage extends StatelessWidget {
                                   controller.reviewTextEditingController,
                               readonly: false,
                               maxLines: 6,
-                              fontSize: fontSizeRegular,
+                              fontSize: fontSizeMedium,
                               fontFamily: regular,
                               onChanged: (data){
                                 if(data != ""){
@@ -232,7 +232,7 @@ class CancelBookingPage extends StatelessWidget {
                                 controller.tripCancelTextEditingController,
                                 readonly: false,
                                 maxLines: 6,
-                                fontSize: fontSizeRegular,
+                                fontSize: fontSizeMedium,
                                 fontFamily: regular,
                                 onChanged: (data){
                                   if(data != ""){
@@ -264,17 +264,17 @@ class CancelBookingPage extends StatelessWidget {
                                   ),
                                 ),
                                 5.widthBox,
-                                Expanded(
-                                  child: InkWell(
-                                    onTap: () async{
-                                      controller.confirmRideCheckBox.value = controller.confirmRideCheckBox.value == true ? false : true;
-                                      if(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_check") != null) {
-                                        controller.errors.remove(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_check"));
-                                      }
-                                    },
-                                    child: txt16Size(title: controller.labelTextDetail['Confirm_cancel_ride'] ?? "I confirm that i want to cancel this ride", context: context),
-                                  )
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () async{
+                                    controller.confirmRideCheckBox.value = controller.confirmRideCheckBox.value == true ? false : true;
+                                    if(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_check") != null) {
+                                      controller.errors.remove(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_check"));
+                                    }
+                                  },
+                                  child: txt18Size(title: controller.labelTextDetail['Confirm_cancel_ride'] ?? "I confirm that i want to cancel this ride", context: context),
                                 )
+                              )
                               ],
                             ),
                             if(controller.errors.firstWhereOrNull((element) => element['title'] == "confirm_check") != null) ...[

@@ -187,18 +187,18 @@ class SearchRidePage extends GetView<SearchRideController> {
 
                                 ),
                               ),
-                              Expanded(
-                                child: InkWell(
-                                  onTap: (){
-                                    controller.pinkRideCheck.value = controller.pinkRideCheck.value == true ? false : true;
-                                  },
-                                  child: txt20Size(
-                                      title: "${controller.labelTextDetail['search_section_pink_ride_label'] ?? "Pink rides"}",
-                                      fontFamily: regular,
-                                      context: context
-                                  ),
+                            Expanded(
+                              child: InkWell(
+                                onTap: (){
+                                  controller.pinkRideCheck.value = controller.pinkRideCheck.value == true ? false : true;
+                                },
+                                child: txt18Size(
+                                    title: "${controller.labelTextDetail['search_section_pink_ride_label'] ?? "Pink rides"}",
+                                    fontFamily: regular,
+                                    context: context
                                 ),
                               ),
+                            ),
                             ],
                           )),
                           Expanded(child: Row(
@@ -214,16 +214,16 @@ class SearchRidePage extends GetView<SearchRideController> {
                                   },
                                 ),
                               ),
-                              Expanded(child: InkWell(
-                                onTap: (){
-                                  controller.extraCareCheck.value = controller.extraCareCheck.value == true ? false : true;
-                                },
-                                child: txt20Size(
-                                    title: "${controller.labelTextDetail['search_section_extra_care_label'] ?? "Extra care rides"}",
-                                    fontFamily: regular,
-                                    context: context
-                                ),
-                              ))
+                            Expanded(child: InkWell(
+                              onTap: (){
+                                controller.extraCareCheck.value = controller.extraCareCheck.value == true ? false : true;
+                              },
+                              child: txt18Size(
+                                  title: "${controller.labelTextDetail['search_section_extra_care_label'] ?? "Extra care rides"}",
+                                  fontFamily: regular,
+                                  context: context
+                              ),
+                            ))
                             ],
                           ))
                         ],

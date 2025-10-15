@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:proximaride_app/consts/constFileLink.dart';
 import 'package:proximaride_app/pages/edit_profile/EditProfileProvider.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 import '../profile_detail/ProfileDetailController.dart';
 
@@ -310,11 +311,15 @@ class EditProfileController extends GetxController {
         miniBioTextEditingController.text.isEmpty) {
 
       if(firstNameTextEditingController.text.isEmpty){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['first_name_error'] ?? 'First name');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['first_name_error'] ?? 'First name',
+          fallbackMessage: 'First name field is required',
+        );
         var err = {
           'title': "first",
-          'eList' : [message ?? 'First name field is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -323,11 +328,15 @@ class EditProfileController extends GetxController {
         }
       }
       if(lastNameTextEditingController.text.isEmpty){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['last_name_error'] ?? 'Last name');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['last_name_error'] ?? 'Last name',
+          fallbackMessage: 'Last name field is required',
+        );
         var err = {
           'title': "last",
-          'eList' : [message ?? 'Last name field is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -336,11 +345,15 @@ class EditProfileController extends GetxController {
         }
       }
       if(gender.value == ""){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['gender_error'] ?? 'Gender');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['gender_error'] ?? 'Gender',
+          fallbackMessage: 'Gender is required',
+        );
         var err = {
           'title': "gender",
-          'eList' : [message ?? 'Gender is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -350,11 +363,15 @@ class EditProfileController extends GetxController {
       }
 
       if(dobTextEditingController.text.isEmpty){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['dob_error'] ?? 'Date of birth ');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['dob_error'] ?? 'Date of birth',
+          fallbackMessage: 'Date of birth is required',
+        );
         var err = {
           'title': "dob",
-          'eList' : [message ?? 'Date of birth is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -364,11 +381,15 @@ class EditProfileController extends GetxController {
       }
 
       if(countryName.value == ""){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['country_error'] ?? 'Country');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['country_error'] ?? 'Country',
+          fallbackMessage: 'Country is required',
+        );
         var err = {
           'title': "country",
-          'eList' : [message ?? 'Country is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -378,11 +399,15 @@ class EditProfileController extends GetxController {
       }
 
       if(stateName.value == ""){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['state_error'] ?? 'State');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['state_error'] ?? 'State',
+          fallbackMessage: 'State is required',
+        );
         var err = {
           'title': "state",
-          'eList' : [message ?? 'State is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -391,11 +416,15 @@ class EditProfileController extends GetxController {
         }
       }
       if(cityName.value == ""){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['city_error'] ?? 'City');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['city_error'] ?? 'City',
+          fallbackMessage: 'City is required',
+        );
         var err = {
           'title': "city",
-          'eList' : [message ?? 'City is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -405,11 +434,15 @@ class EditProfileController extends GetxController {
       }
 
       if(postalCodeTextEditingController.text.isEmpty){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['zip_code_error'] ?? 'Postal code');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['zip_code_error'] ?? 'Postal code',
+          fallbackMessage: 'Postal code field is required',
+        );
         var err = {
           'title': "postal",
-          'eList' : [message ?? 'Postal code field is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -419,11 +452,15 @@ class EditProfileController extends GetxController {
       }
 
       if(miniBioTextEditingController.text.isEmpty){
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['bio_error'] ?? 'Mini bio');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['bio_error'] ?? 'Mini bio',
+          fallbackMessage: 'Mini bio is required',
+        );
         var err = {
           'title': "mini",
-          'eList' : [message ?? 'Mini bio is required']
+          'eList' : [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -443,12 +480,16 @@ class EditProfileController extends GetxController {
       int sizeInBytes = file.lengthSync();
       double sizeInMb = sizeInBytes / (1024 * 1024);
       if (sizeInMb > 10){
-        var message = validationMessageDetail['max.file'];
-        message = message.replaceAll(":attribute", labelTextDetail['government_issued_error'] ?? 'government issue id');
-        message = message.replaceAll(":max", '10');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'max.file',
+          fieldName: labelTextDetail['government_issued_error'] ?? 'government issue id',
+          fallbackMessage: 'Can not upload image size greater than 10MB',
+          additionalReplacements: {':max': '10'},
+        );
         var err = {
           'title': "government_issued_id",
-          'eList' : [message ?? 'Can not upload image size greater than 10MB']
+          'eList' : [message]
         };
         errors.add(err);
         return;

@@ -3,9 +3,10 @@ import 'dart:io';
 
 import 'package:get/get_connect/connect.dart';
 import 'package:proximaride_app/consts/const_api.dart';
+import 'package:proximaride_app/utils/logged_get_connect.dart';
 
 class PostRideProvider extends GetConnect {
-  final getConnect = GetConnect(timeout: const Duration(seconds: 180));
+  final getConnect = LoggedGetConnect(timeout: const Duration(seconds: 180));
 
 
   Future getLabelTextDetail(langId) async {

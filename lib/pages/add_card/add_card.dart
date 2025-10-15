@@ -466,15 +466,15 @@ class AddCard extends GetView<AddCardController> {
                                       }),
                                 ),
                                 5.widthBox,
-                                InkWell(
-                                  onTap: (){
-                                    controller.makePrimaryCard.value = controller.makePrimaryCard.value == true ? false : true;
-                                  },
-                                  child: txt16Size(
-                                      title: "${controller.labelTextDetail['mobile_primary_card_placeholder'] ?? "Primary card"}",
-                                      fontFamily: bold,
-                                      context: context),
-                                ),
+                              InkWell(
+                                onTap: (){
+                                  controller.makePrimaryCard.value = controller.makePrimaryCard.value == true ? false : true;
+                                },
+                                child: txt18Size(
+                                    title: "${controller.labelTextDetail['mobile_primary_card_placeholder'] ?? "Primary card"}",
+                                    fontFamily: bold,
+                                    context: context),
+                              ),
                               ],
                             ),
                             120.heightBox

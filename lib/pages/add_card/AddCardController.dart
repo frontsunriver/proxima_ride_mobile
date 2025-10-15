@@ -7,6 +7,7 @@ import 'package:proximaride_app/pages/book_seat/BookSeatController.dart';
 import 'package:proximaride_app/pages/my_wallet/MyWalletController.dart';
 import 'package:proximaride_app/pages/stages/StageProvider.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 import '../payment_options/PaymentOptionsController.dart';
 import 'AddCardProvider.dart';
@@ -167,25 +168,27 @@ class AddCardController extends GetxController {
     List<String> errorList = [];
 
     if (isRequired && fieldValue.isEmpty) {
-      var message = validationMessageDetail['required'];
-      if(fieldName == "name_on_card"){
-        message = message.replaceAll(":Attribute", labelTextDetail['card_name_error'] ?? fieldData);
-      }else if(fieldName == "card_number"){
-        message = message.replaceAll(":Attribute", labelTextDetail['card_number_error'] ?? fieldData);
-      }else if(fieldName == "cvv"){
-        message = message.replaceAll(":Attribute", labelTextDetail['cvv_error'] ?? fieldData);
-      }else if(fieldName == "street"){
-        message = message.replaceAll(":Attribute", labelTextDetail['address_error'] ?? fieldData);
-      }else if(fieldName == "city"){
-        message = message.replaceAll(":Attribute", labelTextDetail['city_error'] ?? fieldData);
-      }else if(fieldName == "province"){
-        message = message.replaceAll(":Attribute", labelTextDetail['province_error'] ?? fieldData);
-      }else if(fieldName == "country"){
-        message = message.replaceAll(":Attribute", labelTextDetail['country_error'] ?? fieldData);
-      }else if(fieldName == "postal_code"){
-        message = message.replaceAll(":Attribute", labelTextDetail['postal_code_error'] ?? fieldData);
-      }
-      errorList.add(message ?? '$fieldData field is required');
+      // Map field names to their display labels
+      final fieldLabels = {
+        "name_on_card": labelTextDetail['card_name_error'] ?? 'Card name',
+        "card_number": labelTextDetail['card_number_error'] ?? 'Card number',
+        "cvv": labelTextDetail['cvv_error'] ?? 'CVV code',
+        "street": labelTextDetail['address_error'] ?? 'Street',
+        "city": labelTextDetail['city_error'] ?? 'City',
+        "province": labelTextDetail['province_error'] ?? 'Province',
+        "country": labelTextDetail['country_error'] ?? 'Country',
+        "postal_code": labelTextDetail['postal_code_error'] ?? 'Postal code',
+      };
+      
+      String displayName = fieldLabels[fieldName] ?? fieldData;
+      String message = ErrorMessageHelper.getErrorMessage(
+        validationMessages: validationMessageDetail,
+        validationType: 'required',
+        fieldName: displayName,
+        fallbackMessage: 'The $displayName field is required',
+      );
+      
+      errorList.add(message);
       errors.add({
         'title': fieldName,
         'eList': errorList,
@@ -196,13 +199,20 @@ class AddCardController extends GetxController {
     switch (type) {
       case 'numeric':
         if (fieldValue.isNotEmpty && double.tryParse(fieldValue) == null) {
-          var message = validationMessageDetail['numeric'];
-          if(fieldName == "card_number"){
-            message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? fieldData);
-          }else if(fieldName == "cvv"){
-            message = message.replaceAll(":attribute", labelTextDetail['cvv_error'] ?? fieldData);
-          }
-          errorList.add(message ?? '$fieldName must be a number');
+          final fieldLabels = {
+            "card_number": labelTextDetail['card_number_error'] ?? 'Card number',
+            "cvv": labelTextDetail['cvv_error'] ?? 'CVV code',
+          };
+          
+          String displayName = fieldLabels[fieldName] ?? fieldData;
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'numeric',
+            fieldName: displayName,
+            fallbackMessage: 'The $displayName must be a number',
+          );
+          
+          errorList.add(message);
         }
         break;
       case 'date':
@@ -256,11 +266,15 @@ class AddCardController extends GetxController {
           postalCodeController.text.isEmpty
       ) {
         if (cardNameController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['card_name_error'] ?? 'Card name');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['card_name_error'] ?? 'Card name',
+            fallbackMessage: 'Card name field is required',
+          );
           var err = {
             'title': "name_on_card",
-            'eList': [message ?? 'Card name field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -269,11 +283,15 @@ class AddCardController extends GetxController {
           }
         }
         if (cardNumberController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['card_number_error'] ?? 'Card number');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['card_number_error'] ?? 'Card number',
+            fallbackMessage: 'Card number field is required',
+          );
           var err = {
             'title': "card_number",
-            'eList': [message ?? 'Card number field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -282,11 +300,15 @@ class AddCardController extends GetxController {
           }
         }
         if (cardType.value == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['card_type_error'] ?? 'Card type');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['card_type_error'] ?? 'Card type',
+            fallbackMessage: 'Card type field is required',
+          );
           var err = {
             'title': "card_type",
-            'eList': [message ?? 'Card type field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -295,11 +317,15 @@ class AddCardController extends GetxController {
           }
         }
         if (month.value == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['month_error'] ?? 'Month');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['month_error'] ?? 'Month',
+            fallbackMessage: 'Month is required',
+          );
           var err = {
             'title': "month",
-            'eList': [message ?? 'Month is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -308,11 +334,15 @@ class AddCardController extends GetxController {
           }
         }
         if (year.value == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['year_error'] ?? 'Year');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['year_error'] ?? 'Year',
+            fallbackMessage: 'Year is required',
+          );
           var err = {
             'title': "year",
-            'eList': [message ?? 'Year is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -321,11 +351,15 @@ class AddCardController extends GetxController {
           }
         }
         if (cvvCodeController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['cvv_error'] ?? 'CVV code');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['cvv_error'] ?? 'CVV code',
+            fallbackMessage: 'CVV code field is required',
+          );
           var err = {
             'title': "cvv",
-            'eList': [message ?? 'CVV code field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -334,11 +368,15 @@ class AddCardController extends GetxController {
           }
         }
         if (streetController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['address_error'] ?? 'Street');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['address_error'] ?? 'Street',
+            fallbackMessage: 'Street field is required',
+          );
           var err = {
             'title': "street",
-            'eList': [message ?? 'Street field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -347,11 +385,15 @@ class AddCardController extends GetxController {
           }
         }
         if (cityController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['city_error'] ?? 'City');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['city_error'] ?? 'City',
+            fallbackMessage: 'City field is required',
+          );
           var err = {
             'title': "city",
-            'eList': [message ?? 'City field is required']
+            'eList': [message]
           };
           errors.add(err);
           if(scrollField == false){
@@ -360,29 +402,41 @@ class AddCardController extends GetxController {
           }
         }
         if (provinceController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['province_error'] ?? 'Province');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['province_error'] ?? 'Province',
+            fallbackMessage: 'Province field is required',
+          );
           var err = {
             'title': "province",
-            'eList': [message ?? 'Province field is required']
+            'eList': [message]
           };
           errors.add(err);
         }
         if (countryController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['country_error'] ?? 'Country');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['country_error'] ?? 'Country',
+            fallbackMessage: 'Country field is required',
+          );
           var err = {
             'title': "country",
-            'eList': [message ?? 'Country field is required']
+            'eList': [message]
           };
           errors.add(err);
         }
         if (postalCodeController.text == "") {
-          var message = validationMessageDetail['required'];
-          message = message.replaceAll(":Attribute", labelTextDetail['postal_code_error'] ?? 'Postal code');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'required',
+            fieldName: labelTextDetail['postal_code_error'] ?? 'Postal code',
+            fallbackMessage: 'Postal code field is required',
+          );
           var err = {
             'title': "postal_code",
-            'eList': [message ?? 'Postal code field is required']
+            'eList': [message]
           };
           errors.add(err);
         }
@@ -391,11 +445,15 @@ class AddCardController extends GetxController {
       errors.clear();
 
       if (cardType.value == "Visa" && cardNumberController.text.length != 16) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -406,11 +464,15 @@ class AddCardController extends GetxController {
       }
       if (cardType.value == "MasterCard" &&
           cardNumberController.text.length != 16) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -420,11 +482,15 @@ class AddCardController extends GetxController {
         return;
       }
       if (cardType.value == "AmEx" && cardNumberController.text.length != 15) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -434,11 +500,15 @@ class AddCardController extends GetxController {
         return;
       }
       if (cardType.value == "Dis" && cardNumberController.text.length != 16) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -450,11 +520,15 @@ class AddCardController extends GetxController {
       if (cardType.value == "CUP" &&
           !(cardNumberController.text.length == 16 ||
               cardNumberController.text.length == 19)) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -466,11 +540,15 @@ class AddCardController extends GetxController {
       if (cardType.value == "JC" &&
           !(cardNumberController.text.length == 16 ||
               cardNumberController.text.length == 19)) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){
@@ -482,11 +560,15 @@ class AddCardController extends GetxController {
       if (cardType.value == "DiC" &&
           !(cardNumberController.text.length == 14 ||
               cardNumberController.text.length == 16)) {
-        var message = validationMessageDetail['regex'];
-        message = message.replaceAll(":attribute", labelTextDetail['card_number_error'] ?? 'card number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'regex',
+          fieldName: labelTextDetail['card_number_error'] ?? 'card number',
+          fallbackMessage: 'Please enter a valid card number',
+        );
         var err = {
           'title': "card_number",
-          'eList': [message ?? 'Please enter a valid card number']
+          'eList': [message]
         };
         errors.add(err);
         if(scrollField == false){

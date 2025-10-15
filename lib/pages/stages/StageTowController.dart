@@ -7,6 +7,7 @@ import 'package:proximaride_app/consts/const_api.dart';
 import 'package:proximaride_app/pages/login/LoginProvider.dart';
 import 'package:proximaride_app/pages/stages/StageProvider.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 class StageTowController extends GetxController {
   var isOverlayLoading = false.obs;
@@ -142,11 +143,15 @@ class StageTowController extends GetxController {
     }
     if (skip == false) {
       if (profileImageName.value == "") {
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute", labelTextDetail['photo_error'] ?? 'Image');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['photo_error'] ?? 'Image',
+          fallbackMessage: 'Image is required',
+        );
         var err = {
           'title': "image",
-          'eList': [message ?? 'Image is required']
+          'eList': [message]
         };
         errors.add(err);
         return;
@@ -157,12 +162,16 @@ class StageTowController extends GetxController {
         int sizeInBytes = file.lengthSync();
         double sizeInMb = sizeInBytes / (1024 * 1024);
         if (sizeInMb > 10){
-          var message = validationMessageDetail['max.file'];
-          message = message.replaceAll(":attribute", labelTextDetail['photo_error'] ?? 'image');
-          message = message.replaceAll(":max", '10');
+          String message = ErrorMessageHelper.getErrorMessage(
+            validationMessages: validationMessageDetail,
+            validationType: 'max.file',
+            fieldName: labelTextDetail['photo_error'] ?? 'image',
+            fallbackMessage: 'Can not upload image size greater than 10MB',
+            additionalReplacements: {':max': '10'},
+          );
           var err = {
             'title': "image",
-            'eList' : [message ?? 'Can not upload image size greater than 10MB']
+            'eList' : [message]
           };
           errors.add(err);
           return;

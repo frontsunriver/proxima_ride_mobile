@@ -13,6 +13,7 @@ import 'package:proximaride_app/pages/navigation/NavigationController.dart';
 import 'package:proximaride_app/pages/stages/StageProvider.dart';
 import 'package:proximaride_app/pages/widgets/textWidget.dart';
 import 'package:proximaride_app/services/service.dart';
+import 'package:proximaride_app/utils/error_message_helper.dart';
 
 class StageFourController extends GetxController {
   var isOverlayLoading = false.obs;
@@ -301,12 +302,15 @@ class StageFourController extends GetxController {
     if (phoneId == "0") {
       if (countryCodeTextEditingController.text == "" ||
           phoneNumberTextEditingController.text == "") {
-        var message = validationMessageDetail['required'];
-        message = message.replaceAll(":Attribute",
-            labelTextDetail['phone_error'] ?? 'Code and phone number');
+        String message = ErrorMessageHelper.getErrorMessage(
+          validationMessages: validationMessageDetail,
+          validationType: 'required',
+          fieldName: labelTextDetail['phone_error'] ?? 'Code and phone number',
+          fallbackMessage: 'Code and phone number field is required',
+        );
         var err = {
           'title': "number",
-          'eList': [message ?? 'Code and phone number field is required']
+          'eList': [message]
         };
         errors.add(err);
         return;

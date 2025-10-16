@@ -54,6 +54,10 @@ class LocationController extends GetxController {
   void onInit() async {
     // TODO: implement onInit
     super.onInit();
+    
+    // Get fresh parameters from current route
+    final routeParams = Get.parameters;
+    
     isEditProfileRegistered = Get.isRegistered<EditProfileController>();
     isStageControllerRegistered = Get.isRegistered<StageController>();
     isSearchControllerRegistered = Get.isRegistered<SearchRideController>();
@@ -70,16 +74,26 @@ class LocationController extends GetxController {
       tempController = Get.find<PostRideController>();
     }
 
-
-
-
-    isCountry = Get.parameters['country'] ?? "";
-    isState = Get.parameters['state'] ?? "";
-    countryId.value = int.parse(Get.parameters['countryId'] ?? "0");
-    isCity.value = Get.parameters['city'] ?? "";
-    stateId.value = int.parse(Get.parameters['stateId'] ?? "0");
-    spotIndex.value = int.parse(Get.parameters['index'] ?? "0");
-    spot.value = Get.parameters['spot'] ?? "no";
+    // Force read fresh parameters
+    isCountry = routeParams['country'] ?? "";
+    isState = routeParams['state'] ?? "";
+    countryId.value = int.parse(routeParams['countryId'] ?? "0");
+    isCity.value = routeParams['city'] ?? "";
+    stateId.value = int.parse(routeParams['stateId'] ?? "0");
+    spotIndex.value = int.parse(routeParams['index'] ?? "0");
+    spot.value = routeParams['spot'] ?? "no";
+    
+    // Debug: Print all route parameters received
+    print("DEBUG LocationController - ALL Get.parameters:");
+    print("  Raw parameters map: ${Get.parameters}");
+    print("  country: ${Get.parameters['country']}");
+    print("  state: ${Get.parameters['state']}");
+    print("  city: ${Get.parameters['city']}");
+    print("  stateId: ${Get.parameters['stateId']}");
+    print("  index: ${Get.parameters['index']}");
+    print("  spot: ${Get.parameters['spot']}");
+    print("  Final isCity.value: ${isCity.value}");
+    print("  tempController type: ${tempController.runtimeType}");
 
     isLoading(true);
     await getLabelTextDetail();

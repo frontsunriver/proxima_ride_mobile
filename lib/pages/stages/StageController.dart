@@ -172,6 +172,7 @@ class StageController extends GetxController {
         if (firstNameTextEditingController.text.isEmpty) {
 
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['first_name_error'] ?? 'First name');
           message = message.replaceAll(":Attribute", labelTextDetail['first_name_error'] ?? 'First name');
           var err = {
             'title': "first",
@@ -182,6 +183,7 @@ class StageController extends GetxController {
 
         if (lastNameTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['last_name_error'] ?? 'Last name');
           message = message.replaceAll(":Attribute", labelTextDetail['last_name_error'] ?? 'Last name');
           var err = {
             'title': "last",
@@ -192,6 +194,7 @@ class StageController extends GetxController {
 
         if (gender.value.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['gender_error'] ?? 'Gender');
           message = message.replaceAll(":Attribute", labelTextDetail['gender_error'] ?? 'Gender');
           var err = {
             'title': "gender",
@@ -202,6 +205,7 @@ class StageController extends GetxController {
 
         if (dobTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['dob_error'] ?? 'Date');
           message = message.replaceAll(":Attribute", labelTextDetail['dob_error'] ?? 'Date');
           var err = {
             'title': "dob",
@@ -212,6 +216,7 @@ class StageController extends GetxController {
 
         if (countryName.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['country_error'] ?? 'Country name');
           message = message.replaceAll(":Attribute", labelTextDetail['country_error'] ?? 'Country name');
           var err = {
             'title': "country",
@@ -222,6 +227,7 @@ class StageController extends GetxController {
 
         if (stateName.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['state_error'] ?? 'State/province');
           message = message.replaceAll(":Attribute", labelTextDetail['state_error'] ?? 'State/province');
           var err = {
             'title': "state",
@@ -232,6 +238,7 @@ class StageController extends GetxController {
 
         if (cityName.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['city_error'] ?? 'City');
           message = message.replaceAll(":Attribute", labelTextDetail['city_error'] ?? 'City');
           var err = {
             'title': "city",
@@ -242,6 +249,7 @@ class StageController extends GetxController {
 
         if (postalCodeTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['zip_code_error'] ?? 'Postal code');
           message = message.replaceAll(":Attribute", labelTextDetail['zip_code_error'] ?? 'Postal code');
           var err = {
             'title': "zipcode",
@@ -252,6 +260,7 @@ class StageController extends GetxController {
 
         if(miniBioTextEditingController.text.isEmpty){
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['bio_error'] ?? 'Mini bio');
           message = message.replaceAll(":Attribute", labelTextDetail['bio_error'] ?? 'Mini bio');
           var err = {
             'title': "mini",

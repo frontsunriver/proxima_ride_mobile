@@ -104,8 +104,10 @@ class EmailAddressController extends GetxController{
       var message = validationMessageDetail['required'];
 
       if(fieldName == "email_confirmation"){
+        message = message.replaceAll(":attribute", labelTextDetail['confirm_email_error'] ?? "Confirm email");
         message = message.replaceAll(":Attribute", labelTextDetail['confirm_email_error'] ?? "Confirm email");
       }else if(fieldName == "email"){
+        message = message.replaceAll(":attribute", labelTextDetail['new_email_error'] ?? "Email");
         message = message.replaceAll(":Attribute", labelTextDetail['new_email_error'] ?? "Email");
       }
 
@@ -188,6 +190,7 @@ class EmailAddressController extends GetxController{
 
         if (newEmailTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['new_email_error'] ?? 'New e-mail');
           message = message.replaceAll(":Attribute", labelTextDetail['new_email_error'] ?? 'New e-mail');
           var err = {
             'title': "email",
@@ -198,6 +201,7 @@ class EmailAddressController extends GetxController{
 
         if (confirmEmailTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['confirm_email_error'] ?? 'Confirm new e-mail');
           message = message.replaceAll(":Attribute", labelTextDetail['confirm_email_error'] ?? 'Confirm new e-mail');
           var err = {
             'title': "email_confirmation",

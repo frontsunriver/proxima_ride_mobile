@@ -16,6 +16,14 @@
     <style name="NormalTheme" parent="Theme.MaterialComponents">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
+    
+    <!-- Custom theme for UCrop (Image Cropper) to respect navigation bar -->
+    <style name="UCropTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
 </resources>
 
 <!--<?xml version="1.0" encoding="utf-8"?>-->

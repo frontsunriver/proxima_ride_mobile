@@ -29,7 +29,7 @@ Widget genderWidget({context, String title = "",  bool value = false, onChanged}
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        txt16Size(title: title, fontFamily: bold, context: context, textColor: textColor),
+        txt18Size(title: title, fontFamily: bold, context: context, textColor: textColor),
         SizedBox(
           width: 25,
           height: 25,

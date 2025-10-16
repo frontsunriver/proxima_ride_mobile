@@ -123,18 +123,25 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
     if (isRequired && fieldValue.isEmpty) {
       var message = validationMessageDetail['required'];
       if(fieldName == "bank_name"){
+        message = message.replaceAll(":attribute", labelTextDetail['bank_title_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['bank_title_error'] ?? fieldData);
       }else if(fieldName == "acc_no"){
+        message = message.replaceAll(":attribute", labelTextDetail['acc_no_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['acc_no_error'] ?? fieldData);
       }else if(fieldName == "branch"){
+        message = message.replaceAll(":attribute", labelTextDetail['branch_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['branch_error'] ?? fieldData);
       }else if(fieldName == "address"){
+        message = message.replaceAll(":attribute", labelTextDetail['address_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['address_error'] ?? fieldData);
       }else if(fieldName == "user_verify_amount"){
+        message = message.replaceAll(":attribute", labelTextDetail['verify_amount_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['verify_amount_error'] ?? fieldData);
       }else if(fieldName == "paypal_email"){
+        message = message.replaceAll(":attribute", labelTextDetail['paypal_email_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['paypal_email_error'] ?? fieldData);
       }else if(fieldName == "branch_address"){
+        message = message.replaceAll(":attribute", labelTextDetail['branch_address'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['branch_address'] ?? fieldData);
       }
       errorList.add(message ?? '$fieldData field is required');
@@ -255,6 +262,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (bankId.value.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['bank_error'] ?? 'Bank name');
         message = message.replaceAll(":Attribute", labelTextDetail['bank_error'] ?? 'Bank name');
         var err = {
           'title': "bank_name",
@@ -265,6 +273,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (branchTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['branch_error'] ?? 'Branch');
         message = message.replaceAll(":Attribute", labelTextDetail['branch_error'] ?? 'Branch');
         var err = {
           'title': "branch",
@@ -275,6 +284,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (institutionNumberTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['institution_number_error'] ?? 'Institution number');
         message = message.replaceAll(":Attribute", labelTextDetail['institution_number_error'] ?? 'Institution number');
         var err = {
           'title': "institution_number",
@@ -285,6 +295,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (branchAddressTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['branch_address'] ?? 'Branch address');
         message = message.replaceAll(":Attribute", labelTextDetail['branch_address'] ?? 'Branch address');
         var err = {
           'title': "branch_address",
@@ -295,6 +306,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (branchNumberTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['branch_number_error'] ?? 'Branch number');
         message = message.replaceAll(":Attribute", labelTextDetail['branch_number_error'] ?? 'Branch number');
         var err = {
           'title': "branch_number",
@@ -305,6 +317,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (bankTitleTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['bank_title_error'] ?? 'Bank title');
         message = message.replaceAll(":Attribute", labelTextDetail['bank_title_error'] ?? 'Bank title');
         var err = {
           'title': "account_holder_name",
@@ -315,6 +328,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (accountNumberTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['acc_no_error'] ?? 'Account number');
         message = message.replaceAll(":Attribute", labelTextDetail['acc_no_error'] ?? 'Account number');
         var err = {
           'title': "account_holder_number",
@@ -325,6 +339,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
 
       if (addressTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['address_error'] ?? 'Address');
         message = message.replaceAll(":Attribute", labelTextDetail['address_error'] ?? 'Address');
         var err = {
           'title': "account_holder_address",
@@ -427,6 +442,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
       errors.clear();
       if (paypalEmailTextEditingController.text.isEmpty) {
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['paypal_email_error'] ?? 'Paypal email');
         message = message.replaceAll(":Attribute", labelTextDetail['paypal_email_error'] ?? 'Paypal email');
         var err = {
           'title': "paypal_email",
@@ -478,6 +494,7 @@ class PayoutAccountController extends GetxController with GetTickerProviderState
       if (userVerifyAmountTextEditingController.text.isEmpty) {
 
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['verify_amount_error'] ?? 'Amount');
         message = message.replaceAll(":Attribute", labelTextDetail['verify_amount_error'] ?? 'Amount');
         var err = {
           'title': "user_verify_amount",

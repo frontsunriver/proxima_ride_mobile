@@ -295,7 +295,7 @@ class StageOne extends GetView<StageController> {
                                 textController:
                                     controller.dobTextEditingController,
                                 fontFamily: regular,
-                                fontSize: fontSizeRegular,
+                                fontSize: fontSizeMedium,
                                 onTap: () async {
                                   if (controller.errors.firstWhereOrNull(
                                           (element) =>

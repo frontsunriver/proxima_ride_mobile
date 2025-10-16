@@ -57,6 +57,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                       3.heightBox,
                       fieldsWidget(
                         onTap: (){
+                          print("DEBUG: FROM field tapped - navigating to /city/origin/0/0/no");
                           Get.toNamed("/city/origin/0/0/no");
                         },
                         textController: controller.fromTextEditingController,
@@ -104,6 +105,7 @@ class SearchRidePage extends GetView<SearchRideController> {
                       3.heightBox,
                       fieldsWidget(
                         onTap: (){
+                          print("DEBUG: DESTINATION field tapped - navigating to /city/destination/0/0/no");
                           Get.toNamed("/city/destination/0/0/no");
                         },
                         textController: controller.toTextEditingController,

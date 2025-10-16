@@ -100,6 +100,7 @@ class ContactUsController extends GetxController{
 
     if (isRequired && fieldValue.isEmpty) {
       var message = validationMessageDetail['required'];
+      message = message.replaceAll(":attribute", fieldName);
       message = message.replaceAll(":Attribute", fieldName);
       errorList.add(message);
       errors.add({

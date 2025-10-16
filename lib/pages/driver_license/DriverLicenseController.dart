@@ -84,6 +84,7 @@ class DriverLicenseController extends GetxController{
     try{
       if(driverLicenseName.value == ""){
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['driver_license_error'] ?? 'driver license');
         message = message.replaceAll(":Attribute", labelTextDetail['driver_license_error'] ?? 'driver license');
         var err = {
           'title': "driver_liscense",

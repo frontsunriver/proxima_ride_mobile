@@ -218,6 +218,7 @@ class SearchRideController extends GetxController{
       if(type == 1 && (fromTextEditingController.text == "" || toTextEditingController.text == "")){
         if(fromTextEditingController.text == ""){
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['from_error'] ?? 'Origin');
           message = message.replaceAll(":Attribute", labelTextDetail['from_error'] ?? 'Origin');
           var err = {
             'title': "from",
@@ -228,6 +229,7 @@ class SearchRideController extends GetxController{
 
         if(toTextEditingController.text == ""){
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['to_error'] ?? 'Destination');
           message = message.replaceAll(":Attribute", labelTextDetail['to_error'] ?? 'Destination');
           var err = {
             'title': "to",

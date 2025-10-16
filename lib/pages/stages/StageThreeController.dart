@@ -157,6 +157,8 @@ class StageThreeController extends GetxController {
 
     if (driverLicensePathOriginal.value.isEmpty) {
       var message = validationMessageDetail['required'];
+      message = message.replaceAll(":attribute",
+          labelTextDetail['driver_license_error'] ?? 'Driver license');
       message = message.replaceAll(":Attribute",
           labelTextDetail['driver_license_error'] ?? 'Driver license');
       var err = {
@@ -533,6 +535,8 @@ class StageThreeController extends GetxController {
         }
         if (licenseNumberTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute",
+              labelTextDetail['license_error'] ?? 'License number');
           message = message.replaceAll(":Attribute",
               labelTextDetail['license_error'] ?? 'License number');
           var err = {

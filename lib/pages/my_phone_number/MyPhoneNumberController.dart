@@ -153,6 +153,7 @@ class MyPhoneNumberController extends GetxController {
     if(phoneId == "0") {
       if(countryCodeTextEditingController.text == "" || phoneNumberTextEditingController.text == ""){
         var message = validationMessageDetail['required'];
+        message = message.replaceAll(":attribute", labelTextDetail['phone_error'] ?? 'Code and phone');
         message = message.replaceAll(":Attribute", labelTextDetail['phone_error'] ?? 'Code and phone');
         var err = {
           'title': "phoneNumber",

@@ -70,6 +70,7 @@ class ProfilePhotoController extends GetxController{
   uploadUserPhoto() async{
     if(profileImageName.value == ""){
       var message = validationMessageDetail['required'];
+      message = message.replaceAll(":attribute", labelTextDetail['photo_error'] ?? 'Image');
       message = message.replaceAll(":Attribute", labelTextDetail['photo_error'] ?? 'Image');
       var err = {
         'title': "image",

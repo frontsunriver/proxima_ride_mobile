@@ -105,10 +105,13 @@ class PasswordController extends GetxController{
     if (isRequired && fieldValue.isEmpty) {
       var message = validationMessageDetail['required'];
       if(fieldName == "current_password"){
+        message = message.replaceAll(":attribute", labelTextDetail['current_password_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['current_password_error'] ?? fieldData);
       }else if(fieldName == "new_password"){
+        message = message.replaceAll(":attribute", labelTextDetail['new_password_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['new_password_error'] ?? fieldData);
       }else if(fieldName == "confirm_password"){
+        message = message.replaceAll(":attribute", labelTextDetail['confirm_new_password_error'] ?? fieldData);
         message = message.replaceAll(":Attribute", labelTextDetail['confirm_new_password_error'] ?? fieldData);
       }
       errorList.add(message ?? '$fieldData field is required');
@@ -219,6 +222,7 @@ class PasswordController extends GetxController{
 
         if (currentPasswordTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['current_password_error'] ?? 'Current password');
           message = message.replaceAll(":Attribute", labelTextDetail['current_password_error'] ?? 'Current password');
           var err = {
             'title': "current_password",
@@ -229,6 +233,7 @@ class PasswordController extends GetxController{
 
         if (newPasswordTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['new_password_error'] ?? 'New password');
           message = message.replaceAll(":Attribute", labelTextDetail['new_password_error'] ?? 'New password');
           var err = {
             'title': "new_password",
@@ -239,6 +244,7 @@ class PasswordController extends GetxController{
 
         if (confirmPasswordTextEditingController.text.isEmpty) {
           var message = validationMessageDetail['required'];
+          message = message.replaceAll(":attribute", labelTextDetail['confirm_new_password_error'] ?? 'Confirm new password');
           message = message.replaceAll(":Attribute", labelTextDetail['confirm_new_password_error'] ?? 'Confirm new password');
           var err = {
             'title': "confirm_password",

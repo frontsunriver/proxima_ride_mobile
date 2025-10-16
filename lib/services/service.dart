@@ -431,6 +431,10 @@ class Service extends GetxService {
               toolbarWidgetColor: Colors.white,
               initAspectRatio: CropAspectRatioPreset.square,
               lockAspectRatio: false,
+              hideBottomControls: false,
+              statusBarColor: primaryColor,
+              activeControlsWidgetColor: primaryColor,
+              dimmedLayerColor: Colors.black.withOpacity(0.8),
               aspectRatioPresets: [
                 CropAspectRatioPreset.square,
                 CropAspectRatioPreset.ratio4x3,

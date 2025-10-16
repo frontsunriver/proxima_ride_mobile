@@ -14,6 +14,8 @@ class CityPage extends GetView<LocationController> {
 
   @override
   Widget build(BuildContext context) {
+    // Delete old controller to ensure fresh parameters are read
+    Get.delete<LocationController>();
     Get.put(LocationController());
     return Scaffold(
         appBar: AppBar(
@@ -75,7 +77,11 @@ class CityPage extends GetView<LocationController> {
                                   return dropDownItemWidget(
                                       context: context,
                                       onTap: () async{
-
+                                        // Debug: Print to verify which field is being updated
+                                        print("DEBUG: isCity.value = ${controller.isCity.value}");
+                                        print("DEBUG: spot.value = ${controller.spot.value}");
+                                        print("DEBUG: tempController type = ${controller.tempController.runtimeType}");
+                                        
                                         if(controller.isCity.value == "city"){
                                           controller.tempController.cityId.value =
                                           controller.searchCities[index]
@@ -94,12 +100,14 @@ class CityPage extends GetView<LocationController> {
                                             "${controller.searchCities[index]['name']}, ${controller.searchCities[index]['state']['abrv']}, ${controller.searchCities[index]['state']['country']['name']}";
                                           }
                                         }else if(controller.isCity.value == "destination"){
-
+                                            print("DEBUG: Updating DESTINATION field");
                                             if(controller.spot.value == "yes"){
+                                            print("DEBUG: Setting toSpotControllers[${controller.spotIndex.value}]");
                                             controller
                                                 .tempController.toSpotControllers[controller.spotIndex.value].text =
                                             "${controller.searchCities[index]['name']}, ${controller.searchCities[index]['state']['abrv']}, ${controller.searchCities[index]['state']['country']['name']}";
                                             }else{
+                                              print("DEBUG: Setting toTextEditingController");
                                               controller
                                                   .tempController.toTextEditingController.text =
                                               "${controller.searchCities[index]['name']}, ${controller.searchCities[index]['state']['abrv']}, ${controller.searchCities[index]['state']['country']['name']}";

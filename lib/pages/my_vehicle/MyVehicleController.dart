@@ -99,14 +99,19 @@ class MyVehicleController extends GetxController{
     if (isRequired && fieldValue.isEmpty) {
       var message = validationMessageDetail['required'];
       if(fieldName == "make"){
+        message = message.replaceAll(":attribute", labelTextDetail['make_error'] ?? "Make");
         message = message.replaceAll(":Attribute", labelTextDetail['make_error'] ?? "Make");
       }else if(fieldName == "model"){
+        message = message.replaceAll(":attribute", labelTextDetail['model_error'] ?? "Model");
         message = message.replaceAll(":Attribute", labelTextDetail['model_error'] ?? "Model");
       }else if(fieldName == "liscense_no"){
+        message = message.replaceAll(":attribute", labelTextDetail['license_error'] ?? "License no");
         message = message.replaceAll(":Attribute", labelTextDetail['license_error'] ?? "License no");
       }else if(fieldName == "color"){
+        message = message.replaceAll(":attribute", labelTextDetail['color_error'] ?? "Color");
         message = message.replaceAll(":Attribute", labelTextDetail['color_error'] ?? "Color");
       }else if(fieldName == "year"){
+        message = message.replaceAll(":attribute", labelTextDetail['year_error'] ?? "Year");
         message = message.replaceAll(":Attribute", labelTextDetail['year_error'] ?? "Year");
       }
 
